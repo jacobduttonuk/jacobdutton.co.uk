@@ -61,6 +61,38 @@ nav.links a:hover{color:var(--ink)}
 .btn.ghost:hover{background:var(--ink);color:var(--paper)}
 @media (max-width:760px){nav.links a:not(.btn){display:none}}
 
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+/* tailor */
+.tailor{background:var(--cobalt);color:#fff}
+.tailor .sec-head p{color:#E3E6FF}
+.tailor .sec-head{margin-bottom:clamp(24px,3vw,36px)}
+.tmodes{display:inline-flex;gap:4px;padding:4px;border:1px solid rgba(255,255,255,.35);border-radius:999px;flex-wrap:wrap;margin-bottom:16px}
+.tmodes button{font:inherit;font-size:15px;font-weight:600;padding:9px 16px;border-radius:999px;border:0;background:transparent;color:#E3E6FF;cursor:pointer}
+.tmodes button[aria-selected="true"]{background:#fff;color:var(--cobalt)}
+.tform{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:12px;align-items:end}
+.tform textarea{font:inherit;font-size:18px;width:100%;min-height:60px;resize:vertical;padding:16px 18px;border-radius:14px;border:0;background:#fff;color:var(--ink);line-height:1.4}
+.tform textarea::placeholder{color:#7A7F8A}
+.tform textarea:focus-visible{outline:3px solid var(--ink);outline-offset:2px}
+.tform .btn{background:var(--ink);padding:16px 24px;font-size:16px}
+.tform .btn:hover{background:#000}
+.tform .btn[disabled]{opacity:.6;cursor:wait}
+.tnote{margin-top:12px;font-size:14px;color:#C9CEFF}
+.tout{margin-top:clamp(28px,4vw,44px)}
+.tout:empty{display:none}
+.tcard{background:#fff;color:var(--ink);border-radius:18px;padding:clamp(22px,3vw,40px)}
+.tcard h3{font-size:clamp(26px,3vw,38px);font-weight:700;letter-spacing:-.02em;line-height:1.05}
+.tcard .tsum{margin-top:12px;font-size:clamp(17px,1.5vw,19px);max-width:62ch;color:var(--slate)}
+.tgrid{margin-top:26px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px 40px}
+.tgrid section h4{font-size:15px;font-weight:700;color:var(--cobalt);padding-bottom:8px;border-bottom:1px solid var(--rule)}
+.tgrid ul{list-style:none;margin-top:6px}
+.tgrid li{padding:8px 0 8px 16px;position:relative;font-size:16px;line-height:1.45}
+.tgrid li::before{content:"";position:absolute;left:0;top:16px;width:6px;height:6px;background:var(--cobalt);border-radius:1px}
+.tfoot{margin-top:26px;display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+.tfoot small{color:var(--slate);font-size:13px}
+.tstatus{font-size:17px;color:#fff}
+.tstatus.err{background:#fff;color:var(--ink);padding:14px 18px;border-radius:12px;display:inline-block}
+@media (max-width:760px){.tform{grid-template-columns:1fr}.tgrid{grid-template-columns:1fr}.tmodes{display:flex;border-radius:18px}.tmodes button{flex:1 1 auto}}
+
 /* hero */
 .hero{padding:clamp(28px,6vw,72px) 0 clamp(48px,7vw,96px)}
 .hero-grid{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(0,1fr);gap:clamp(24px,4vw,56px);align-items:stretch}
@@ -428,7 +460,7 @@ Clients and organisations he has worked with include Microsoft, Salesforce, HSBC
       <p class="lede rise d2">I get AI working for large companies, groups and portfolios: choosing where it pays, proving it on their own work and getting people using it every week. Most recently I led innovation, R&amp;D and emerging technology across ADQ’s 20+ operating companies in Abu Dhabi.</p>
       <div class="cta rise d3">
         <a class="btn" href="https://calendarbridge.com/book/jacobdutton/home">Book a call</a>
-        <a class="btn ghost" href="https://www.linkedin.com/in/jacobdutton">LinkedIn profile</a>
+        <a class="btn ghost" href="#tailor">Tailor this to you</a>
       </div>
     </div>
     <figure class="portrait">
@@ -528,6 +560,27 @@ Clients and organisations he has worked with include Microsoft, Salesforce, HSBC
         <p>More of the buying gets done by a customer’s own agent, comparing, choosing and reordering on their behalf. Products and services have to be readable by machines, through APIs and MCP, as well as by people. Services move from being sold by the hour or the seat to being paid for on outcomes, and brand counts for less in the search and more in the trust.</p>
       </div>
     </div>
+  </div>
+</section>
+
+<section class="tailor" id="tailor" aria-labelledby="tailor-title">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 id="tailor-title" class="display">See it for your company.</h2>
+      <p>Type a company name, or paste a project brief or a job spec. You’ll get a short read on where AI would pay, what I’d do first and the closest work I’ve done. It’s written by AI, working only from what’s on this site.</p>
+    </div>
+    <div class="tmodes" role="tablist" aria-label="What are you giving me?">
+      <button type="button" role="tab" aria-selected="true" data-mode="company">Company</button>
+      <button type="button" role="tab" aria-selected="false" data-mode="brief">Project brief</button>
+      <button type="button" role="tab" aria-selected="false" data-mode="job">Job spec</button>
+    </div>
+    <form class="tform" id="tform">
+      <label for="tinput" class="sr">Your company, brief or job spec</label>
+      <textarea id="tinput" rows="2" maxlength="6000" placeholder="A company name, like Etihad Airways or Unilever" required></textarea>
+      <button type="submit" class="btn" id="tgo">Tailor it</button>
+    </form>
+    <p class="tnote">Written by AI in about 15 seconds. Worth a call to check it properly.</p>
+    <div class="tout" id="tout" aria-live="polite"></div>
   </div>
 </section>
 
@@ -754,6 +807,33 @@ Clients and organisations he has worked with include Microsoft, Salesforce, HSBC
 })();
 
   (function(){var tb=document.querySelectorAll('.tracks button');tb.forEach(function(b){b.addEventListener('click',function(){var t=b.getAttribute('data-track');tb.forEach(function(x){x.setAttribute('aria-selected',x===b?'true':'false')});document.querySelectorAll('.gates[data-track]').forEach(function(g){var on=g.getAttribute('data-track')===t;g.hidden=!on;if(on){g.classList.remove('in');void g.offsetWidth;g.classList.add('in')}})})})})();
+</script>
+<script>
+(function(){
+  var API=/jacobdutton\.co\.uk$/.test(location.hostname)?'/api/tailor':'https://www.jacobdutton.co.uk/api/tailor';
+  var mode='company',form=document.getElementById('tform');if(!form)return;
+  var ta=document.getElementById('tinput'),go=document.getElementById('tgo'),out=document.getElementById('tout');
+  var ph={company:'A company name, like Etihad Airways or Unilever',brief:'Paste the project brief',job:'Paste the job spec'};
+  var labels={value:'Value creation',growth:'Growth',innovation:'Innovation',first90:'The first 90 days',closest:'Closest work',read:'The read',approach:'How I’d run it',prove:'What to prove first',questions:'Questions I’d ask',fit:'Where I fit'};
+  var order={company:['value','growth','innovation','first90','closest'],brief:['read','approach','prove','closest','questions'],job:['fit','first90','closest','questions']};
+  document.querySelectorAll('.tmodes button').forEach(function(b){b.addEventListener('click',function(){
+    mode=b.getAttribute('data-mode');document.querySelectorAll('.tmodes button').forEach(function(x){x.setAttribute('aria-selected',x===b?'true':'false')});
+    ta.placeholder=ph[mode];ta.rows=mode==='company'?2:6;ta.focus();});});
+  function el(t,c,txt){var e=document.createElement(t);if(c)e.className=c;if(txt!=null)e.textContent=txt;return e}
+  function status(t,err){out.innerHTML='';out.appendChild(el('p','tstatus'+(err?' err':''),t))}
+  form.addEventListener('submit',function(ev){ev.preventDefault();var v=ta.value.trim();if(!v)return;
+    go.disabled=true;go.textContent='Working on it';status('Reading what you’ve given me and matching it to my work. About 15 seconds.');
+    fetch(API,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({mode:mode,input:v})})
+    .then(function(r){return r.json()}).then(function(d){
+      if(!d||d.error){status((d&&d.error)||'Something went wrong. Please try again.',true);return}
+      out.innerHTML='';var c=el('article','tcard');c.appendChild(el('h3','',d.title||''));if(d.summary)c.appendChild(el('p','tsum',[].concat(d.summary).join(' ')));
+      var g=el('div','tgrid');(order[mode]||[]).forEach(function(k){var items=d[k];if(!items||!items.length)return;var s=el('section');s.appendChild(el('h4','',labels[k]||k));var ul=el('ul');[].concat(items).forEach(function(i){ul.appendChild(el('li','',String(i)))});s.appendChild(ul);g.appendChild(s)});
+      c.appendChild(g);var f=el('div','tfoot');var a=el('a','btn','Book a call to talk it through');a.href=d.book||'https://calendarbridge.com/book/jacobdutton/home';f.appendChild(a);f.appendChild(el('small','','Written by AI from my profile, so worth checking with me.'));c.appendChild(f);out.appendChild(c);
+      c.scrollIntoView({behavior:'smooth',block:'start'});
+    }).catch(function(){status('I couldn’t reach the tailoring service. Please try again in a minute.',true)})
+    .then(function(){go.disabled=false;go.textContent='Tailor it'});
+  });
+})();
 </script>
 </body>
 </html>
