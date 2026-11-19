@@ -4,25 +4,43 @@
 
 Jacob owns the value side of AI adoption: which use cases get funded, proof before scale, getting people using it and governance. He works alongside the CTO or CDO, who owns the platforms and data. Roles his work fits: Chief AI Officer, head of AI value creation, portfolio value creation, chief innovation officer.
 
-## How he runs AI spend
+## What he does
 
-He runs AI spend like a staged fund. Each use case passes five gates, and money is released at each one:
+- Value creation: where AI will save or make the most money in the business a company already runs. He works out which AI use cases are worth funding, proves them on the business's own work before they scale and stops the rest early. At ADQ, AI did the mapping, screening and valuation across 20+ operating companies, and people made the funding calls. AED 120M deployed across 16 initiatives.
+- Growth: where AI can grow what a company already sells. He finds where AI lifts revenue in existing products, services and channels and gets it in front of customers, for Fortune 100 clients inside an NYSE-listed holding company and for businesses like Hilton, JCB and Walgreens. Example: AI predictive maintenance built into JCB's heavy equipment.
+- Innovation: net new AI-powered ventures, products and services, from the first test with customers to a business that pays its way. Done inside IPG, through Future Foundry for clients like Mars, Microsoft and Salesforce, and in his own venture studio. 10 businesses launched at IPG, one to $20M ARR in 18 months.
+
+## Point of view: fund AI like a portfolio, not an IT project
+
+Most companies fund AI like an IT project: pick the use case, build it, roll it out and hope people use it. That's why so much of it stalls after the pilot. AI behaves more like a portfolio of bets. You need lots of cheap ones because most won't pay off, and the money should follow the evidence. Jacob releases funding in tranches, and every bet has to prove itself to get the next one. At ADQ, 16 of 276 AI opportunities got funded; the rest were stopped at screening, before real money went in.
+
+Using AI in what a company already runs, money is released at five gates:
 
 1. Baseline: what today's process costs, how long it takes and how often it's right.
 2. Owner: a named person in the business who'll use it and answer for the result.
 3. Target: the accuracy it has to reach on the company's own cases, agreed before anything is built.
-4. Supervised: a person checks the AI's work until it hits that target.
-5. Unattended: only then does it run on its own, measured on cost per correct outcome against the old way.
+4. Supervised: a person checks the AI's work until it hits that target, case after case.
+5. In use: it's part of the normal week, on its own or with a person in the loop, measured on cost per correct outcome against the old way.
+
+Building something new with AI, money is released at four gates:
+
+1. Demand: evidence customers want it, from what they do rather than what they say in a survey.
+2. Delivery: proof the company can build and run it, with the data, partners and people it needs.
+3. Numbers: unit economics that work at the price customers will actually pay.
+4. Scale: money to grow it, with an owner and a route into the core business or out as a spin-out.
 
 ## Selected work
 
-- ADQ (2025 to 2026), SVP Innovation, R&D and Emerging Technology: set the function up to run AI-first across a $300B sovereign investor and 20+ operating companies including Etihad, TAQA, AD Ports, PureHealth, Etihad Rail and Al Dahra. Ran the AED 500M portfolio innovation fund: 276 opportunities surfaced with AI, AED 120M deployed across 16 initiatives against evidence at each of five gates. Designed and led the Robotics Ramp-Up Programme across 19 operating companies: 23 proofs of concept launched, 100+ robotics and physical AI partners brought in. Reviewed innovation capability across 13 operating companies and turned it into a three-horizon roadmap.
+- ADQ (2025 to 2026), SVP Innovation, R&D and Emerging Technology: set the function up to run AI-first across a $300B sovereign investor and 20+ operating companies in aviation, energy, ports, logistics, food and healthcare. Ran the AED 500M portfolio innovation fund: 276 opportunities surfaced with AI, AED 120M deployed across 16 initiatives against evidence at each gate. Designed and led the Robotics Ramp-Up Programme across 19 operating companies: 23 proofs of concept launched, 100+ robotics and physical AI partners brought in. Reviewed innovation capability across 13 operating companies and turned it into a three-horizon roadmap.
 - Aucctus AI (2026 to now), Global Head of AI Innovation: leads how enterprise clients get started with the platform, from the first conversation with their leadership to the first use case running on their own data.
 - Future Foundry (2021 to 2025), co-founder and CEO: business experimentation company. 500+ projects tested and 50+ launched, a 90% launch success rate, and more than $1bn of spend stopped on ideas that weren't going to work. Built the Velocity Method, adopted inside Salesforce, Microsoft, HSBC, Mars and Hilton.
 - Curzon Street Ventures (2023 to 2025), co-founder and CEO: place-based venture studio turning the operational problems of large companies into AI-led startups. Six ventures validated with corporate partners Kaiser Permanente, BP, Grant Thornton, Boeing, GXO and HSBC. $500,000 of corporate sponsorship, 25 corporate partners.
 - Interpublic Group (2018 to 2021), Managing Director, Innovation, New York: built IPG's first innovation and venture practice to 50 people. 10 businesses launched; three raised $45M of Series A between them and one reached $20M ARR in 18 months. AI products in market since 2018, including predictive maintenance for JCB and AI-personalised skincare for Avon China.
 - 383 (2009 to 2018), employee number one to Managing Partner: grew a Birmingham product studio to 40+ people. Built the first Hive connected thermostat for British Gas, an $11M subscription business in year one.
-- Also: Expert Instructor, Innovation Management, Maven (200+ senior operators, 85 NPS). Advisory Board Member, Connected Places Catapult.
+- Maven (current), Expert Instructor, Innovation Management: 200+ senior operators trained to use AI in their own work, 85 NPS.
+- Also: Advisory Board Member, Connected Places Catapult.
+
+Career in four eras: 2009 to 2018, before AI (383); 2018 to 2021, AI in the product (IPG); 2021 to 2025, AI-assisted (Future Foundry, Curzon Street Ventures); 2025 to now, AI-native (ADQ, Aucctus AI, Maven).
 
 Clients and organisations he has worked with include Microsoft, Salesforce, HSBC, Boeing, BP, Mars, P&G, Unilever, Reckitt, Kimberly-Clark, Novartis, Walgreens, Capital One, Experian, Ørsted, Hilton, JCB and the USPS.
 
@@ -50,7 +68,6 @@ Clients and organisations he has worked with include Microsoft, Salesforce, HSBC
 - [How to build a corporate innovation engine](https://www.youtube.com/watch?v=8FBFC9crt2g): talk, 2023
 - [How to think like a VC and win at corporate innovation](https://www.youtube.com/watch?v=QfNFZoFOW3c): talk, 2022
 - [How to eliminate corporate innovation waste](https://www.youtube.com/watch?v=QGkd_7DTFJM): talk, 2022
-
 
 ## Contact
 
