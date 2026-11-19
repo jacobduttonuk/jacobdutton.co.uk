@@ -33,16 +33,16 @@ Clients and organisations he has worked with include Microsoft, Salesforce, HSBC
 
 ## Talks and writing
 
-- [The New Corporate Innovator: how AI changes value creation in large companies](https://innovationroundtable.com/summit/): talk, Innovation Roundtable Summit, Copenhagen, 2026
-- [Don't let the inventor run the company](https://jacobdutton.substack.com/p/dont-let-the-inventor-run-the-company): article, 2026
-- [What nobody tells you about building ventures inside corporates](https://jacobdutton.substack.com/p/what-nobody-tells-you-about-building): article, 2026
-- [You're hiring innovation leaders for the wrong things](https://jacobdutton.substack.com/p/youre-hiring-innovation-leaders-for): article, 2026
-- [Retail's platform gap](https://jacobdutton.substack.com/p/retails-platform-gap): thesis, 2026
-- [Britain's innovation problem is not what we think it is](https://jacobdutton.substack.com/p/britains-innovation-problem-is-not): article, 2026
-- [The experimentation inversion](https://jacobdutton.substack.com/p/the-experimentation-inversion): article, 2026
-- [CVC's trilemma](https://jacobdutton.substack.com/p/cvcs-trilemma): article, 2026
-- [Using AI to improve innovation experiments](https://www.youtube.com/watch?v=lXW4S4bMOVk): interview, 2025
-- [The emerging and evolving role of the Chief Innovation Officer](https://youtu.be/yMrx7n6AyVM): interview, 2025
+- [AI changes what corporate innovators are for](https://innovationroundtable.com/summit/): talk, Innovation Roundtable Summit, Copenhagen, 2026
+- [When AI makes anyone an inventor, don't let the inventor run the company](https://jacobdutton.substack.com/p/dont-let-the-inventor-run-the-company): article, 2026
+- [What nobody tells you about building AI ventures inside corporates](https://jacobdutton.substack.com/p/what-nobody-tells-you-about-building): article, 2026
+- [You're hiring AI and innovation leaders for the wrong things](https://jacobdutton.substack.com/p/youre-hiring-innovation-leaders-for): article, 2026
+- [Retail's AI problem is a platform gap](https://jacobdutton.substack.com/p/retails-platform-gap): thesis, 2026
+- [Britain's AI and innovation problem isn't what we think it is](https://jacobdutton.substack.com/p/britains-innovation-problem-is-not): article, 2026
+- [AI has inverted how companies should experiment](https://jacobdutton.substack.com/p/the-experimentation-inversion): article, 2026
+- [Corporate venture capital's trilemma in an AI market](https://jacobdutton.substack.com/p/cvcs-trilemma): article, 2026
+- [AI makes innovation experiments faster and cheaper](https://www.youtube.com/watch?v=lXW4S4bMOVk): interview, 2025
+- [How AI is changing the Chief Innovation Officer’s job](https://youtu.be/yMrx7n6AyVM): interview, 2025
 - [The Innovators Handbook](https://innov8rs.co/wp-content/uploads/2024/12/The-Innovators-Handbook-2025.pdf): publication, Innov8rs, 2025
 - [How corporate innovators should think about AI](https://www.innovationleader.com/thought-leadership/how-corporate-innovators-should-think-about-ai/): Innovation Leader, 2024
 - [Why innovation teams fail](https://www.innovationleader.com/thought-leadership/why-innovation-teams-fail/): Innovation Leader, 2024
