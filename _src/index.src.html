@@ -58,7 +58,7 @@ nav.links a:hover{color:var(--ink)}
 .ask label{display:block;font-weight:700;font-size:17px;margin-bottom:10px}
 .askrow{display:flex;gap:8px;background:#fff;border-radius:16px;padding:6px;box-shadow:inset 0 0 0 1.5px var(--ink)}
 .askrow:focus-within{box-shadow:inset 0 0 0 2px var(--cobalt)}
-.askrow textarea{flex:1;font:inherit;font-size:17px;border:0;outline:0;resize:none;background:transparent;padding:10px 12px;line-height:1.35;max-height:180px;color:var(--ink)}
+.askrow textarea{flex:1;min-width:0;font:inherit;font-size:17px;border:0;outline:0;resize:none;background:transparent;padding:10px 12px;line-height:1.35;max-height:180px;color:var(--ink)}
 .askrow textarea::placeholder{color:#8A8F99}
 .askrow .btn{align-self:flex-end;background:var(--cobalt);padding:12px 20px}
 .askrow .btn:hover{background:var(--ink)}
@@ -718,6 +718,11 @@ figure.portrait .ph img{position:absolute;inset:0;width:100%;height:100%;min-hei
   var form=document.getElementById('ask');if(!form)return;
   var ta=document.getElementById('askin'),go=document.getElementById('askgo'),bar=document.getElementById('tbar');
   function grow(){ta.style.height='auto';ta.style.height=Math.min(ta.scrollHeight,180)+'px'}
+  var phs=['Organisation, project brief or job spec','Organisation, brief or job spec','Organisation or job spec','Company or job spec'];
+  function fitPh(){if(ta.value)return;var cs=getComputedStyle(ta),w=ta.clientWidth-parseFloat(cs.paddingLeft)-parseFloat(cs.paddingRight)-4;
+    var c=document.createElement('canvas').getContext('2d');c.font=cs.fontSize+' '+cs.fontFamily;
+    for(var i=0;i<phs.length;i++){if(c.measureText(phs[i]).width<=w||i===phs.length-1){ta.placeholder=phs[i];break}}}
+  fitPh();window.addEventListener('resize',fitPh);if(document.fonts&&document.fonts.ready)document.fonts.ready.then(fitPh);
   ta.addEventListener('input',grow);
   var hint=document.getElementById('askhint'),clip=document.getElementById('askclip'),fin=document.getElementById('askfile'),row=document.getElementById('askrow');
   clip.addEventListener('click',function(){fin.click()});
