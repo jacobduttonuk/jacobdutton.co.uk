@@ -142,12 +142,12 @@ async function cachePut(env, key, text) {
 }
 
 function valid(text) {
-  return /^LEDE: .+/m.test(text) && /^VALUE: .+/m.test(text);
+  return /^LEDE: .+/m.test(text) && /^VALUE: .+/m.test(text) && /^PORTFOLIO: .+/m.test(text) && /^CTA: .+/m.test(text);
 }
 
 async function generate(request, env, ctx, input, cacheKey, pdf) {
   const cached = await cacheGet(env, cacheKey);
-  if (cached) return new Response(cached, { headers: { ...textHeaders, "X-Tailor": "cache" } });
+  if (cached && valid(cached)) return new Response(cached, { headers: { ...textHeaders, "X-Tailor": "cache" } });
   if (await rateLimited(request)) return json({ error: "That's a lot for one hour. Please try again later, or just book a call." }, 429);
 
   const system = systemPrompt(await getProfile());
