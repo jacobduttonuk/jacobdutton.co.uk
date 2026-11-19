@@ -81,7 +81,7 @@ Clients and organisations he has worked with include Microsoft, Salesforce, HSBC
 
 ## Tailored version of this site
 
-The site can rewrite itself for a visitor's organisation (company, group or investor), job spec or project brief, written by Claude only from this profile. Open https://www.jacobdutton.co.uk/?for=<organisation> (for example ?for=mubadala), or call the API: POST https://www.jacobdutton.co.uk/api/tailor with JSON {"input": "..."}, or GET https://www.jacobdutton.co.uk/api/tailor?for=<organisation>. It returns plain text lines (LEDE, VALUE, GROWTH, INNOVATION, FIRST90, CLOSEST and so on).
+The site uses Jacob's work and experience to show how he could help a visitor's organisation (company, group or investor), job spec or project brief, written by Claude only from this profile. Open https://www.jacobdutton.co.uk/?for=<organisation> (for example ?for=mubadala), or call the API: POST https://www.jacobdutton.co.uk/api/tailor with JSON {"input": "..."}, or GET https://www.jacobdutton.co.uk/api/tailor?for=<organisation>. It returns plain text lines (LEDE, VALUE, GROWTH, INNOVATION, FIRST90, CLOSEST and so on).
 
 ## Contact
 
