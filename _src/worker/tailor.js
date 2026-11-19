@@ -195,11 +195,12 @@ async function getText(url, limit = 400000) {
   } catch { return ""; }
 }
 
+const FRAMEWORK = new Set(["#0D6EFD","#007BFF","#6610F2","#6F42C1","#D63384","#DC3545","#FD7E14","#FFC107","#198754","#20C997","#0DCAF0","#28A745","#17A2B8","#E83E8C","#0A58CA","#0B5ED7","#3B82F6","#2563EB","#1D4ED8","#EF4444","#10B981","#4285F4","#1A73E8","#3F51B5","#2196F3","#F44336"]);
 function topHex(css) {
   const counts = {};
   for (const m of css.matchAll(/#([0-9a-fA-F]{6})\b/g)) {
     const h = "#" + m[1].toUpperCase();
-    if (saturated(h)) counts[h] = (counts[h] || 0) + 1;
+    if (saturated(h) && !FRAMEWORK.has(h)) counts[h] = (counts[h] || 0) + 1;
   }
   const best = Object.entries(counts).sort((x, y) => y[1] - x[1])[0];
   return best && best[1] >= 3 ? best[0] : null;
@@ -230,7 +231,7 @@ async function siteColour(domain) {
 async function brand(env, ctx, name, debug) {
   const slug = slugify(name);
   if (!slug || !env.ANTHROPIC_API_KEY) return json({ color: null });
-  const key = `brand5:${slug}`;
+  const key = `brand6:${slug}`;
   if (!debug) {
     const hit = await cacheGet(env, key);
     if (hit) return json({ color: hit === "NONE" ? null : hit, cached: true });
