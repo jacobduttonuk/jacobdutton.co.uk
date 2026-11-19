@@ -104,8 +104,8 @@ figure.portrait img{display:block;width:100%;flex:1 1 auto;min-height:360px;heig
 figure.portrait figcaption{margin-top:12px;font-size:14px;color:var(--slate);display:flex;justify-content:space-between;gap:12px}
 @media (max-width:860px){
   .hero-grid{grid-template-columns:1fr}
-  figure.portrait{order:-1;max-width:150px}
-  figure.portrait img{flex:none;height:auto;min-height:0;aspect-ratio:4/4.2}
+  figure.portrait{order:1;max-width:none;margin-top:8px}
+  figure.portrait img{flex:none;height:auto;min-height:0;aspect-ratio:4/3;object-position:50% 22%}
 }
 
 /* proof row */
@@ -190,7 +190,8 @@ h2{font-size:clamp(38px,5.2vw,76px);text-wrap:balance}
 .work .fig span{display:block;font-size:14px;color:var(--slate);margin-top:6px}
 @media (max-width:860px){
   .work{grid-template-columns:1fr}
-  .work .fig{text-align:left;order:-1}
+  .work .fig{text-align:left}
+  .work .fig b{font-size:40px}
 }
 
 /* track record timeline */
@@ -331,13 +332,15 @@ figure.portrait .ph img{position:absolute;inset:0;width:100%;height:100%;min-hei
 @media (hover:hover){.work:hover .fig b{transform:translateX(-6px)}}
 .post .t{transition:color .2s ease}
 .shot{margin:56px 0 0;position:relative}
-.shot .ph{position:relative;overflow:hidden;aspect-ratio:3/2;background:var(--ink,#111)}
+.shot .ph{position:relative;overflow:hidden;aspect-ratio:16/9;background:var(--ink,#111)}
 .shot img{display:block;width:100%;height:100%;object-fit:cover;filter:contrast(1.12) brightness(1.03)}
 .shot .ph::after{content:"";position:absolute;inset:0;background:var(--cobalt);mix-blend-mode:color;pointer-events:none;transition:background .6s}
 .shot.band{margin:0}
 .shot.band .ph{aspect-ratio:21/8}
 .shot.band img{object-position:50% 28%}
-@media (max-width:860px){.shot{margin-top:40px}.shot.band .ph{aspect-ratio:4/3}}
+.shot.talk .ph{aspect-ratio:21/9}
+.shot.talk img{object-position:50% 40%}
+@media (max-width:860px){.shot{margin-top:40px}.shot .ph,.shot.band .ph,.shot.talk .ph{aspect-ratio:4/3}section{padding:56px 0}.filters{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;margin-left:-4px;padding-left:4px}.filters button{white-space:nowrap;font-size:14px;padding:7px 12px}}
 </style>
 </head>
 <body>
@@ -613,7 +616,7 @@ figure.portrait .ph img{position:absolute;inset:0;width:100%;height:100%;min-hei
       <h2 id="writing-title" class="display">Talks and writing.</h2>
       <p>On getting AI to pay off in large companies, groups and portfolios, and what it changes about how they decide what to fund.</p>
     </div>
-    <figure class="shot" style="margin:0 0 40px"><div class="ph"><img src="__IMG_stage-copenhagen-wide__" alt="Jacob Dutton on stage at the Innovation Roundtable Summit 2026, Copenhagen" loading="lazy" width="1800" height="1200"></div></figure>
+    <figure class="shot talk" style="margin:0 0 40px"><div class="ph"><img src="__IMG_stage-copenhagen-wide__" alt="Jacob Dutton on stage at the Innovation Roundtable Summit 2026, Copenhagen" loading="lazy" width="1800" height="1200"></div></figure>
     <div class="filters" role="group" aria-label="Show">
       <button type="button" data-f="all" aria-pressed="true">Everything</button>
       <button type="button" data-f="talk" aria-pressed="false">Talks and interviews</button>
