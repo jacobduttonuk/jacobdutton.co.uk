@@ -364,7 +364,7 @@ figure.portrait .ph img{position:absolute;inset:0;width:100%;height:100%;min-hei
       <p class="lede rise d2">I get AI working for large companies, groups and portfolios: choosing where it pays, proving it on their own work and getting people using it every week. Most recently I led innovation, R&amp;D and emerging technology across ADQ’s 20+ operating companies in Abu Dhabi.</p>
       <div class="cta rise d3">
         <a class="btn" href="https://calendarbridge.com/book/jacobdutton/home">Book a call</a>
-        <a class="btn ghost" href="#tailor">Tailor this to you</a>
+        <a class="btn ghost" href="#tailor">What I’d do for you</a>
       </div>
     </div>
     <figure class="portrait">
@@ -470,17 +470,17 @@ figure.portrait .ph img{position:absolute;inset:0;width:100%;height:100%;min-hei
 <section class="tailor" id="tailor" aria-labelledby="tailor-title">
   <div class="wrap">
     <div class="sec-head">
-      <h2 id="tailor-title" class="display">What I’d do at your company.</h2>
-      <p>Type a company name, or paste a project brief or a job spec. You’ll get a short read on where AI would pay, what I’d do first and the closest work I’ve done. It’s written by AI, working only from what’s on this site.</p>
+      <h2 id="tailor-title" class="display">What I’d do for you.</h2>
+      <p>Name a company, group or investor, or paste a project brief or a job spec. You’ll get a short read on where AI would pay, what I’d do first and the closest work I’ve done. It’s written by AI, working only from what’s on this site.</p>
     </div>
     <div class="tmodes" role="tablist" aria-label="What are you giving me?">
-      <button type="button" role="tab" aria-selected="true" data-mode="company">Company</button>
+      <button type="button" role="tab" aria-selected="true" data-mode="company">Organisation</button>
       <button type="button" role="tab" aria-selected="false" data-mode="brief">Project brief</button>
       <button type="button" role="tab" aria-selected="false" data-mode="job">Job spec</button>
     </div>
     <form class="tform" id="tform">
-      <label for="tinput" class="sr">Your company, brief or job spec</label>
-      <textarea id="tinput" rows="2" maxlength="6000" placeholder="A company name, like Etihad Airways or Unilever" required></textarea>
+      <label for="tinput" class="sr">Your organisation, brief or job spec</label>
+      <textarea id="tinput" rows="2" maxlength="6000" placeholder="A company, group or investor, like Unilever, Mubadala or KKR" required></textarea>
       <button type="submit" class="btn" id="tgo">Tailor it</button>
     </form>
     <p class="tnote">Written by AI in about 15 seconds. Worth a call to check it properly.</p>
@@ -717,7 +717,7 @@ figure.portrait .ph img{position:absolute;inset:0;width:100%;height:100%;min-hei
   var API=/jacobdutton\.co\.uk$/.test(location.hostname)?'/api/tailor':'https://www.jacobdutton.co.uk/api/tailor';
   var mode='company',form=document.getElementById('tform');if(!form)return;
   var ta=document.getElementById('tinput'),go=document.getElementById('tgo'),out=document.getElementById('tout');
-  var ph={company:'A company name, like Etihad Airways or Unilever',brief:'Paste the project brief',job:'Paste the job spec'};
+  var ph={company:'A company, group or investor, like Unilever, Mubadala or KKR',brief:'Paste the project brief',job:'Paste the job spec'};
   var labels={value:'Value creation',growth:'Growth',innovation:'Innovation',first90:'The first 90 days',closest:'Closest work',read:'The read',approach:'How I’d run it',prove:'What to prove first',questions:'Questions I’d ask',fit:'Where I fit'};
   var order={company:['value','growth','innovation','first90','closest'],brief:['read','approach','prove','closest','questions'],job:['fit','first90','closest','questions']};
   document.querySelectorAll('.tmodes button').forEach(function(b){b.addEventListener('click',function(){

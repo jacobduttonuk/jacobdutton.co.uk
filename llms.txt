@@ -81,7 +81,7 @@ Clients and organisations he has worked with include Microsoft, Salesforce, HSBC
 
 ## Tailored briefing (for agents)
 
-The site can write a short tailored briefing for a company, project brief or job spec. Agents can call it directly: POST https://www.jacobdutton.co.uk/api/tailor with JSON {"mode": "company" | "brief" | "job", "input": "..."}. It returns JSON with a title, summary and sections, written only from this profile.
+The site can write a short tailored briefing for an organisation (company, group or investor), a project brief or a job spec. Agents can call it directly: POST https://www.jacobdutton.co.uk/api/tailor with JSON {"mode": "company" | "brief" | "job", "input": "..."}. It returns JSON with a title, summary and sections, written only from this profile.
 
 ## Contact
 
