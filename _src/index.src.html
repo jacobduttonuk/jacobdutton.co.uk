@@ -767,8 +767,9 @@ figure.portrait .ph img{position:absolute;inset:0;width:100%;height:100%;min-hei
     if(!originals){originals={};targets.forEach(function(k){originals[k]=[].map.call(q(k),function(e){return e.innerHTML})})}
     applied={};targets.forEach(function(k){q(k).forEach(function(e){e.classList.add('pending')})});
     go.disabled=true;go.textContent='Rewriting';
+    clearTimeout(window.__slow);window.__slow=setTimeout(function(){if(!applied.LEDE)alert0('Looking them up first, as they’re not one I know well. A few more seconds.')},5000);
   }
-  function done(){go.disabled=false;go.textContent='Show me';if(/^Reading /.test(hint.textContent))hint.textContent='Rewritten for you. Try another organisation, project brief or job spec above.';targets.forEach(function(k){if(!applied[k])q(k).forEach(function(e,i){e.classList.remove('pending');if(originals)e.innerHTML=originals[k][i]})})}
+  function done(){clearTimeout(window.__slow);go.disabled=false;go.textContent='Show me';if(/^(Reading |Looking them up)/.test(hint.textContent))hint.textContent='Rewritten for you. Try another organisation, project brief or job spec above.';targets.forEach(function(k){if(!applied[k])q(k).forEach(function(e,i){e.classList.remove('pending');if(originals)e.innerHTML=originals[k][i]})})}
   function run(req){
     start();var buf='';
     fetch(req.url,req.opts).then(function(r){
