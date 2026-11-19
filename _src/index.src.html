@@ -330,6 +330,14 @@ figure.portrait .ph img{position:absolute;inset:0;width:100%;height:100%;min-hei
 .work .fig b{transition:transform .5s cubic-bezier(.2,.7,.1,1)}
 @media (hover:hover){.work:hover .fig b{transform:translateX(-6px)}}
 .post .t{transition:color .2s ease}
+.shot{margin:56px 0 0;position:relative}
+.shot .ph{position:relative;overflow:hidden;aspect-ratio:3/2;background:var(--ink,#111)}
+.shot img{display:block;width:100%;height:100%;object-fit:cover;filter:contrast(1.12) brightness(1.03)}
+.shot .ph::after{content:"";position:absolute;inset:0;background:var(--cobalt);mix-blend-mode:color;pointer-events:none;transition:background .6s}
+.shot.band{margin:0}
+.shot.band .ph{aspect-ratio:21/8}
+.shot.band img{object-position:50% 28%}
+@media (max-width:860px){.shot{margin-top:40px}.shot.band .ph{aspect-ratio:4/3}}
 </style>
 </head>
 <body>
@@ -463,6 +471,7 @@ figure.portrait .ph img{position:absolute;inset:0;width:100%;height:100%;min-hei
       <div class="gate"><span class="step">Tranche 4</span><h3>Scale</h3><p>Money to grow it, with an owner and a route into the core business or out as a spin-out.</p><div class="bar"><i style="--h:120px;--d:.3s"></i></div></div>
     </div>
     <div class="gates-foot"><span>Money released at each tranche</span><span>The rest get stopped early and cheaply</span></div>
+    <figure class="shot"><div class="ph"><img src="__IMG_stage-copenhagen-frontier__" alt="Jacob Dutton on stage at the Innovation Roundtable Summit in Copenhagen, presenting where AI is changing corporate innovation" loading="lazy" width="1800" height="1200"></div></figure>
   </div>
 </section>
 
@@ -491,6 +500,8 @@ figure.portrait .ph img{position:absolute;inset:0;width:100%;height:100%;min-hei
     </div>
   </div>
 </section>
+
+<div class="wrap"><figure class="shot band"><div class="ph"><img src="__IMG_stage-copenhagen-close__" alt="Jacob Dutton speaking at the Innovation Roundtable Summit, Copenhagen" loading="lazy" width="1800" height="1200"></div></figure></div>
 
 <section id="work" aria-labelledby="work-title">
   <div class="wrap">
@@ -602,6 +613,7 @@ figure.portrait .ph img{position:absolute;inset:0;width:100%;height:100%;min-hei
       <h2 id="writing-title" class="display">Talks and writing.</h2>
       <p>On getting AI to pay off in large companies, groups and portfolios, and what it changes about how they decide what to fund.</p>
     </div>
+    <figure class="shot" style="margin:0 0 40px"><div class="ph"><img src="__IMG_stage-copenhagen-wide__" alt="Jacob Dutton on stage at the Innovation Roundtable Summit 2026, Copenhagen" loading="lazy" width="1800" height="1200"></div></figure>
     <div class="filters" role="group" aria-label="Show">
       <button type="button" data-f="all" aria-pressed="true">Everything</button>
       <button type="button" data-f="talk" aria-pressed="false">Talks and interviews</button>
