@@ -96,8 +96,10 @@ html.branded figure.portrait .ph::after{content:"";position:absolute;inset:0;bac
 .first90 li{counter-increment:s;font-size:16px;line-height:1.45;color:#D6D9E0}
 .first90 li::before{content:"Step " counter(s);display:block;font-weight:700;color:#fff;margin-bottom:6px}
 @media (max-width:760px){.first90 ol{grid-template-columns:1fr}.askrow textarea{font-size:16px}}
+@media (max-width:520px){.askrow{flex-wrap:wrap}.askrow textarea{flex:1 1 100%}.askrow .btn{flex:1}.askrow .clip{order:2}.askrow .btn{order:3}}
+@media (max-width:360px){.askrow textarea{font-size:14px;padding:10px 8px}}
+@media (max-width:340px){.askrow textarea{font-size:13px;padding:10px 6px}}
 .work .why{margin-top:12px;font-size:15px;font-weight:600;color:var(--cobalt)}
-.b.top{box-shadow:inset 0 0 0 2px var(--cobalt)}
 
 /* hero */
 .hero{padding:clamp(28px,6vw,72px) 0 clamp(48px,7vw,96px)}
@@ -473,11 +475,11 @@ The site can rewrite itself for a visitor's organisation (company, group or inve
         <label for="askin">Where would AI pay for you?</label>
         <div class="askrow" id="askrow">
           <textarea id="askin" rows="1" maxlength="6000" placeholder="Organisation, project brief or job spec"></textarea>
-          <button type="button" class="clip" id="askclip" aria-label="Upload a job spec or brief (PDF, Word or text)" title="Upload a PDF, Word or text file"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M16.5 6.5v10a4.5 4.5 0 0 1-9 0V5a3 3 0 0 1 6 0v10.5a1.5 1.5 0 0 1-3 0V6.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button>
+          <button type="button" class="clip" id="askclip" aria-label="Upload a project brief or job spec (PDF, Word or text)" title="Upload a PDF, Word or text file"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M16.5 6.5v10a4.5 4.5 0 0 1-9 0V5a3 3 0 0 1 6 0v10.5a1.5 1.5 0 0 1-3 0V6.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button>
           <input type="file" id="askfile" accept=".pdf,.docx,.txt,.md,application/pdf,text/plain,application/vnd.openxmlformats-officedocument.wordprocessingml.document" hidden>
           <button type="submit" class="btn" id="askgo">Show me</button>
         </div>
-        <p class="askhint" id="askhint">The page rewrites itself for you. Try <button type="button" class="eg">Mubadala</button>, <button type="button" class="eg">Unilever</button> or <button type="button" class="eg">KKR</button>, or upload a spec.</p>
+        <p class="askhint" id="askhint">The page rewrites itself for you. Try <button type="button" class="eg">Mubadala</button>, <button type="button" class="eg">Unilever</button> or <button type="button" class="eg">KKR</button>, or upload a project brief or job spec.</p>
       </form>
       <div class="cta rise d3">
         <a class="btn book" href="https://calendarbridge.com/book/jacobdutton/home">Book a call</a>
@@ -818,11 +820,6 @@ The site can rewrite itself for a visitor's organisation (company, group or inve
   var form=document.getElementById('ask');if(!form)return;
   var ta=document.getElementById('askin'),go=document.getElementById('askgo'),bar=document.getElementById('tbar');
   function grow(){ta.style.height='auto';ta.style.height=Math.min(ta.scrollHeight,180)+'px'}
-  var phs=['Organisation, project brief or job spec','Organisation, brief or job spec','Organisation or job spec','Company or job spec'];
-  function fitPh(){if(ta.value)return;var cs=getComputedStyle(ta),w=ta.clientWidth-parseFloat(cs.paddingLeft)-parseFloat(cs.paddingRight)-4;
-    var c=document.createElement('canvas').getContext('2d');c.font=cs.fontSize+' '+cs.fontFamily;
-    for(var i=0;i<phs.length;i++){if(c.measureText(phs[i]).width<=w||i===phs.length-1){ta.placeholder=phs[i];break}}}
-  fitPh();window.addEventListener('resize',fitPh);if(document.fonts&&document.fonts.ready)document.fonts.ready.then(fitPh);
   ta.addEventListener('input',grow);
   var hint=document.getElementById('askhint'),clip=document.getElementById('askclip'),fin=document.getElementById('askfile'),row=document.getElementById('askrow');
   clip.addEventListener('click',function(){fin.click()});
@@ -871,7 +868,7 @@ The site can rewrite itself for a visitor's organisation (company, group or inve
     applied={};targets.forEach(function(k){q(k).forEach(function(e){e.classList.add('pending')})});
     go.disabled=true;go.textContent='Rewriting';
   }
-  function done(){go.disabled=false;go.textContent='Show me';if(/^Reading /.test(hint.textContent))hint.textContent='Rewritten for you. Try another organisation, project or spec above.';targets.forEach(function(k){if(!applied[k])q(k).forEach(function(e,i){e.classList.remove('pending');if(originals)e.innerHTML=originals[k][i]})})}
+  function done(){go.disabled=false;go.textContent='Show me';if(/^Reading /.test(hint.textContent))hint.textContent='Rewritten for you. Try another organisation, project brief or job spec above.';targets.forEach(function(k){if(!applied[k])q(k).forEach(function(e,i){e.classList.remove('pending');if(originals)e.innerHTML=originals[k][i]})})}
   function run(req){
     start();var buf='';
     fetch(req.url,req.opts).then(function(r){

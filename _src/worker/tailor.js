@@ -284,7 +284,7 @@ export default {
     try { body = await request.json(); } catch { return json({ error: "Please send some text." }, 400); }
     const input = String(body.input || "").trim().slice(0, MAX_INPUT);
     const pdf = typeof body.pdf === "string" && body.pdf.length < 6_000_000 ? body.pdf : "";
-    if (input.length < 2 && !pdf) return json({ error: "Please add an organisation, a project or a job spec." }, 400);
+    if (input.length < 2 && !pdf) return json({ error: "Please add an organisation, a project brief or a job spec." }, 400);
     const short = !pdf && input.length <= 80 && !/\n/.test(input);
     const key = short ? `${VERSION}:org:${slugify(input)}` : `${VERSION}:txt:${await sha(input + pdf)}`;
     return generate(request, env, ctx, input, key, pdf);
