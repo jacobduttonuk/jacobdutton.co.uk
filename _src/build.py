@@ -1,9 +1,9 @@
 import html
 src=open('/home/claude/src/index.src.html').read().replace('__AGENT_MD__',html.escape(open('/home/claude/jacobdutton.co.uk/llms.txt').read().rstrip(),quote=False))
 b=open('/home/claude/src/photo.b64').read().strip()
-meta='''<link rel="icon" href="/favicon.svg" type="image/svg+xml">
-<link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png">
-<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+meta='''<link rel="icon" href="/favicon.svg?v=2" type="image/svg+xml">
+<link rel="icon" href="/favicon-32.png?v=2" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png?v=2">
 <link rel="canonical" href="https://www.jacobdutton.co.uk/">
 <meta property="og:type" content="profile">
 <meta property="og:description" content="I find where AI creates value in large companies and investment portfolios, get it built and get the business using it.">
