@@ -115,6 +115,24 @@ h2{font-size:clamp(44px,6.6vw,96px);text-wrap:balance}
 .kill b{font-size:clamp(56px,7vw,96px);font-weight:800;font-variation-settings:"wdth" 66;line-height:.9;color:var(--paper)}
 .kill .of{font-size:clamp(22px,2.4vw,30px);font-weight:700;color:#9AA0AB}
 .kill p{flex:1 1 280px;font-size:clamp(17px,1.5vw,20px);color:#D3D6DC;max-width:44ch}
+.tracks{display:inline-flex;gap:4px;margin:clamp(32px,4vw,48px) 0 18px;padding:4px;border:1px solid #3A3E47;border-radius:999px;flex-wrap:wrap}
+.tracks button{font:inherit;font-size:15px;font-weight:600;padding:9px 16px;border-radius:999px;border:0;background:transparent;color:#C9CCD3;cursor:pointer}
+.tracks button[aria-selected="true"]{background:var(--paper);color:var(--ink)}
+.tracks button:focus-visible{outline:2px solid var(--cobalt);outline-offset:2px}
+.gates[hidden]{display:none}
+@media (max-width:600px){.tracks{display:flex;border-radius:18px}.tracks button{flex:1 1 100%;border-radius:14px;text-align:left}}
+#built{border-top:1px solid var(--rule)}
+.built-group{margin-top:clamp(28px,4vw,48px)}
+.built-group h3{font-size:22px;font-weight:800;font-variation-settings:"wdth" 75;display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 14px;padding-bottom:14px;border-bottom:2px solid var(--ink)}
+.built-group h3 small{font-size:15px;font-weight:500;color:var(--slate);font-variation-settings:normal}
+.built-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0}
+.b{display:flex;flex-direction:column;padding:22px 24px 24px 0;border-bottom:1px solid var(--rule)}
+.b:not(:nth-child(3n+1)){padding-left:24px;border-left:1px solid var(--rule)}
+.b .sec{font-size:14px;color:var(--slate)}
+.b h4{margin-top:6px;font-size:clamp(28px,2.8vw,40px);font-weight:800;font-variation-settings:"wdth" 66;line-height:1}
+.b p{margin-top:12px;font-size:16px;line-height:1.5;max-width:36ch;text-wrap:pretty}
+.b .with{margin-top:auto;padding-top:18px;font-size:15px;font-weight:600;color:var(--cobalt)}
+@media (max-width:860px){.built-grid{grid-template-columns:1fr}.b,.b:not(:nth-child(3n+1)){padding:20px 0;border-left:0}}
 .gates-foot{display:flex;justify-content:space-between;gap:24px;margin-top:16px;font-size:14px;color:#9AA0AB;flex-wrap:wrap}
 @media (max-width:860px){
   .gates{grid-template-columns:1fr}
@@ -280,7 +298,8 @@ figure.portrait .ph img{position:absolute;inset:0;width:100%;height:100%;min-hei
     <div class="right">
       <nav class="links" aria-label="Main">
         <a href="#what">What I do</a>
-        <a href="#work">Selected work</a>
+        <a href="#work">Work</a>
+        <a href="#built">Built</a>
         <a href="#record">Track record</a>
         <a href="#writing">Talks and writing</a>
       </nav>
@@ -314,9 +333,9 @@ Jacob owns the value side of AI adoption: which use cases get funded, proof befo
 
 ## Point of view: fund AI like a portfolio, not an IT project
 
-Most companies fund AI like an IT project: pick the use case, build it, roll it out and hope people use it. That's why so much of it stalls after the pilot. AI behaves more like a portfolio of bets. You need lots of cheap ones because most won't pay off, and the money should follow the evidence. Jacob releases funding in tranches, and every bet has to prove itself to get the next one. At ADQ, 16 of 276 AI opportunities got funded; the rest were stopped at screening, before real money went in.
+Most companies fund AI like an IT project: pick the use case, build it, roll it out and hope people use it. That's why so much of it stalls after the pilot. AI behaves more like a portfolio of bets. You need lots of cheap ones because most won't pay off, and the money should follow the evidence. Jacob releases funding in tranches, and every bet has to prove itself to get the next one. What counts as proof depends on the bet. At ADQ, 16 of 276 AI opportunities got funded; the rest were stopped at screening, before real money went in.
 
-Using AI in what a company already runs, money is released at five gates:
+For AI in what a company already runs, money is released in five tranches:
 
 1. Baseline: what today's process costs, how long it takes and how often it's right.
 2. Owner: a named person in the business who'll use it and answer for the result.
@@ -324,16 +343,30 @@ Using AI in what a company already runs, money is released at five gates:
 4. Supervised: a person checks the AI's work until it hits that target, case after case.
 5. In use: it's part of the normal week, on its own or with a person in the loop, measured on cost per correct outcome against the old way.
 
-Building something new with AI, money is released at four gates:
+For something new built with AI, money is released in four tranches:
 
 1. Demand: evidence customers want it, from what they do rather than what they say in a survey.
 2. Delivery: proof the company can build and run it, with the data, partners and people it needs.
 3. Numbers: unit economics that work at the price customers will actually pay.
 4. Scale: money to grow it, with an owner and a route into the core business or out as a spin-out.
 
+## What he's built
+
+Curzon Street Ventures (2023 to 2025), validated ventures, each with a corporate partner from day one:
+- CareFlow: predicts when a hospital patient is deteriorating, from vital signs, lab results and clinical notes. With Kaiser Permanente.
+- CarbonOS: automates supply chain carbon accounting from procurement and logistics data, with audit-ready reports. With BP.
+- RegIntel: reads regulatory changes, checks them against a firm's own policies and drafts compliance reporting. With Grant Thornton.
+- Twin: digital twins of factory operations that predict failures and cut unplanned downtime. With Boeing.
+- RouteLogic: routes urban deliveries across vans, EVs and cargo bikes in real time. With GXO.
+
+Interpublic Group (2018 to 2021), AI in products:
+- Predictive maintenance for JCB's heavy equipment.
+- AI-personalised skincare for Avon China.
+- Custom-formulated supplements for Holland &amp; Barrett.
+
 ## Selected work
 
-- ADQ (2025 to 2026), SVP Innovation, R&amp;D and Emerging Technology: set the function up to run AI-first across a $300B sovereign investor and 20+ operating companies in aviation, energy, ports, logistics, food and healthcare. Ran the AED 500M portfolio innovation fund: 276 opportunities surfaced with AI, AED 120M deployed across 16 initiatives against evidence at each gate. Designed and led the Robotics Ramp-Up Programme across 19 operating companies: 23 proofs of concept launched, 100+ robotics and physical AI partners brought in. Reviewed innovation capability across 13 operating companies and turned it into a three-horizon roadmap.
+- ADQ (2025 to 2026), SVP Innovation, R&amp;D and Emerging Technology: set the function up to run AI-first across a $300B sovereign investor and 20+ operating companies in aviation, energy, ports, logistics, food and healthcare. Ran the AED 500M portfolio innovation fund: 276 opportunities surfaced with AI, AED 120M deployed across 16 initiatives against evidence at each tranche. Designed and led the Robotics Ramp-Up Programme across 19 operating companies: 23 proofs of concept launched, 100+ robotics and physical AI partners brought in. Reviewed innovation capability across 13 operating companies and turned it into a three-horizon roadmap.
 - Aucctus AI (2026 to now), Global Head of AI Innovation: leads how enterprise clients get started with the platform, from the first conversation with their leadership to the first use case running on their own data.
 - Future Foundry (2021 to 2025), co-founder and CEO: business experimentation company. 500+ projects tested and 50+ launched, a 90% launch success rate, and more than $1bn of spend stopped on ideas that weren't going to work. Built the Velocity Method, adopted inside Salesforce, Microsoft, HSBC, Mars and Hilton.
 - Curzon Street Ventures (2023 to 2025), co-founder and CEO: place-based venture studio turning the operational problems of large companies into AI-led startups. Six ventures validated with corporate partners Kaiser Permanente, BP, Grant Thornton, Boeing, GXO and HSBC. $500,000 of corporate sponsorship, 25 corporate partners.
@@ -354,22 +387,11 @@ Clients and organisations he has worked with include Microsoft, Salesforce, HSBC
 ## Talks and writing
 
 - [AI changes what corporate innovators are for](https://innovationroundtable.com/summit/): talk, Innovation Roundtable Summit, Copenhagen, 2026
-- [When AI makes anyone an inventor, don't let the inventor run the company](https://jacobdutton.substack.com/p/dont-let-the-inventor-run-the-company): article, 2026
-- [What nobody tells you about building AI ventures inside corporates](https://jacobdutton.substack.com/p/what-nobody-tells-you-about-building): article, 2026
-- [You're hiring AI and innovation leaders for the wrong things](https://jacobdutton.substack.com/p/youre-hiring-innovation-leaders-for): article, 2026
-- [Retail's AI problem is a platform gap](https://jacobdutton.substack.com/p/retails-platform-gap): thesis, 2026
-- [Britain's AI and innovation problem isn't what we think it is](https://jacobdutton.substack.com/p/britains-innovation-problem-is-not): article, 2026
+- [What corporate innovators do when AI does the analysis](https://newcorporateinnovator.aucctus.com/): briefing, 2026
 - [AI has inverted how companies should experiment](https://jacobdutton.substack.com/p/the-experimentation-inversion): article, 2026
-- [Corporate venture capital's trilemma in an AI market](https://jacobdutton.substack.com/p/cvcs-trilemma): article, 2026
 - [AI makes innovation experiments faster and cheaper](https://www.youtube.com/watch?v=lXW4S4bMOVk): interview, 2025
 - [How AI is changing the Chief Innovation Officer’s job](https://youtu.be/yMrx7n6AyVM): interview, 2025
-- [The Innovators Handbook](https://innov8rs.co/wp-content/uploads/2024/12/The-Innovators-Handbook-2025.pdf): publication, Innov8rs, 2025
 - [How corporate innovators should think about AI](https://www.innovationleader.com/thought-leadership/how-corporate-innovators-should-think-about-ai/): Innovation Leader, 2024
-- [Why innovation teams fail](https://www.innovationleader.com/thought-leadership/why-innovation-teams-fail/): Innovation Leader, 2024
-- [The why and how of corporate innovation](https://youtu.be/6ddzvIo85jk): podcast, 2024
-- [How to build a corporate innovation engine](https://www.youtube.com/watch?v=8FBFC9crt2g): talk, 2023
-- [How to think like a VC and win at corporate innovation](https://www.youtube.com/watch?v=QfNFZoFOW3c): talk, 2022
-- [How to eliminate corporate innovation waste](https://www.youtube.com/watch?v=QGkd_7DTFJM): talk, 2022
 
 ## Contact
 
@@ -417,7 +439,7 @@ Clients and organisations he has worked with include Microsoft, Salesforce, HSBC
         <h3>Value creation</h3>
         <div class="q">Where will AI save or make the most money?</div>
         <p>Across a company, group or portfolio, I work out which AI use cases are worth funding, prove them on the business’s own work before they scale and stop the rest early. At ADQ, AI did the mapping, screening and valuation across 20+ operating companies, and people made the funding calls.</p>
-        <div class="ev"><b class="num">AED 120M</b> deployed across 16 initiatives, against evidence at each of five gates</div>
+        <div class="ev"><b class="num">AED 120M</b> deployed across 16 initiatives, against evidence at each tranche</div>
       </div>
       <div class="lens">
         <h3>Growth</h3>
@@ -440,25 +462,27 @@ Clients and organisations he has worked with include Microsoft, Salesforce, HSBC
   <div class="wrap">
     <div class="sec-head">
       <h2 id="method-title" class="display">Fund AI like a portfolio, not an IT project.</h2>
-      <p>Most companies fund AI like an IT project: pick the use case, build it, roll it out and hope people use it. That’s why so much of it stalls after the pilot. AI behaves more like a portfolio of bets. You need lots of cheap ones because most won’t pay off, and the money should follow the evidence. I release funding in tranches, and every bet has to prove itself to get the next one.</p>
+      <p>Most companies fund AI like an IT project: pick the use case, build it, roll it out and hope people use it. That’s why so much of it stalls after the pilot. AI behaves more like a portfolio of bets. You need lots of cheap ones because most won’t pay off, and the money should follow the evidence. I release funding in tranches, and every bet has to prove itself to get the next one. What counts as proof depends on the bet.</p>
     </div>
     <div class="kill"><b class="num" data-to="16">16</b><span class="of">of 276</span><p>AI opportunities at ADQ got funded. The rest were stopped at screening, before real money went in.</p></div>
-    <h3 class="track">Using AI in what you already run</h3>
-    <div class="gates" id="gates">
-      <div class="gate"><span class="step">Gate 1</span><h3>Baseline</h3><p>What today’s process costs, how long it takes and how often it’s right.</p><div class="bar"><i style="--h:18px;--d:0s"></i></div></div>
-      <div class="gate"><span class="step">Gate 2</span><h3>Owner</h3><p>A named person in the business who’ll use it and answer for the result.</p><div class="bar"><i style="--h:34px;--d:.1s"></i></div></div>
-      <div class="gate"><span class="step">Gate 3</span><h3>Target</h3><p>The accuracy it has to reach on the company’s own cases, agreed before anything is built.</p><div class="bar"><i style="--h:56px;--d:.2s"></i></div></div>
-      <div class="gate"><span class="step">Gate 4</span><h3>Supervised</h3><p>A person checks the AI’s work until it hits that target, case after case.</p><div class="bar"><i style="--h:84px;--d:.3s"></i></div></div>
-      <div class="gate"><span class="step">Gate 5</span><h3>In use</h3><p>It’s part of the normal week, on its own or with a person in the loop, measured on cost per correct outcome against the old way.</p><div class="bar"><i style="--h:120px;--d:.4s"></i></div></div>
+    <div class="tracks" role="tablist" aria-label="Which kind of AI bet">
+      <button type="button" role="tab" aria-selected="true" data-track="run">AI in what you already run</button>
+      <button type="button" role="tab" aria-selected="false" data-track="new">Something new built with AI</button>
     </div>
-    <h3 class="track">Building something new with AI</h3>
-    <div class="gates four">
-      <div class="gate"><span class="step">Gate 1</span><h3>Demand</h3><p>Evidence customers want it, from what they do rather than what they say in a survey.</p><div class="bar"><i style="--h:18px;--d:0s"></i></div></div>
-      <div class="gate"><span class="step">Gate 2</span><h3>Delivery</h3><p>Proof the company can build and run it, with the data, partners and people it needs.</p><div class="bar"><i style="--h:44px;--d:.1s"></i></div></div>
-      <div class="gate"><span class="step">Gate 3</span><h3>Numbers</h3><p>Unit economics that work at the price customers will actually pay.</p><div class="bar"><i style="--h:78px;--d:.2s"></i></div></div>
-      <div class="gate"><span class="step">Gate 4</span><h3>Scale</h3><p>Money to grow it, with an owner and a route into the core business or out as a spin-out.</p><div class="bar"><i style="--h:120px;--d:.3s"></i></div></div>
+    <div class="gates" id="gates" data-track="run">
+      <div class="gate"><span class="step">Tranche 1</span><h3>Baseline</h3><p>What today’s process costs, how long it takes and how often it’s right.</p><div class="bar"><i style="--h:18px;--d:0s"></i></div></div>
+      <div class="gate"><span class="step">Tranche 2</span><h3>Owner</h3><p>A named person in the business who’ll use it and answer for the result.</p><div class="bar"><i style="--h:34px;--d:.1s"></i></div></div>
+      <div class="gate"><span class="step">Tranche 3</span><h3>Target</h3><p>The accuracy it has to reach on the company’s own cases, agreed before anything is built.</p><div class="bar"><i style="--h:56px;--d:.2s"></i></div></div>
+      <div class="gate"><span class="step">Tranche 4</span><h3>Supervised</h3><p>A person checks the AI’s work until it hits that target, case after case.</p><div class="bar"><i style="--h:84px;--d:.3s"></i></div></div>
+      <div class="gate"><span class="step">Tranche 5</span><h3>In use</h3><p>It’s part of the normal week, on its own or with a person in the loop, measured on cost per correct outcome against the old way.</p><div class="bar"><i style="--h:120px;--d:.4s"></i></div></div>
     </div>
-    <div class="gates-foot"><span>Money released at each gate</span><span>The rest get stopped early and cheaply</span></div>
+    <div class="gates four" data-track="new" hidden>
+      <div class="gate"><span class="step">Tranche 1</span><h3>Demand</h3><p>Evidence customers want it, from what they do rather than what they say in a survey.</p><div class="bar"><i style="--h:18px;--d:0s"></i></div></div>
+      <div class="gate"><span class="step">Tranche 2</span><h3>Delivery</h3><p>Proof the company can build and run it, with the data, partners and people it needs.</p><div class="bar"><i style="--h:44px;--d:.1s"></i></div></div>
+      <div class="gate"><span class="step">Tranche 3</span><h3>Numbers</h3><p>Unit economics that work at the price customers will actually pay.</p><div class="bar"><i style="--h:78px;--d:.2s"></i></div></div>
+      <div class="gate"><span class="step">Tranche 4</span><h3>Scale</h3><p>Money to grow it, with an owner and a route into the core business or out as a spin-out.</p><div class="bar"><i style="--h:120px;--d:.3s"></i></div></div>
+    </div>
+    <div class="gates-foot"><span>Money released at each tranche</span><span>The rest get stopped early and cheaply</span></div>
   </div>
 </section>
 
@@ -500,6 +524,29 @@ Clients and organisations he has worked with include Microsoft, Salesforce, HSBC
         <div class="fig"><b class="num" data-to="11" data-pre="$" data-suf="M">$11M</b><span>Hive subscription revenue in year one</span></div>
       </article>
     </div>
+  </div>
+</section>
+
+<section id="built" aria-labelledby="built-title">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 id="built-title" class="display">What I’ve built.</h2>
+      <p>AI-led ventures and products built with large companies. At Curzon Street Ventures we took real problems from corporate partners and validated each one into a venture with that partner on board from day one. At IPG the AI went into products customers could buy.</p>
+    </div>
+    <div class="built-group"><h3>Curzon Street Ventures <small>Validated ventures, 2023 to 2025</small></h3>
+    <div class="built-grid">
+      <article class="b"><span class="sec">Health</span><h4>CareFlow</h4><p>Predicts when a hospital patient is deteriorating, from vital signs, lab results and clinical notes, so care teams can step in earlier.</p><span class="with">With Kaiser Permanente</span></article>
+      <article class="b"><span class="sec">Climate</span><h4>CarbonOS</h4><p>Automates carbon accounting across a supply chain by plugging into procurement and logistics data, with reports that stand up to audit.</p><span class="with">With BP</span></article>
+      <article class="b"><span class="sec">Financial services</span><h4>RegIntel</h4><p>Reads regulatory changes, checks them against a firm’s own policies and drafts the compliance reporting.</p><span class="with">With Grant Thornton</span></article>
+      <article class="b"><span class="sec">Manufacturing</span><h4>Twin</h4><p>Digital twins of factory operations that predict failures before they happen and cut unplanned downtime.</p><span class="with">With Boeing</span></article>
+      <article class="b"><span class="sec">Logistics</span><h4>RouteLogic</h4><p>Routes urban deliveries across vans, EVs and cargo bikes in real time, using live traffic, weather and demand.</p><span class="with">With GXO</span></article>
+    </div></div>
+    <div class="built-group"><h3>Interpublic Group <small>AI in products, 2018 to 2021</small></h3>
+    <div class="built-grid">
+      <article class="b"><span class="sec">Industrial</span><h4>Predictive maintenance</h4><p>AI that flags when JCB’s heavy equipment needs attention before it breaks down on site.</p><span class="with">For JCB</span></article>
+      <article class="b"><span class="sec">Beauty</span><h4>Personalised skincare</h4><p>AI-personalised skincare recommendations for Avon’s customers in China.</p><span class="with">For Avon China</span></article>
+      <article class="b"><span class="sec">Health</span><h4>Custom supplements</h4><p>Supplements formulated to each customer’s own needs.</p><span class="with">For Holland &amp; Barrett</span></article>
+    </div></div>
   </div>
 </section>
 
@@ -561,22 +608,10 @@ Clients and organisations he has worked with include Microsoft, Salesforce, HSBC
     <div class="posts">
       <a class="post" data-kind="talk" href="https://innovationroundtable.com/summit/"><span class="y num">2026</span><span class="k">Talk</span><span class="t">AI changes what corporate innovators are for <small>Innovation Roundtable Summit, Copenhagen</small></span></a>
       <a class="post" data-kind="writing" href="https://newcorporateinnovator.aucctus.com/?utm_source=jacobdutton.co.uk&amp;utm_medium=website&amp;utm_campaign=nci"><span class="y num">2026</span><span class="k">Briefing</span><span class="t">What corporate innovators do when AI does the analysis</span></a>
-      <a class="post" data-kind="writing" href="https://jacobdutton.substack.com/p/dont-let-the-inventor-run-the-company"><span class="y num">2026</span><span class="k">Article</span><span class="t">When AI makes anyone an inventor, don’t let the inventor run the company</span></a>
-      <a class="post" data-kind="writing" href="https://jacobdutton.substack.com/p/what-nobody-tells-you-about-building"><span class="y num">2026</span><span class="k">Article</span><span class="t">What nobody tells you about building AI ventures inside corporates</span></a>
-      <a class="post" data-kind="writing" href="https://jacobdutton.substack.com/p/youre-hiring-innovation-leaders-for"><span class="y num">2026</span><span class="k">Article</span><span class="t">You’re hiring AI and innovation leaders for the wrong things</span></a>
-      <a class="post" data-kind="writing" href="https://jacobdutton.substack.com/p/retails-platform-gap"><span class="y num">2026</span><span class="k">Thesis</span><span class="t">Retail’s AI problem is a platform gap</span></a>
-      <a class="post" data-kind="writing" href="https://jacobdutton.substack.com/p/britains-innovation-problem-is-not"><span class="y num">2026</span><span class="k">Article</span><span class="t">Britain’s AI and innovation problem isn’t what we think it is</span></a>
       <a class="post" data-kind="writing" href="https://jacobdutton.substack.com/p/the-experimentation-inversion"><span class="y num">2026</span><span class="k">Article</span><span class="t">AI has inverted how companies should experiment</span></a>
-      <a class="post" data-kind="writing" href="https://jacobdutton.substack.com/p/cvcs-trilemma"><span class="y num">2026</span><span class="k">Article</span><span class="t">Corporate venture capital’s trilemma in an AI market</span></a>
       <a class="post" data-kind="talk" href="https://www.youtube.com/watch?v=lXW4S4bMOVk"><span class="y num">2025</span><span class="k">Interview</span><span class="t">AI makes innovation experiments faster and cheaper</span></a>
       <a class="post" data-kind="talk" href="https://youtu.be/yMrx7n6AyVM"><span class="y num">2025</span><span class="k">Interview</span><span class="t">How AI is changing the Chief Innovation Officer’s job</span></a>
-      <a class="post" data-kind="writing" href="https://innov8rs.co/wp-content/uploads/2024/12/The-Innovators-Handbook-2025.pdf"><span class="y num">2025</span><span class="k">Publication</span><span class="t">The Innovators Handbook <small>Innov8rs</small></span></a>
       <a class="post" data-kind="writing" href="https://www.innovationleader.com/thought-leadership/how-corporate-innovators-should-think-about-ai/"><span class="y num">2024</span><span class="k">Article</span><span class="t">How corporate innovators should think about AI <small>Innovation Leader</small></span></a>
-      <a class="post" data-kind="writing" href="https://www.innovationleader.com/thought-leadership/why-innovation-teams-fail/"><span class="y num">2024</span><span class="k">Article</span><span class="t">Why innovation teams fail <small>Innovation Leader</small></span></a>
-      <a class="post" data-kind="talk" href="https://youtu.be/6ddzvIo85jk"><span class="y num">2024</span><span class="k">Podcast</span><span class="t">The why and how of corporate innovation</span></a>
-      <a class="post" data-kind="talk" href="https://www.youtube.com/watch?v=8FBFC9crt2g&amp;list=PLT7MmSMiubUgfUl-NDklDO0rTvnjc8-tM&amp;index=1"><span class="y num">2023</span><span class="k">Talk</span><span class="t">How to build a corporate innovation engine</span></a>
-      <a class="post" data-kind="talk" href="https://www.youtube.com/watch?v=QfNFZoFOW3c"><span class="y num">2022</span><span class="k">Talk</span><span class="t">How to think like a VC and win at corporate innovation</span></a>
-      <a class="post" data-kind="talk" href="https://www.youtube.com/watch?v=QGkd_7DTFJM"><span class="y num">2022</span><span class="k">Talk</span><span class="t">How to eliminate corporate innovation waste</span></a>
     </div>
   </div>
 </section>
@@ -676,6 +711,8 @@ Clients and organisations he has worked with include Microsoft, Salesforce, HSBC
   requestAnimationFrame(function(){setTimeout(function(){hero.classList.add('in');portrait.classList.add('in')},80)});
   document.querySelectorAll('.display:not(#hero-title),.gates,[data-to],.proof-grid,.eras,.work-list,.lenses,.posts,.invest').forEach(function(el){io.observe(el)});
 })();
+
+  (function(){var tb=document.querySelectorAll('.tracks button');tb.forEach(function(b){b.addEventListener('click',function(){var t=b.getAttribute('data-track');tb.forEach(function(x){x.setAttribute('aria-selected',x===b?'true':'false')});document.querySelectorAll('.gates[data-track]').forEach(function(g){var on=g.getAttribute('data-track')===t;g.hidden=!on;if(on){g.classList.remove('in');void g.offsetWidth;g.classList.add('in')}})})})})();
 </script>
 </body>
 </html>
