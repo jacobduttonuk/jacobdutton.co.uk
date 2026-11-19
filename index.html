@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Jacob Dutton</title>
+<meta name="description" content="Jacob Dutton uses AI for value creation, growth and innovation: finding where it creates value in large companies, getting it built and getting the business using it. Former SVP Innovation, R&amp;D and Emerging Technology at ADQ. Based in Abu Dhabi.">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="canonical" href="https://www.jacobdutton.co.uk/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Jacob Dutton: AI for value creation, growth and innovation">
+<meta property="og:description" content="I find where AI creates value in large companies and investment portfolios, get it built and get the business using it.">
+<meta property="og:url" content="https://www.jacobdutton.co.uk/">
+<meta property="og:image" content="https://www.jacobdutton.co.uk/jacob-dutton.jpg">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,300..900;1,62..125,300..900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --stone:#E7E8E3;
+  --paper:#F4F5F1;
+  --ink:#15171C;
+  --slate:#5A5F69;
+  --rule:#C9CBC4;
+  --cobalt:#2236D9;
+  --cobalt-soft:#DADFFB;
+  --measure:68ch;
+  --gutter:clamp(20px,5vw,64px);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+body{background:var(--stone);color:var(--ink);font-family:"Archivo",system-ui,sans-serif;font-variation-settings:"wdth" 100;font-size:17px;line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+a:focus-visible,button:focus-visible{outline:3px solid var(--cobalt);outline-offset:3px;border-radius:2px}
+.wrap{max-width:1240px;margin:0 auto;padding:0 var(--gutter)}
+.display{font-stretch:62%;font-variation-settings:"wdth" 62;font-weight:800;letter-spacing:-.01em;line-height:.92}
+.num{font-variant-numeric:tabular-nums lining-nums}
+
+/* top bar */
+header.top{position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--stone) 92%,transparent);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-bottom:1px solid transparent}
+header.top.scrolled{border-bottom-color:var(--rule)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;height:64px;gap:16px}
+.brand{font-weight:800;font-variation-settings:"wdth" 75;font-size:21px;text-decoration:none;letter-spacing:-.005em}
+nav.links{display:flex;gap:28px;align-items:center}
+nav.links a{text-decoration:none;font-size:15px;color:var(--slate)}
+nav.links a:hover{color:var(--ink)}
+.btn{display:inline-flex;align-items:center;justify-content:center;background:var(--ink);color:var(--paper);text-decoration:none;font-weight:600;font-size:15px;padding:11px 18px;border-radius:999px;white-space:nowrap}
+.btn:hover{background:var(--cobalt)}
+nav.links a.btn{color:var(--paper)}
+nav.links a.btn:hover{color:#fff}
+.btn.ghost{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 1.5px var(--ink)}
+.btn.ghost:hover{background:var(--ink);color:var(--paper)}
+@media (max-width:760px){nav.links a:not(.btn){display:none}}
+
+/* hero */
+.hero{padding:clamp(28px,6vw,72px) 0 clamp(48px,7vw,96px)}
+.hero-grid{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(0,1fr);gap:clamp(24px,4vw,56px);align-items:end}
+.hero h1{font-size:clamp(58px,10.4vw,148px);text-wrap:balance}
+.hero .lede{margin-top:clamp(22px,3vw,34px);font-size:clamp(19px,1.7vw,22px);line-height:1.45;max-width:36ch;text-wrap:pretty}
+.hero .cta{margin-top:30px;display:flex;flex-wrap:wrap;gap:12px}
+figure.portrait{position:relative}
+figure.portrait img{display:block;width:100%;aspect-ratio:320/408;object-fit:cover;filter:contrast(1.04)}
+figure.portrait figcaption{margin-top:12px;font-size:14px;color:var(--slate);display:flex;justify-content:space-between;gap:12px}
+@media (max-width:860px){
+  .hero-grid{grid-template-columns:1fr}
+  figure.portrait{order:-1;max-width:360px}
+  figure.portrait img{aspect-ratio:4/4.2}
+}
+
+/* proof row */
+.proof-grid{display:grid;grid-template-columns:repeat(4,1fr);border-top:2px solid var(--ink)}
+.proof-item{padding:22px 22px 26px 0;border-right:1px solid var(--rule)}
+.proof-item+.proof-item{padding-left:22px}
+.proof-item:last-child{border-right:0}
+.proof-item b{display:block;font-size:clamp(40px,4.6vw,64px);line-height:1;font-weight:800;font-variation-settings:"wdth" 62}
+.proof-item span{display:block;margin-top:10px;font-size:15px;color:var(--slate);max-width:24ch}
+@media (max-width:860px){
+  .proof-grid{grid-template-columns:1fr 1fr}
+  .proof-item{padding:20px 16px 22px 0}
+  .proof-item+.proof-item{padding-left:0}
+  .proof-item:nth-child(2n){padding-left:16px;border-right:0}
+  .proof-item:nth-child(n+3){border-top:1px solid var(--rule)}
+}
+
+section{padding:clamp(64px,9vw,128px) 0}
+.sec-head{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(24px,4vw,64px);align-items:end;margin-bottom:clamp(36px,5vw,64px)}
+h2{font-size:clamp(44px,6.6vw,96px);text-wrap:balance}
+.sec-head p{font-size:clamp(17px,1.5vw,19px);max-width:46ch;color:var(--ink);text-wrap:pretty}
+@media (max-width:860px){.sec-head{grid-template-columns:1fr}}
+
+/* method: the signature */
+.method{background:var(--ink);color:var(--paper)}
+.method .sec-head p{color:#C9CCD3}
+.gates{display:grid;grid-template-columns:repeat(5,1fr);gap:0;border-top:1px solid #3A3E47}
+.gate{padding:20px 18px 0 0;display:flex;flex-direction:column;min-height:100%}
+.gate+.gate{padding-left:18px;border-left:1px solid #3A3E47}
+.gate .step{font-size:14px;color:#9AA0AB}
+.gate h3{margin-top:6px;font-size:clamp(26px,2.6vw,36px);font-weight:800;font-variation-settings:"wdth" 70;line-height:1}
+.gate p{margin-top:12px;font-size:15px;line-height:1.5;color:#D3D6DC;max-width:30ch}
+.gate .bar{margin-top:auto;padding-top:28px}
+.gate .bar i{display:block;background:var(--cobalt);height:var(--h);transform-origin:bottom;transform:scaleY(0);transition:transform .9s cubic-bezier(.2,.7,.1,1) var(--d)}
+.gates.in .bar i{transform:scaleY(1)}
+.gates-foot{display:flex;justify-content:space-between;gap:24px;margin-top:16px;font-size:14px;color:#9AA0AB;flex-wrap:wrap}
+@media (max-width:860px){
+  .gates{grid-template-columns:1fr}
+  .gate,.gate+.gate{padding:18px 0;border-left:0;border-bottom:1px solid #3A3E47;display:grid;grid-template-columns:1fr 64px;column-gap:18px}
+  .gate .step,.gate h3,.gate p{grid-column:1}
+  .gate .bar{grid-column:2;grid-row:1 / span 3;padding-top:0;display:flex;align-items:flex-end}
+  .gate .bar i{width:100%}
+}
+
+/* selected work */
+.work-list{border-top:2px solid var(--ink)}
+.work{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.4fr) minmax(0,.8fr);gap:clamp(18px,3vw,40px);padding:clamp(24px,3vw,36px) 0;border-bottom:1px solid var(--rule)}
+.work .where{font-weight:700;font-variation-settings:"wdth" 80;font-size:20px;line-height:1.2}
+.work .where small{display:block;font-weight:400;font-variation-settings:"wdth" 100;font-size:15px;color:var(--slate);margin-top:4px}
+.work p{max-width:var(--measure);text-wrap:pretty}
+.work .fig{text-align:right}
+.work .fig b{display:block;font-size:clamp(34px,3.6vw,52px);font-weight:800;font-variation-settings:"wdth" 62;line-height:1;color:var(--cobalt)}
+.work .fig span{display:block;font-size:14px;color:var(--slate);margin-top:6px}
+@media (max-width:860px){
+  .work{grid-template-columns:1fr}
+  .work .fig{text-align:left;order:-1}
+}
+
+/* track record timeline */
+.record{background:var(--paper)}
+.eras{display:grid;grid-template-columns:repeat(4,1fr);border-top:2px solid var(--ink)}
+.era{padding:20px 20px 8px 0}
+.era+.era{padding-left:20px;border-left:1px solid var(--rule)}
+.era .yrs{font-weight:800;font-variation-settings:"wdth" 62;font-size:30px;line-height:1}
+.era .tag{font-size:14px;color:var(--cobalt);margin-top:6px;font-weight:600}
+.era ul{list-style:none;margin-top:18px}
+.era li{padding:12px 0;border-top:1px solid var(--rule)}
+.era li b{display:block;font-weight:700;font-size:16px;line-height:1.3}
+.era li span{display:block;font-size:14px;color:var(--slate);margin-top:3px}
+.era li.now b::after{content:"Now";margin-left:8px;font-size:12px;font-weight:600;background:var(--cobalt);color:#fff;padding:2px 7px;border-radius:999px;vertical-align:2px}
+.clients{margin-top:clamp(40px,5vw,64px);display:grid;grid-template-columns:minmax(0,1fr) minmax(0,3fr);gap:24px;align-items:baseline}
+.clients h3{font-size:15px;font-weight:600;color:var(--slate)}
+.clients p{font-size:clamp(20px,2.2vw,30px);font-weight:600;font-variation-settings:"wdth" 80;line-height:1.3;text-wrap:balance}
+.clients p span{color:var(--slate);font-weight:400}
+.creds{margin-top:28px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,3fr);gap:24px;align-items:baseline}
+.creds h3{font-size:15px;font-weight:600;color:var(--slate)}
+.creds p{max-width:var(--measure)}
+@media (max-width:960px){
+  .eras{grid-template-columns:1fr 1fr}
+  .era:nth-child(3){padding-left:0;border-left:0}
+  .era:nth-child(n+3){border-top:1px solid var(--rule);margin-top:8px}
+}
+@media (max-width:600px){
+  .eras{grid-template-columns:1fr}
+  .era,.era+.era{padding:18px 0 4px;border-left:0}
+  .era+.era{border-top:1px solid var(--rule)}
+  .clients,.creds{grid-template-columns:1fr;gap:8px}
+}
+
+/* writing */
+.posts{border-top:2px solid var(--ink)}
+.post{display:grid;grid-template-columns:72px 150px minmax(0,1fr);gap:16px;align-items:baseline;padding:18px 0;border-bottom:1px solid var(--rule);text-decoration:none}
+.post .y{color:var(--slate);font-size:15px}
+.post .k{color:var(--slate);font-size:15px}
+.post .t{font-size:clamp(18px,1.7vw,22px);font-weight:600;font-variation-settings:"wdth" 85;line-height:1.25}
+.post:hover .t{color:var(--cobalt);text-decoration:underline;text-underline-offset:4px;text-decoration-thickness:2px}
+@media (max-width:600px){.post{grid-template-columns:52px minmax(0,1fr)}.post .k{display:none}}
+/* contact */
+.contact{background:var(--cobalt);color:#fff}
+.contact h2{font-size:clamp(52px,8.4vw,128px)}
+.contact-grid{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);gap:clamp(28px,5vw,72px);align-items:end}
+.contact p{font-size:clamp(18px,1.6vw,21px);max-width:44ch;margin-top:24px}
+.contact .btn{background:#fff;color:var(--ink);font-size:17px;padding:15px 24px}
+.contact .btn:hover{background:var(--ink);color:#fff}
+.contact dl{margin-top:22px;font-size:16px}
+.contact dt{color:#C7CEFA;font-size:14px;margin-top:14px}
+.contact dd a{color:#fff;text-underline-offset:4px}
+@media (max-width:860px){.contact-grid{grid-template-columns:1fr}}
+footer{padding:28px 0;font-size:14px;color:var(--slate)}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+
+/* three lenses */
+.lenses{display:grid;grid-template-columns:repeat(3,1fr);border-top:2px solid var(--ink)}
+.lens{padding:22px 24px 6px 0}
+.lens+.lens{padding-left:24px;border-left:1px solid var(--rule)}
+.lens h3{font-size:clamp(30px,3vw,42px);font-weight:800;font-variation-settings:"wdth" 66;line-height:1}
+.lens .q{margin-top:10px;font-size:15px;color:var(--cobalt);font-weight:600}
+.lens p{margin-top:14px;max-width:40ch;text-wrap:pretty}
+.lens .ev{margin-top:18px;padding-top:14px;border-top:1px solid var(--rule);font-size:15px;color:var(--slate)}
+.lens .ev b{color:var(--ink);font-weight:700}
+.remit{margin-top:clamp(36px,4vw,52px);font-size:clamp(20px,2vw,26px);font-weight:600;font-variation-settings:"wdth" 85;line-height:1.3;max-width:52ch;text-wrap:pretty}
+@media (max-width:860px){.lenses{grid-template-columns:1fr}.lens,.lens+.lens{padding:20px 0 8px;border-left:0}.lens+.lens{border-top:1px solid var(--rule)}}
+.filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:18px}
+.filters button{font:inherit;font-size:15px;font-weight:600;border:0;border-radius:999px;padding:8px 14px;background:transparent;color:var(--ink);box-shadow:inset 0 0 0 1.5px var(--rule);cursor:pointer}
+.filters button[aria-pressed="true"]{background:var(--ink);color:var(--paper);box-shadow:none}
+.post[hidden]{display:none}
+.post .t small{display:block;font-size:14px;font-weight:400;font-variation-settings:"wdth" 100;color:var(--slate);margin-top:4px}
+.invest{margin-top:clamp(40px,5vw,64px);display:grid;grid-template-columns:minmax(0,1fr) minmax(0,3fr);gap:24px;align-items:baseline;padding-top:22px;border-top:2px solid var(--ink)}
+.invest h3{font-size:22px;font-weight:800;font-variation-settings:"wdth" 75}
+.invest p{max-width:var(--measure)}
+.invest a{font-weight:600;color:var(--cobalt);text-underline-offset:4px}
+@media (max-width:600px){.invest{grid-template-columns:1fr;gap:8px}}
+
+/* one load moment: headline lines rise */
+.rise{opacity:0;transform:translateY(18px);animation:rise .9s cubic-bezier(.2,.7,.1,1) forwards}
+.rise.d2{animation-delay:.12s}.rise.d3{animation-delay:.24s}.rise.d4{animation-delay:.36s}
+@keyframes rise{to{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+
+<header class="top" id="top">
+  <div class="wrap">
+    <a class="brand" href="#top">Jacob Dutton</a>
+    <nav class="links" aria-label="Main">
+      <a href="#what">What I do</a>
+      <a href="#work">Selected work</a>
+      <a href="#record">Track record</a>
+      <a href="#writing">Talks and writing</a>
+      <a class="btn" href="https://calendarbridge.com/book/jacobdutton/home">Book a call</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<section class="hero" aria-labelledby="hero-title">
+  <div class="wrap hero-grid">
+    <div>
+      <h1 id="hero-title" class="display rise">AI for value creation, growth and innovation.</h1>
+      <p class="lede rise d2">I find where AI creates value in large companies and investment portfolios, get it built and get the business using it. Most recently I led innovation, R&amp;D and emerging technology across ADQ’s 20+ operating companies in Abu Dhabi.</p>
+      <div class="cta rise d3">
+        <a class="btn" href="https://calendarbridge.com/book/jacobdutton/home">Book a call</a>
+        <a class="btn ghost" href="https://www.linkedin.com/in/jacobdutton">LinkedIn profile</a>
+      </div>
+    </div>
+    <figure class="portrait rise d2">
+      <img src="data:image/jpeg;base64,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" alt="Jacob Dutton, seated at a table, in a black jumper and glasses">
+      <figcaption><span>Jacob Dutton</span><span>Abu Dhabi</span></figcaption>
+    </figure>
+  </div>
+</section>
+
+<div class="wrap" aria-label="Headline numbers">
+  <div class="proof-grid">
+    <div class="proof-item"><b class="num">AED 500M</b><span>portfolio innovation fund run at ADQ</span></div>
+    <div class="proof-item"><b class="num">276</b><span>opportunities surfaced with AI across the portfolio, 16 funded</span></div>
+    <div class="proof-item"><b class="num">500+</b><span>propositions tested, with a 90% launch success rate</span></div>
+    <div class="proof-item"><b class="num">$45M</b><span>Series A raised by ventures from the studio I built at IPG</span></div>
+  </div>
+</div>
+
+<section id="what" aria-labelledby="what-title">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 id="what-title" class="display">Where I put AI to work.</h2>
+      <p>Eighteen years of building new products, services and ventures inside large organisations, and the systems that decide what gets funded. AI now does much of the work that used to take a team of analysts, so the job is choosing where it pays and making it stick.</p>
+    </div>
+    <div class="lenses">
+      <div class="lens">
+        <h3>Value creation</h3>
+        <div class="q">Which AI bets get the money?</div>
+        <p>Across a group or portfolio, I decide which AI use cases get funded, prove them before they scale and stop the rest early. At ADQ, AI did the mapping, screening and valuation across 20+ operating companies, and people made the funding calls.</p>
+        <div class="ev"><b class="num">AED 120M</b> deployed across 16 initiatives, against evidence at each of five gates</div>
+      </div>
+      <div class="lens">
+        <h3>Growth</h3>
+        <div class="q">Where’s the new revenue?</div>
+        <p>I build new products, services and ventures with AI in them, from first prototype to paying market. I’ve done it inside a global agency group, for consumer brands and through my own venture studio.</p>
+        <div class="ev"><b class="num">10</b> businesses launched at IPG, one to $20M ARR in 18 months</div>
+      </div>
+      <div class="lens">
+        <h3>Innovation</h3>
+        <div class="q">How does the organisation keep doing it?</div>
+        <p>I set up the operating model that makes it repeatable: stage gates, decision rights, funding pools, and the methods and training that get teams using AI in a normal week. The Velocity Method is how I run it, and it’s used inside Salesforce, Microsoft, HSBC, Mars and Hilton.</p>
+        <div class="ev"><b class="num">13</b> operating companies’ capability reviewed and turned into a fundable roadmap</div>
+      </div>
+    </div>
+    <p class="remit">I own the value side of AI: which use cases get funded, proof before scale, adoption and governance. I work alongside the CTO or CDO, who owns the platforms and data.</p>
+  </div>
+</section>
+
+<section class="method" id="method" aria-labelledby="method-title">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 id="method-title" class="display">Run AI spend like a staged fund.</h2>
+      <p>Most large companies have hundreds of possible AI use cases, a handful of pilots and very little in production. What’s missing is a way to decide which few matter to the P&amp;L and when to stop the rest. I run it the way I ran ADQ’s innovation fund: every use case earns the next tranche of money with evidence.</p>
+    </div>
+    <div class="gates" id="gates">
+      <div class="gate"><span class="step">Gate 1</span><h3>Baseline</h3><p>What today’s process costs, how long it takes and how often it’s right.</p><div class="bar"><i style="--h:18px;--d:0s"></i></div></div>
+      <div class="gate"><span class="step">Gate 2</span><h3>Owner</h3><p>A named person in the business who’ll use it and answer for the result.</p><div class="bar"><i style="--h:34px;--d:.1s"></i></div></div>
+      <div class="gate"><span class="step">Gate 3</span><h3>Target</h3><p>The accuracy it has to reach on the company’s own cases, agreed before anything is built.</p><div class="bar"><i style="--h:56px;--d:.2s"></i></div></div>
+      <div class="gate"><span class="step">Gate 4</span><h3>Supervised</h3><p>A person checks the AI’s work until it hits that target, case after case.</p><div class="bar"><i style="--h:84px;--d:.3s"></i></div></div>
+      <div class="gate"><span class="step">Gate 5</span><h3>Unattended</h3><p>Only then does it run on its own, measured on cost per correct outcome against the old way.</p><div class="bar"><i style="--h:120px;--d:.4s"></i></div></div>
+    </div>
+    <div class="gates-foot"><span>Money released at each gate</span><span>The rest get stopped early and cheaply</span></div>
+  </div>
+</section>
+
+<section id="work" aria-labelledby="work-title">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 id="work-title" class="display">Work that made it out of the deck.</h2>
+      <p>Across a sovereign portfolio, global brands and my own companies. Some of it was AI before anyone called it that.</p>
+    </div>
+    <div class="work-list">
+      <article class="work">
+        <div class="where">ADQ<small>SVP Innovation, R&amp;D and Emerging Technology, 2025 to 2026</small></div>
+        <p>Set the function up to run AI-first across a $300B sovereign investor and its operating companies in aviation, energy, ports, logistics, food and healthcare. AI did the opportunity mapping, proposition generation, screening and valuation, so a small team could cover the whole portfolio. I set the investment governance, stage gates and decision rights, and led the change so the operating companies could find, prove and fund AI use cases themselves.</p>
+        <div class="fig"><b class="num">AED 120M</b><span>deployed across 16 initiatives from 276 opportunities</span></div>
+      </article>
+      <article class="work">
+        <div class="where">ADQ Robotics Ramp-Up<small>Designed and led at ADQ</small></div>
+        <p>A programme to get robotics and physical AI into real operations across 19 operating companies. I ran the use case sessions inside the businesses myself, at Etihad Rail, PureHealth, TAQA and Al Dahra, and brought in more than 100 robotics and physical AI partners.</p>
+        <div class="fig"><b class="num">23</b><span>proofs of concept launched</span></div>
+      </article>
+      <article class="work">
+        <div class="where">Interpublic Group<small>Managing Director, Innovation, New York, 2018 to 2021</small></div>
+        <p>Built IPG’s first innovation and venture practice, with its own P&amp;L, and grew it to 50 people. We launched 10 businesses, and three raised $45M of Series A between them. We were putting AI into products early: predictive maintenance on JCB’s heavy equipment, AI-personalised skincare for Avon China, and custom-formulated supplements for Holland &amp; Barrett.</p>
+        <div class="fig"><b class="num">$20M</b><span>ARR reached by one venture in 18 months</span></div>
+      </article>
+      <article class="work">
+        <div class="where">Future Foundry<small>Co-founder and CEO, 2021 to 2025</small></div>
+        <p>A business experimentation company that tests whether customers want something, whether it can be delivered and whether the numbers work, before a large company invests. We built AI into the testing early, from desk research and test materials to synthetic customer interviews and analysis, so clients could test far more ideas. 500+ propositions tested and 50+ launched, for clients including Mars, P&amp;G, Unilever, HSBC, Microsoft and Salesforce.</p>
+        <div class="fig"><b class="num">$1bn+</b><span>of spend stopped on ideas that weren’t going to work</span></div>
+      </article>
+      <article class="work">
+        <div class="where">Curzon Street Ventures<small>Co-founder and CEO, 2023 to 2025</small></div>
+        <p>A place-based venture studio turning the operational problems of large companies into AI-led startups. Six ventures validated, each with a corporate partner from day one: Kaiser Permanente, BP, Grant Thornton, Boeing, GXO and HSBC. I set up the studio’s governance and investment criteria, then took the model to nine other places and partners.</p>
+        <div class="fig"><b class="num">$500K</b><span>corporate sponsorship signed, 25 partners committed</span></div>
+      </article>
+      <article class="work">
+        <div class="where">383<small>Employee number one to Managing Partner, 2009 to 2018</small></div>
+        <p>Grew a Birmingham product studio to 40+ people. We built the first Hive connected thermostat for British Gas and ran Hilton’s guest experience and digital product strategy for four years, including keyless room entry.</p>
+        <div class="fig"><b class="num">$11M</b><span>Hive subscription revenue in year one</span></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="record" id="record" aria-labelledby="record-title">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 id="record-title" class="display">Eighteen years, four eras.</h2>
+      <p>The work has stayed the same: find where the new value is, prove it cheaply, then take it to market. What changed is how much of it AI does.</p>
+    </div>
+    <div class="eras">
+      <div class="era">
+        <div class="yrs num">2009 to 2018</div><div class="tag">Before AI</div>
+        <ul><li><b>Managing Partner, 383</b><span>Product studio, Birmingham</span></li></ul>
+      </div>
+      <div class="era">
+        <div class="yrs num">2018 to 2021</div><div class="tag">AI in the product</div>
+        <ul><li><b>Managing Director, Innovation, Interpublic Group</b><span>New York</span></li></ul>
+      </div>
+      <div class="era">
+        <div class="yrs num">2021 to 2025</div><div class="tag">AI-assisted</div>
+        <ul>
+          <li><b>Co-founder and CEO, Future Foundry</b><span>London</span></li>
+          <li><b>Co-founder and CEO, Curzon Street Ventures</b><span>Venture studio, Birmingham</span></li>
+          <li><b>Expert Instructor, Innovation Management, Maven</b><span>200+ senior operators taught, 85 NPS</span></li>
+          <li><b>Advisory Board Member, Connected Places Catapult</b><span>UK</span></li>
+        </ul>
+      </div>
+      <div class="era">
+        <div class="yrs num">2025 to now</div><div class="tag">AI-first</div>
+        <ul>
+          <li><b>SVP Innovation, R&amp;D and Emerging Technology, ADQ</b><span>Abu Dhabi</span></li>
+          <li class="now"><b>Global Head of AI Innovation, Aucctus AI</b><span>Getting enterprise leadership teams using AI in real funding and portfolio decisions</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="clients">
+      <h3>Who I’ve worked with</h3>
+      <p>Etihad, TAQA, AD Ports, PureHealth, Mars, P&amp;G, Unilever, Reckitt, Kimberly-Clark, Novartis, Walgreens, HSBC, Capital One, Experian, Ørsted, Microsoft, Salesforce, Hilton, JCB <span>and the USPS.</span></p>
+    </div>
+    <div class="creds">
+      <h3>Education</h3>
+      <p>Advanced Programme in Entrepreneurship and Venture Finance, Saïd Business School, University of Oxford. Executive MBA, Quantic School of Business and Technology.</p>
+    </div>
+  </div>
+</section>
+
+<section id="writing" aria-labelledby="writing-title">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2 id="writing-title" class="display">Talks and writing.</h2>
+      <p>On how large companies decide what to fund, why their innovation stalls and what AI changes about both.</p>
+    </div>
+    <div class="filters" role="group" aria-label="Show">
+      <button type="button" data-f="all" aria-pressed="true">Everything</button>
+      <button type="button" data-f="talk" aria-pressed="false">Talks and interviews</button>
+      <button type="button" data-f="writing" aria-pressed="false">Writing</button>
+    </div>
+    <div class="posts">
+      <a class="post" data-kind="talk" href="https://innovationroundtable.com/summit/"><span class="y num">2026</span><span class="k">Talk</span><span class="t">The New Corporate Innovator: how AI changes value creation in large companies <small>Innovation Roundtable Summit, Copenhagen</small></span></a>
+      <a class="post" data-kind="writing" href="https://newcorporateinnovator.aucctus.com/?utm_source=jacobdutton.co.uk&amp;utm_medium=website&amp;utm_campaign=nci"><span class="y num">2026</span><span class="k">Briefing</span><span class="t">The New Corporate Innovator</span></a>
+      <a class="post" data-kind="writing" href="https://jacobdutton.substack.com/p/dont-let-the-inventor-run-the-company"><span class="y num">2026</span><span class="k">Article</span><span class="t">Don’t let the inventor run the company</span></a>
+      <a class="post" data-kind="writing" href="https://jacobdutton.substack.com/p/what-nobody-tells-you-about-building"><span class="y num">2026</span><span class="k">Article</span><span class="t">What nobody tells you about building ventures inside corporates</span></a>
+      <a class="post" data-kind="writing" href="https://jacobdutton.substack.com/p/youre-hiring-innovation-leaders-for"><span class="y num">2026</span><span class="k">Article</span><span class="t">You’re hiring innovation leaders for the wrong things</span></a>
+      <a class="post" data-kind="writing" href="https://jacobdutton.substack.com/p/retails-platform-gap"><span class="y num">2026</span><span class="k">Thesis</span><span class="t">Retail’s platform gap</span></a>
+      <a class="post" data-kind="writing" href="https://jacobdutton.substack.com/p/britains-innovation-problem-is-not"><span class="y num">2026</span><span class="k">Article</span><span class="t">Britain’s innovation problem is not what we think it is</span></a>
+      <a class="post" data-kind="writing" href="https://jacobdutton.substack.com/p/the-experimentation-inversion"><span class="y num">2026</span><span class="k">Article</span><span class="t">The experimentation inversion</span></a>
+      <a class="post" data-kind="writing" href="https://jacobdutton.substack.com/p/cvcs-trilemma"><span class="y num">2026</span><span class="k">Article</span><span class="t">CVC’s trilemma</span></a>
+      <a class="post" data-kind="talk" href="https://www.youtube.com/watch?v=lXW4S4bMOVk"><span class="y num">2025</span><span class="k">Interview</span><span class="t">Using AI to improve innovation experiments</span></a>
+      <a class="post" data-kind="talk" href="https://youtu.be/yMrx7n6AyVM"><span class="y num">2025</span><span class="k">Interview</span><span class="t">The emerging and evolving role of the Chief Innovation Officer</span></a>
+      <a class="post" data-kind="writing" href="https://innov8rs.co/wp-content/uploads/2024/12/The-Innovators-Handbook-2025.pdf"><span class="y num">2025</span><span class="k">Publication</span><span class="t">The Innovators Handbook <small>Innov8rs</small></span></a>
+      <a class="post" data-kind="writing" href="https://www.innovationleader.com/thought-leadership/how-corporate-innovators-should-think-about-ai/"><span class="y num">2024</span><span class="k">Article</span><span class="t">How corporate innovators should think about AI <small>Innovation Leader</small></span></a>
+      <a class="post" data-kind="writing" href="https://www.innovationleader.com/thought-leadership/why-innovation-teams-fail/"><span class="y num">2024</span><span class="k">Article</span><span class="t">Why innovation teams fail <small>Innovation Leader</small></span></a>
+      <a class="post" data-kind="talk" href="https://youtu.be/6ddzvIo85jk"><span class="y num">2024</span><span class="k">Podcast</span><span class="t">The why and how of corporate innovation</span></a>
+      <a class="post" data-kind="talk" href="https://www.youtube.com/watch?v=8FBFC9crt2g&amp;list=PLT7MmSMiubUgfUl-NDklDO0rTvnjc8-tM&amp;index=1"><span class="y num">2023</span><span class="k">Talk</span><span class="t">How to build a corporate innovation engine</span></a>
+      <a class="post" data-kind="talk" href="https://www.youtube.com/watch?v=QfNFZoFOW3c"><span class="y num">2022</span><span class="k">Talk</span><span class="t">How to think like a VC and win at corporate innovation</span></a>
+      <a class="post" data-kind="talk" href="https://www.youtube.com/watch?v=QGkd_7DTFJM"><span class="y num">2022</span><span class="k">Talk</span><span class="t">How to eliminate corporate innovation waste</span></a>
+    </div>
+    <div class="invest">
+      <h3>Investing</h3>
+      <p>I write $10K cheques into pre-seed and seed B2B software and AI companies that fix what large organisations can’t fix themselves. <a href="mailto:hello@jacobdutton.co.uk?subject=Deck">Send your deck</a></p>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact" aria-labelledby="contact-title">
+  <div class="wrap contact-grid">
+    <div>
+      <h2 id="contact-title" class="display">Let’s talk.</h2>
+      <p>If you’re hiring for AI, value creation or innovation leadership, or working out where AI should pay off across a business or portfolio, book a time that suits you.</p>
+    </div>
+    <div>
+      <a class="btn" href="https://calendarbridge.com/book/jacobdutton/home">Book a call</a>
+      <dl>
+        <dt>Email</dt><dd><a href="mailto:hello@jacobdutton.co.uk">hello@jacobdutton.co.uk</a></dd>
+        <dt>LinkedIn</dt><dd><a href="https://www.linkedin.com/in/jacobdutton">linkedin.com/in/jacobdutton</a></dd>
+      </dl>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap"><span>© 2026 Jacob Dutton</span><span>Abu Dhabi, United Arab Emirates</span></div>
+</footer>
+
+<script>
+(function(){
+  var top=document.getElementById('top');
+  function onScroll(){top.classList.toggle('scrolled',window.scrollY>8)}
+  window.addEventListener('scroll',onScroll,{passive:true});onScroll();
+  var btns=document.querySelectorAll('.filters button'),posts=document.querySelectorAll('.post');
+  btns.forEach(function(b){b.addEventListener('click',function(){
+    var f=b.getAttribute('data-f');
+    btns.forEach(function(x){x.setAttribute('aria-pressed',x===b?'true':'false')});
+    posts.forEach(function(p){p.hidden=!(f==='all'||p.getAttribute('data-kind')===f)});
+  })});
+  var g=document.getElementById('gates');
+  if(!('IntersectionObserver' in window)){g.classList.add('in');return}
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){g.classList.add('in');io.disconnect()}})},{threshold:.35});
+  io.observe(g);
+})();
+</script>
+</body>
+</html>
