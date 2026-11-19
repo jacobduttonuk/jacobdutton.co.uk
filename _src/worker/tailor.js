@@ -72,7 +72,7 @@ PORTFOLIO: the 4 most relevant of these, most relevant first, comma separated: C
 CTA: under 5 words, a book-a-call button label for them, like "Talk about Mubadala"`;
 }
 
-async function streamClaude(env, system, user, onText) {
+async function streamClaude(env, system, user, onText, attempt = 0) {
   const r = await fetch("https://api.anthropic.com/v1/messages", {
     method: "POST",
     headers: { "x-api-key": env.ANTHROPIC_API_KEY, "anthropic-version": "2023-06-01", "content-type": "application/json" },
@@ -84,6 +84,10 @@ async function streamClaude(env, system, user, onText) {
       messages: [{ role: "user", content: user }],
     }),
   });
+  if ((r.status === 429 || r.status === 529 || r.status >= 500) && attempt < 2) {
+    await new Promise((res) => setTimeout(res, 1500 * (attempt + 1)));
+    return streamClaude(env, system, user, onText, attempt + 1);
+  }
   if (!r.ok || !r.body) throw new Error("claude " + r.status);
   const reader = r.body.getReader();
   const dec = new TextDecoder();
@@ -100,6 +104,7 @@ async function streamClaude(env, system, user, onText) {
       try {
         const ev = JSON.parse(line.slice(5));
         if (ev.type === "content_block_delta" && ev.delta && ev.delta.text) await onText(ev.delta.text);
+        if (ev.type === "error") throw new Error("claude stream " + (ev.error && ev.error.type));
       } catch {}
     }
   }
@@ -161,6 +166,7 @@ async function generate(request, env, ctx, input, cacheKey) {
     try {
       await streamClaude(env, system, user, async (t) => { full += t; await writer.write(enc.encode(t)); });
       if (valid(full)) await cachePut(env, cacheKey, full);
+      else await writer.write(enc.encode("\nERROR: That didn't come out right. Please try again in a minute.\n"));
     } catch (e) {
       try { await writer.write(enc.encode("\nERROR: Something went wrong on our side. Please try again in a minute.\n")); } catch {}
     } finally {
