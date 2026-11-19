@@ -49,7 +49,8 @@ RULES
 - Only state facts about Jacob that are in the profile. Never invent clients, numbers, roles or results.
 - About the visitor's organisation: be specific and practical, using what's widely known about it and anything they gave you. If unsure, stay general rather than invent. Never claim knowledge of their internal data.
 - For an investor or group, think across its portfolio companies as well as the head office.
-- If you don't recognise the organisation or aren't sure what it does, never guess or invent what it does. Use what the name and any context make clear (for example that it's an Abu Dhabi investor), keep the use cases general to that, and say plainly in LEDE that you'd start by understanding their priorities.
+- If you don't know the organisation well (for example it's new, small or local), use the web_search tool once or twice to find out what it is and what it owns or does, then write. Don't search for well-known organisations.
+- If you still aren't sure what it does, never guess or invent what it does. Use what the name and any context make clear (for example that it's an Abu Dhabi investor), keep the use cases general to that, and say plainly in LEDE that you'd start by understanding their priorities.
 - Start writing the TYPE line straight away; keep any private reasoning brief.
 - Write in Jacob's voice, first person, like his site ("I'd start by...", "At ADQ I..."). British English, plain words, contractions, short sentences. No hype, no consultant jargon, no "unique", no em dashes, no emojis.
 - Never mention prices, day rates or fees.
@@ -74,22 +75,23 @@ PORTFOLIO: the 4 most relevant of these, most relevant first, comma separated: C
 CTA: under 5 words, a book-a-call button label for them, like "Talk about Mubadala"`;
 }
 
-async function streamClaude(env, system, user, onText, attempt = 0) {
+async function streamClaude(env, system, user, onText, attempt = 0, tools = true) {
   // user may be a string or an array of content blocks
   const r = await fetch("https://api.anthropic.com/v1/messages", {
     method: "POST",
     headers: { "x-api-key": env.ANTHROPIC_API_KEY, "anthropic-version": "2023-06-01", "content-type": "application/json" },
-    body: JSON.stringify({
+    body: JSON.stringify(Object.assign({
       model: env.CLAUDE_MODEL || "claude-sonnet-5-5",
       max_tokens: 6000,
       stream: true,
       system,
       messages: [{ role: "user", content: user }],
-    }),
+    }, tools ? { tools: [{ type: "web_search_20250305", name: "web_search", max_uses: 2 }] } : {})),
   });
+  if (r.status === 400 && tools) return streamClaude(env, system, user, onText, attempt, false);
   if ((r.status === 429 || r.status === 529 || r.status >= 500) && attempt < 2) {
     await new Promise((res) => setTimeout(res, 1500 * (attempt + 1)));
-    return streamClaude(env, system, user, onText, attempt + 1);
+    return streamClaude(env, system, user, onText, attempt + 1, tools);
   }
   if (!r.ok || !r.body) throw new Error("claude " + r.status);
   const reader = r.body.getReader();
