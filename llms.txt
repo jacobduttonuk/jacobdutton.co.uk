@@ -41,14 +41,14 @@ Over the next decade AI pushes the cost of thinking towards zero. That changes w
 
 AI-led ventures and products, each built with a large company on board from day one:
 
-- CareFlow: Predicts when a hospital patient is deteriorating, from vital signs, lab results and clinical notes, so care teams can step in earlier. With Kaiser Permanente (validated venture).
+- CareFlow: Predicts when a hospital patient is deteriorating, from vital signs, lab results and clinical notes, so care teams can step in earlier. With Kaiser Permanente.
 - LiveLink+: Built on top of JCB LiveLink. AI on machine data that predicts when heavy equipment needs maintenance, before it breaks down on site. With JCB.
-- Jingzi: An AI personalisation engine for Avon in China, combining connected devices, biometric data and machine learning, sold as a WeChat skincare subscription. With Avon (in market in China).
-- CarbonOS: Automates carbon accounting across a supply chain by plugging into procurement and logistics data, with reports that stand up to audit. With BP (validated venture).
-- RegIntel: Reads regulatory changes, checks them against a firm's own policies and drafts the compliance reporting. With Grant Thornton (validated venture).
-- Twin: Digital twins of factory operations that predict failures before they happen and cut unplanned downtime. With Boeing (validated venture).
-- RouteLogic: Routes urban deliveries across vans, EVs and cargo bikes in real time, using live traffic, weather and demand. With GXO (validated venture).
-- Healthbox: AI-personalised supplements, formulated to each customer's own needs; 20,000+ subscribers, with renewals 35% above the category. With Holland & Barrett (in market).
+- Jingzi: An AI personalisation engine for Avon in China, combining connected devices, biometric data and machine learning, sold as a WeChat skincare subscription. With Avon.
+- CarbonOS: Automates carbon accounting across a supply chain by plugging into procurement and logistics data, with reports that stand up to audit. With BP.
+- RegIntel: Reads regulatory changes, checks them against a firm's own policies and drafts the compliance reporting. With Grant Thornton.
+- Twin: Digital twins of factory operations that predict failures before they happen and cut unplanned downtime. With Boeing.
+- RouteLogic: Routes urban deliveries across vans, EVs and cargo bikes in real time, using live traffic, weather and demand. With GXO.
+- Healthbox: AI-personalised supplements, formulated to each customer's own needs; 20,000+ subscribers, with renewals 35% above the category. With Holland & Barrett.
 
 ## Selected work
 
