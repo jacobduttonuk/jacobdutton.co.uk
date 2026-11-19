@@ -14,6 +14,13 @@ Jacob owns the value side of AI adoption: which use cases get funded, the proof 
 
 Most companies fund AI like an IT project: pick the use case, build it, roll it out and hope people use it. That's why so much of it stalls after the pilot. AI behaves more like a portfolio of bets. You need plenty of small ones because most won't pay off, and the money should follow the evidence. Jacob releases funding in tranches, and every bet has to prove itself to get the next one. The proof needed depends on the kind of bet. At ADQ, 16 of 276 AI opportunities made it to funding, and all 16 are in use, worth $40M+ a year; most of the rest were stopped early, before the big money went in.
 
+What gets on the list: before a bet gets any money, it has to pass four checks. Jacob runs them on the work itself, workflow by workflow, with the people who do it.
+
+- Worth: what the work costs today and what it'd be worth to do it faster or better. If nobody can put a number on it, it waits.
+- Ready: whether the data exists, is good enough and can be reached, with the access and security sign-off it needs. A lot of pilots stall here.
+- Standard: whether AI can do it as well as the company's best team does now. Faster only counts if the work is as good.
+- Shared: whether it can be built once and reused across teams, business units or portfolio companies, so the second one costs far less than the first.
+
 For AI in what a company already runs, money is released in five tranches:
 
 1. Owner: a named person in the business who'll use it and answer for the result.
@@ -28,6 +35,8 @@ For something new built with AI, money is released in four tranches:
 2. Delivery: proof the company can build and run it, with the data, partners and people it needs.
 3. Numbers: unit economics that work at the price customers will pay.
 4. Scale: money to grow it, with an owner and a route into the core business or out as a spin-out.
+
+Every bet is measured the same way: a baseline before it starts, the impact after, and one report across the portfolio.
 
 ## Point of view: where this ends up
 

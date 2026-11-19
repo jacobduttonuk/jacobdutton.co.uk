@@ -350,6 +350,13 @@ figure.portrait .ph img{position:absolute;inset:0;width:100%;height:100%;min-hei
 .shot.talk .ph{aspect-ratio:21/9}
 .shot.talk img{object-position:50% 40%}
 @media (max-width:860px){.shot{margin-top:40px}.shot .ph,.shot.band .ph,.shot.talk .ph{aspect-ratio:4/3}section{padding:56px 0}.filters{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;margin-left:-4px;padding-left:4px}.filters button{white-space:nowrap;font-size:14px;padding:7px 12px}}
+.checks{margin:28px 0 40px}
+.checks-head h3{font-size:clamp(22px,2.2vw,28px);font-weight:700;line-height:1.15}
+.checks-head p{margin-top:8px;font-size:clamp(16px,1.4vw,18px);color:#D3D6DC;max-width:60ch}
+.checks .gates{margin-top:18px}
+.checks .gate{padding-bottom:22px}
+.gates-foot .measure{flex-basis:100%;color:#D3D6DC}
+@media (max-width:860px){.checks .gate,.checks .gate+.gate{display:block}}
 </style>
 </head>
 <body>
@@ -399,6 +406,13 @@ Jacob owns the value side of AI adoption: which use cases get funded, the proof 
 
 Most companies fund AI like an IT project: pick the use case, build it, roll it out and hope people use it. That's why so much of it stalls after the pilot. AI behaves more like a portfolio of bets. You need plenty of small ones because most won't pay off, and the money should follow the evidence. Jacob releases funding in tranches, and every bet has to prove itself to get the next one. The proof needed depends on the kind of bet. At ADQ, 16 of 276 AI opportunities made it to funding, and all 16 are in use, worth $40M+ a year; most of the rest were stopped early, before the big money went in.
 
+What gets on the list: before a bet gets any money, it has to pass four checks. Jacob runs them on the work itself, workflow by workflow, with the people who do it.
+
+- Worth: what the work costs today and what it'd be worth to do it faster or better. If nobody can put a number on it, it waits.
+- Ready: whether the data exists, is good enough and can be reached, with the access and security sign-off it needs. A lot of pilots stall here.
+- Standard: whether AI can do it as well as the company's best team does now. Faster only counts if the work is as good.
+- Shared: whether it can be built once and reused across teams, business units or portfolio companies, so the second one costs far less than the first.
+
 For AI in what a company already runs, money is released in five tranches:
 
 1. Owner: a named person in the business who'll use it and answer for the result.
@@ -413,6 +427,8 @@ For something new built with AI, money is released in four tranches:
 2. Delivery: proof the company can build and run it, with the data, partners and people it needs.
 3. Numbers: unit economics that work at the price customers will pay.
 4. Scale: money to grow it, with an owner and a route into the core business or out as a spin-out.
+
+Every bet is measured the same way: a baseline before it starts, the impact after, and one report across the portfolio.
 
 ## Point of view: where this ends up
 
@@ -555,6 +571,15 @@ The site uses Jacob's work and experience to show how he could help a visitor's 
       <div class="paras"><p>Most companies fund AI like an IT project: pick a use case, build it, roll it out and hope people use it. That’s why so much stalls after the pilot.</p><p>AI behaves more like a portfolio of bets. Most won’t pay off, so you need plenty of small ones, with the money following the evidence. I release funding in tranches, and each bet has to prove itself to get the next. The proof needed depends on the kind of bet.</p></div>
     </div>
     <div class="kill"><b class="num" data-to="16">16</b><span class="of">of 276</span><p>AI opportunities at ADQ made it to funding. All 16 are in use, worth $40M+ a year. Most of the rest were stopped before the big money went in.</p></div>
+    <div class="checks" aria-labelledby="checks-title">
+      <div class="checks-head"><h3 id="checks-title">What gets on the list</h3><p>Before a bet gets any money, it has to pass four checks. I run them on the work itself, workflow by workflow, with the people who do it.</p></div>
+      <div class="gates four">
+        <div class="gate"><h3>Worth</h3><p>What the work costs today and what it’d be worth to do it faster or better. If nobody can put a number on it, it waits.</p></div>
+        <div class="gate"><h3>Ready</h3><p>Whether the data exists, is good enough and can be reached, with the access and security sign-off it needs. A lot of pilots stall here.</p></div>
+        <div class="gate"><h3>Standard</h3><p>Whether AI can do it as well as the company’s best team does now. Faster only counts if the work is as good.</p></div>
+        <div class="gate"><h3>Shared</h3><p>Whether it can be built once and reused across teams, business units or portfolio companies, so the second one costs far less than the first.</p></div>
+      </div>
+    </div>
     <div class="tracks" role="tablist" aria-label="Which kind of AI bet">
       <button type="button" role="tab" aria-selected="true" data-track="run">AI in what you already run</button>
       <button type="button" role="tab" aria-selected="false" data-track="new">Something new built with AI</button>
@@ -572,7 +597,7 @@ The site uses Jacob's work and experience to show how he could help a visitor's 
       <div class="gate"><span class="step">Tranche 3</span><h3>Numbers</h3><p>Unit economics that work at the price customers will pay.</p><div class="bar"><i style="--h:78px;--d:.2s"></i></div></div>
       <div class="gate"><span class="step">Tranche 4</span><h3>Scale</h3><p>Money to grow it, with an owner and a route into the core business or out as a spin-out.</p><div class="bar"><i style="--h:120px;--d:.3s"></i></div></div>
     </div>
-    <div class="gates-foot"><span>Money released at each tranche</span><span>The rest get stopped early and cheaply</span></div>
+    <div class="gates-foot"><span>Money released at each tranche</span><span>The rest get stopped early and cheaply</span><span class="measure">Every bet is measured the same way: a baseline before it starts, the impact after, and one report across the portfolio.</span></div>
     <figure class="shot"><div class="ph"><img src="/images/stage-copenhagen-frontier.jpg" alt="Jacob Dutton on stage at the Innovation Roundtable Summit in Copenhagen, presenting where AI is changing corporate innovation" loading="lazy" width="1800" height="1200"></div></figure>
   </div>
 </section>
