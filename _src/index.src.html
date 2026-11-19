@@ -471,7 +471,7 @@ figure.portrait .ph img{position:absolute;inset:0;width:100%;height:100%;min-hei
   <div class="wrap">
     <div class="sec-head">
       <h2 id="tailor-title" class="display">What I’d do for you.</h2>
-      <p>Name a company, group or investor, or paste a project brief or a job spec. You’ll get a short read on where AI would pay, what I’d do first and the closest work I’ve done. It’s written by AI, working only from what’s on this site.</p>
+      <p>Name a company, group or investor, or paste a project brief or a job spec. You’ll get a short read on where AI would pay, what I’d do first and the closest work I’ve done. It’s written by Claude, working only from what’s on this site.</p>
     </div>
     <div class="tmodes" role="tablist" aria-label="What are you giving me?">
       <button type="button" role="tab" aria-selected="true" data-mode="company">Organisation</button>
@@ -731,7 +731,7 @@ figure.portrait .ph img{position:absolute;inset:0;width:100%;height:100%;min-hei
       if(!d||d.error){status((d&&d.error)||'Something went wrong. Please try again.',true);return}
       out.innerHTML='';var c=el('article','tcard');c.appendChild(el('h3','',d.title||''));if(d.summary)c.appendChild(el('p','tsum',[].concat(d.summary).join(' ')));
       var g=el('div','tgrid');(order[mode]||[]).forEach(function(k){var items=d[k];if(!items||!items.length)return;var s=el('section');s.appendChild(el('h4','',labels[k]||k));var ul=el('ul');[].concat(items).forEach(function(i){ul.appendChild(el('li','',String(i)))});s.appendChild(ul);g.appendChild(s)});
-      c.appendChild(g);var f=el('div','tfoot');var a=el('a','btn','Book a call to talk it through');a.href=d.book||'https://calendarbridge.com/book/jacobdutton/home';f.appendChild(a);f.appendChild(el('small','','Written by AI from my profile, so worth checking with me.'));c.appendChild(f);out.appendChild(c);
+      c.appendChild(g);var f=el('div','tfoot');var a=el('a','btn','Book a call to talk it through');a.href=d.book||'https://calendarbridge.com/book/jacobdutton/home';f.appendChild(a);f.appendChild(el('small','','Written by Claude from my profile, so worth talking through with me.'));c.appendChild(f);out.appendChild(c);
       c.scrollIntoView({behavior:'smooth',block:'start'});
     }).catch(function(){status('I couldn’t reach the tailoring service. Please try again in a minute.',true)})
     .then(function(){go.disabled=false;go.textContent='Tailor it'});
