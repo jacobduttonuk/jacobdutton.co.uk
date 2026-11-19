@@ -73,11 +73,16 @@ nav.links a:hover{color:var(--ink)}
 .askrow .btn{align-self:flex-end;background:var(--cobalt);padding:12px 20px}
 .askrow .btn:hover{background:var(--ink)}
 .askrow .btn[disabled]{opacity:.7;cursor:wait}
+.askrow .clip{align-self:flex-end;background:none;border:0;color:var(--slate);width:44px;height:44px;border-radius:12px;cursor:pointer;display:grid;place-items:center}
+.askrow .clip:hover{color:var(--ink);background:var(--stone)}
+.askrow.drag{box-shadow:inset 0 0 0 2px var(--cobalt);background:var(--cobalt-soft)}
+html.branded figure.portrait img{filter:grayscale(1) contrast(1.08) brightness(1.04)}
+html.branded figure.portrait .ph::after{content:"";position:absolute;inset:0;background:var(--cobalt);mix-blend-mode:color;pointer-events:none;transition:background .6s}
 .askhint{margin-top:10px;font-size:14px;color:var(--slate)}
 .askhint .eg{font:inherit;font-size:14px;background:none;border:0;padding:0;color:var(--ink);text-decoration:underline;text-underline-offset:3px;cursor:pointer}
 .hero .cta{margin-top:22px}
 /* tailored state */
-.tbar{background:var(--cobalt);color:#fff;font-size:15px}
+.tbar{background:var(--cobalt);color:#fff;font-size:15px;position:sticky;top:64px;z-index:4;box-shadow:0 6px 18px -12px rgba(0,0,0,.5)}
 .tbar .wrap{display:flex;justify-content:space-between;align-items:center;gap:16px;min-height:44px;padding-top:8px;padding-bottom:8px;flex-wrap:wrap}
 .tbar a{color:#fff;font-weight:600}
 [data-t].pending{color:transparent!important;background:linear-gradient(90deg,#E4E6E0 0%,#F1F2EE 50%,#E4E6E0 100%);background-size:200% 100%;animation:shim 1.2s linear infinite;border-radius:6px}
@@ -465,12 +470,14 @@ The site can rewrite itself for a visitor's organisation (company, group or inve
       <h1 id="hero-title" class="display">AI for value creation, growth and innovation.</h1>
       <p class="lede rise d2" data-t="LEDE">I get AI working for large companies, groups and portfolios: choosing where it pays, proving it on their own work and getting people using it every week. Most recently I led innovation, R&amp;D and emerging technology across ADQ’s 20+ operating companies in Abu Dhabi.</p>
       <form class="ask rise d3" id="ask" autocomplete="off">
-        <label for="askin">Where would AI pay at your organisation?</label>
-        <div class="askrow">
-          <textarea id="askin" rows="1" maxlength="6000" placeholder="Organisation name, or paste a job spec" required></textarea>
+        <label for="askin">Where would AI pay for you?</label>
+        <div class="askrow" id="askrow">
+          <textarea id="askin" rows="1" maxlength="6000" placeholder="Organisation, project brief or job spec"></textarea>
+          <button type="button" class="clip" id="askclip" aria-label="Upload a job spec or brief (PDF, Word or text)" title="Upload a PDF, Word or text file"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M16.5 6.5v10a4.5 4.5 0 0 1-9 0V5a3 3 0 0 1 6 0v10.5a1.5 1.5 0 0 1-3 0V6.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button>
+          <input type="file" id="askfile" accept=".pdf,.docx,.txt,.md,application/pdf,text/plain,application/vnd.openxmlformats-officedocument.wordprocessingml.document" hidden>
           <button type="submit" class="btn" id="askgo">Show me</button>
         </div>
-        <p class="askhint">The page rewrites itself for you. Try <button type="button" class="eg">Mubadala</button>, <button type="button" class="eg">Unilever</button> or <button type="button" class="eg">KKR</button>.</p>
+        <p class="askhint" id="askhint">The page rewrites itself for you. Try <button type="button" class="eg">Mubadala</button>, <button type="button" class="eg">Unilever</button> or <button type="button" class="eg">KKR</button>, or upload a spec.</p>
       </form>
       <div class="cta rise d3">
         <a class="btn book" href="https://calendarbridge.com/book/jacobdutton/home">Book a call</a>
@@ -812,6 +819,20 @@ The site can rewrite itself for a visitor's organisation (company, group or inve
   var ta=document.getElementById('askin'),go=document.getElementById('askgo'),bar=document.getElementById('tbar');
   function grow(){ta.style.height='auto';ta.style.height=Math.min(ta.scrollHeight,180)+'px'}
   ta.addEventListener('input',grow);
+  var hint=document.getElementById('askhint'),clip=document.getElementById('askclip'),fin=document.getElementById('askfile'),row=document.getElementById('askrow');
+  clip.addEventListener('click',function(){fin.click()});
+  fin.addEventListener('change',function(){if(fin.files[0])useFile(fin.files[0]);fin.value=''});
+  ['dragenter','dragover'].forEach(function(t){row.addEventListener(t,function(e){e.preventDefault();row.classList.add('drag')})});
+  ['dragleave','drop'].forEach(function(t){row.addEventListener(t,function(e){e.preventDefault();row.classList.remove('drag')})});
+  row.addEventListener('drop',function(e){var f=e.dataTransfer&&e.dataTransfer.files[0];if(f)useFile(f)});
+  function loadScript(src){return new Promise(function(res,rej){var s=document.createElement('script');s.src=src;s.onload=res;s.onerror=rej;document.head.appendChild(s)})}
+  function useFile(f){
+    var n=f.name.toLowerCase();if(f.size>4.5e6){alert0('That file’s a bit big. Please use one under 4MB, or paste the text.');return}
+    alert0('Reading '+f.name+'…');
+    if(/\.pdf$/.test(n)||f.type==='application/pdf'){var r=new FileReader();r.onload=function(){var b64=String(r.result).split(',')[1];ta.value='';ta.placeholder=f.name;send('',b64)};r.readAsDataURL(f);return}
+    if(/\.docx$/.test(n)){f.arrayBuffer().then(function(ab){return (window.mammoth?Promise.resolve():loadScript('https://cdn.jsdelivr.net/npm/mammoth@1.8.0/mammoth.browser.min.js')).then(function(){return window.mammoth.extractRawText({arrayBuffer:ab})})}).then(function(o){ta.value=o.value.trim().slice(0,6000);grow();send(ta.value)}).catch(function(){alert0('I couldn’t read that Word file. Please paste the text instead.')});return}
+    f.text().then(function(t){ta.value=t.trim().slice(0,6000);grow();send(ta.value)});
+  }
   ta.addEventListener('keydown',function(e){if(e.key==='Enter'&&!e.shiftKey&&ta.value.length<120){e.preventDefault();form.requestSubmit()}});
   document.querySelectorAll('.ask .eg').forEach(function(b){b.addEventListener('click',function(){ta.value=b.textContent;grow();form.requestSubmit()})});
   var targets=['LEDE','WHAT','VALUE','VALUE_EV','GROWTH','GROWTH_EV','INNOVATION','INNOVATION_EV'];
@@ -822,7 +843,7 @@ The site can rewrite itself for a visitor's organisation (company, group or inve
   function apply(k,v){
     if(applied[k]||!v)return;applied[k]=1;
     if(targets.indexOf(k)>=0){setText(k,v);return}
-    if(k==='NAME'){q('NAME').forEach(function(e){e.textContent=v});bar.hidden=false;document.title='Jacob Dutton for '+v;return}
+    if(k==='NAME'){q('NAME').forEach(function(e){e.textContent=v});bar.hidden=false;document.title='Jacob Dutton for '+v;brandFor(v);return}
     if(k==='FIRST90'){var ol=q('FIRST90')[0];ol.innerHTML='';v.split('|').forEach(function(x){x=x.trim();if(x){var li=document.createElement('li');li.textContent=x;ol.appendChild(li)}});document.getElementById('first90').hidden=false;return}
     if(k==='CLOSEST'){var list=document.querySelector('.work-list');var parts=v.split('|').map(function(x){var i=x.indexOf('=');return[x.slice(0,i).trim().toLowerCase(),x.slice(i+1).trim()]}).filter(function(p){return p[0]});
       parts.slice().reverse().forEach(function(p){var a=list.querySelector('[data-k="'+p[0]+'"]');if(!a)return;var w=a.querySelector('.why');if(!w){w=document.createElement('p');w.className='why';var fig=a.querySelector('.fig');a.insertBefore(w,fig)}w.textContent=p[1];list.insertBefore(a,list.firstChild)});return}
@@ -831,6 +852,12 @@ The site can rewrite itself for a visitor's organisation (company, group or inve
     if(k==='CTA'){document.querySelectorAll('a.book').forEach(function(a){a.textContent=v});return}
     if(k==='ERROR'){fail(v)}
   }
+  function brandFor(name){fetch(API.replace('/tailor','/brand')+'?name='+encodeURIComponent(name)).then(function(r){return r.json()}).then(function(d){if(d&&d.color)setBrand(d.color)}).catch(function(){})}
+  function setBrand(hex){var h=hex.replace('#','');var rgb=[0,2,4].map(function(i){return parseInt(h.substr(i,2),16)/255});
+    var lin=rgb.map(function(c){return c<=.03928?c/12.92:Math.pow((c+.055)/1.055,2.4)});var L=.2126*lin[0]+.7152*lin[1]+.0722*lin[2];
+    var spread=Math.max.apply(null,rgb)-Math.min.apply(null,rgb);if(spread<.08)return;
+    var c=hex;if(L>.32){var k=Math.min(.6,(L-.2)*1.6);c='#'+rgb.map(function(x){return Math.round(x*255*(1-k)).toString(16).padStart(2,'0')}).join('')}
+    var root=document.documentElement;root.style.setProperty('--cobalt',c);root.style.setProperty('--cobalt-soft','color-mix(in srgb,'+c+' 16%,#fff)');root.classList.add('branded')}
   function fail(msg){targets.forEach(function(k){q(k).forEach(function(e){e.classList.remove('pending')})});alert0(msg)}
   function alert0(msg){var h=document.querySelector('.askhint');h.textContent=msg}
   var originals=null;
@@ -839,7 +866,7 @@ The site can rewrite itself for a visitor's organisation (company, group or inve
     applied={};targets.forEach(function(k){q(k).forEach(function(e){e.classList.add('pending')})});
     go.disabled=true;go.textContent='Rewriting';
   }
-  function done(){go.disabled=false;go.textContent='Show me';targets.forEach(function(k){if(!applied[k])q(k).forEach(function(e,i){e.classList.remove('pending');if(originals)e.innerHTML=originals[k][i]})})}
+  function done(){go.disabled=false;go.textContent='Show me';if(/^Reading /.test(hint.textContent))hint.textContent='Rewritten for you. Try another organisation, project or spec above.';targets.forEach(function(k){if(!applied[k])q(k).forEach(function(e,i){e.classList.remove('pending');if(originals)e.innerHTML=originals[k][i]})})}
   function run(req){
     start();var buf='';
     fetch(req.url,req.opts).then(function(r){
@@ -853,11 +880,13 @@ The site can rewrite itself for a visitor's organisation (company, group or inve
     function flush(final){var i;while((i=buf.indexOf('\n'))>=0){line(buf.slice(0,i));buf=buf.slice(i+1)}if(final&&buf.trim())line(buf)}
     function line(l){var m=l.match(/^([A-Z0-9_]+):\s*(.*)$/);if(m)apply(m[1],m[2].trim())}
   }
-  form.addEventListener('submit',function(e){e.preventDefault();var v=ta.value.trim();if(!v)return;
-    if(v.length<=80&&v.indexOf('\n')<0){try{history.replaceState(null,'','?for='+slug(v))}catch(err){}}
-    run({url:API,opts:{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({input:v})}});
+  function send(v,pdf){
+    if(!pdf&&v.length<=80&&v.indexOf('\n')<0){try{history.replaceState(null,'','?for='+slug(v))}catch(err){}}
+    var body={input:v};if(pdf)body.pdf=pdf;
+    run({url:API,opts:{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)}});
     document.querySelector('.hero').scrollIntoView({behavior:'smooth'});
-  });
+  }
+  form.addEventListener('submit',function(e){e.preventDefault();var v=ta.value.trim();if(!v){fin.click();return}send(v)});
   var f=new URLSearchParams(location.search).get('for');
   if(f){ta.value=f.replace(/-/g,' ');run({url:API+'?for='+encodeURIComponent(f),opts:{}})}
 })();

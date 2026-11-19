@@ -73,6 +73,7 @@ CTA: under 5 words, a book-a-call button label for them, like "Talk about Mubada
 }
 
 async function streamClaude(env, system, user, onText, attempt = 0) {
+  // user may be a string or an array of content blocks
   const r = await fetch("https://api.anthropic.com/v1/messages", {
     method: "POST",
     headers: { "x-api-key": env.ANTHROPIC_API_KEY, "anthropic-version": "2023-06-01", "content-type": "application/json" },
@@ -144,15 +145,19 @@ function valid(text) {
   return /^LEDE: .+/m.test(text) && /^VALUE: .+/m.test(text);
 }
 
-async function generate(request, env, ctx, input, cacheKey) {
+async function generate(request, env, ctx, input, cacheKey, pdf) {
   const cached = await cacheGet(env, cacheKey);
   if (cached) return new Response(cached, { headers: { ...textHeaders, "X-Tailor": "cache" } });
   if (await rateLimited(request)) return json({ error: "That's a lot for one hour. Please try again later, or just book a call." }, 429);
 
   const system = systemPrompt(await getProfile());
-  const user = `<visitor_input>\n${input}\n</visitor_input>`;
+  const text = `<visitor_input>\n${input || "(see the attached document)"}\n</visitor_input>`;
+  const user = pdf
+    ? [{ type: "document", source: { type: "base64", media_type: "application/pdf", data: pdf } }, { type: "text", text }]
+    : text;
 
   if (!env.ANTHROPIC_API_KEY) {
+    if (pdf) return json({ error: "PDF upload needs Claude. Please paste the text instead." }, 400);
     const t = await workersAI(env, system, user);
     if (valid(t)) ctx.waitUntil(cachePut(env, cacheKey, t));
     return new Response(t, { headers: textHeaders });
@@ -176,12 +181,40 @@ async function generate(request, env, ctx, input, cacheKey) {
   return new Response(readable, { headers: { ...textHeaders, "X-Tailor": "live" } });
 }
 
+async function brand(env, ctx, name) {
+  const slug = slugify(name);
+  if (!slug || !env.ANTHROPIC_API_KEY) return json({ color: null });
+  const key = `brand:${slug}`;
+  const hit = await cacheGet(env, key);
+  if (hit) return json({ color: hit === "NONE" ? null : hit, cached: true });
+  let color = "NONE";
+  try {
+    const r = await fetch("https://api.anthropic.com/v1/messages", {
+      method: "POST",
+      headers: { "x-api-key": env.ANTHROPIC_API_KEY, "anthropic-version": "2023-06-01", "content-type": "application/json" },
+      body: JSON.stringify({
+        model: env.BRAND_MODEL || "claude-haiku-5-5",
+        max_tokens: 20,
+        system: "Reply with only the primary brand colour of the named organisation as a 6-digit hex code like #E4002B, the colour most associated with its logo. Prefer a strong colour over black, white or grey where the brand uses one. If you don't know the organisation or its colour, reply NONE.",
+        messages: [{ role: "user", content: name.slice(0, 120) }],
+      }),
+    });
+    const d = await r.json();
+    const t = ((d.content || [])[0] || {}).text || "";
+    const m = t.match(/#[0-9a-fA-F]{6}/);
+    if (m) color = m[0].toUpperCase();
+  } catch {}
+  ctx.waitUntil(cachePut(env, key, color));
+  return json({ color: color === "NONE" ? null : color });
+}
+
 export default {
   async fetch(request, env, ctx) {
     const url = new URL(request.url);
     if (request.method === "OPTIONS") return new Response(null, { headers: CORS });
     if (url.pathname === "/api/health")
       return json({ ok: true, engine: env.ANTHROPIC_API_KEY ? "claude" : "workers-ai", cache: env.TAILOR ? "kv" : "edge", version: VERSION });
+    if (url.pathname === "/api/brand") return brand(env, ctx, url.searchParams.get("name") || "");
     if (url.pathname !== "/api/tailor") return json({ error: "Not found" }, 404);
 
     if (request.method === "GET") {
@@ -195,9 +228,10 @@ export default {
     let body;
     try { body = await request.json(); } catch { return json({ error: "Please send some text." }, 400); }
     const input = String(body.input || "").trim().slice(0, MAX_INPUT);
-    if (input.length < 2) return json({ error: "Please add an organisation, a job spec or a brief." }, 400);
-    const short = input.length <= 80 && !/\n/.test(input);
-    const key = short ? `${VERSION}:org:${slugify(input)}` : `${VERSION}:txt:${await sha(input)}`;
-    return generate(request, env, ctx, input, key);
+    const pdf = typeof body.pdf === "string" && body.pdf.length < 6_000_000 ? body.pdf : "";
+    if (input.length < 2 && !pdf) return json({ error: "Please add an organisation, a project or a job spec." }, 400);
+    const short = !pdf && input.length <= 80 && !/\n/.test(input);
+    const key = short ? `${VERSION}:org:${slugify(input)}` : `${VERSION}:txt:${await sha(input + pdf)}`;
+    return generate(request, env, ctx, input, key, pdf);
   },
 };
