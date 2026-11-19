@@ -62,41 +62,42 @@ nav.links a:hover{color:var(--ink)}
 @media (max-width:760px){nav.links a:not(.btn){display:none}}
 
 .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
-/* tailor */
-.tailor{background:var(--cobalt);color:#fff}
-.tailor .sec-head p{color:#E3E6FF}
-.tailor .sec-head{margin-bottom:clamp(24px,3vw,36px)}
-.tmodes{display:inline-flex;gap:4px;padding:4px;border:1px solid rgba(255,255,255,.35);border-radius:999px;flex-wrap:wrap;margin-bottom:16px}
-.tmodes button{font:inherit;font-size:15px;font-weight:600;padding:9px 16px;border-radius:999px;border:0;background:transparent;color:#E3E6FF;cursor:pointer}
-.tmodes button[aria-selected="true"]{background:#fff;color:var(--cobalt)}
-.tform{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:12px;align-items:end}
-.tform textarea{font:inherit;font-size:18px;width:100%;min-height:60px;resize:vertical;padding:16px 18px;border-radius:14px;border:0;background:#fff;color:var(--ink);line-height:1.4}
-.tform textarea::placeholder{color:#7A7F8A}
-.tform textarea:focus-visible{outline:3px solid var(--ink);outline-offset:2px}
-.tform .btn{background:var(--ink);padding:16px 24px;font-size:16px}
-.tform .btn:hover{background:#000}
-.tform .btn[disabled]{opacity:.6;cursor:wait}
-.tnote{margin-top:12px;font-size:14px;color:#C9CEFF}
-.tout{margin-top:clamp(28px,4vw,44px)}
-.tout:empty{display:none}
-.tcard{background:#fff;color:var(--ink);border-radius:18px;padding:clamp(22px,3vw,40px)}
-.tcard h3{font-size:clamp(26px,3vw,38px);font-weight:700;letter-spacing:-.02em;line-height:1.05}
-.tcard .tsum{margin-top:12px;font-size:clamp(17px,1.5vw,19px);max-width:62ch;color:var(--slate)}
-.tgrid{margin-top:26px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px 40px}
-.tgrid section h4{font-size:15px;font-weight:700;color:var(--cobalt);padding-bottom:8px;border-bottom:1px solid var(--rule)}
-.tgrid ul{list-style:none;margin-top:6px}
-.tgrid li{padding:8px 0 8px 16px;position:relative;font-size:16px;line-height:1.45}
-.tgrid li::before{content:"";position:absolute;left:0;top:16px;width:6px;height:6px;background:var(--cobalt);border-radius:1px}
-.tfoot{margin-top:26px;display:flex;flex-wrap:wrap;gap:12px;align-items:center}
-.tfoot small{color:var(--slate);font-size:13px}
-.tstatus{font-size:17px;color:#fff}
-.tstatus.err{background:#fff;color:var(--ink);padding:14px 18px;border-radius:12px;display:inline-block}
-@media (max-width:760px){.tform{grid-template-columns:1fr}.tgrid{grid-template-columns:1fr}.tmodes{display:flex;border-radius:18px}.tmodes button{flex:1 1 auto}}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+/* ask */
+.ask{margin-top:30px;max-width:620px}
+.ask label{display:block;font-weight:700;font-size:17px;margin-bottom:10px}
+.askrow{display:flex;gap:8px;background:#fff;border-radius:16px;padding:6px;box-shadow:inset 0 0 0 1.5px var(--ink)}
+.askrow:focus-within{box-shadow:inset 0 0 0 2px var(--cobalt)}
+.askrow textarea{flex:1;font:inherit;font-size:17px;border:0;outline:0;resize:none;background:transparent;padding:10px 12px;line-height:1.35;max-height:180px;color:var(--ink)}
+.askrow textarea::placeholder{color:#8A8F99}
+.askrow .btn{align-self:flex-end;background:var(--cobalt);padding:12px 20px}
+.askrow .btn:hover{background:var(--ink)}
+.askrow .btn[disabled]{opacity:.7;cursor:wait}
+.askhint{margin-top:10px;font-size:14px;color:var(--slate)}
+.askhint .eg{font:inherit;font-size:14px;background:none;border:0;padding:0;color:var(--ink);text-decoration:underline;text-underline-offset:3px;cursor:pointer}
+.hero .cta{margin-top:22px}
+/* tailored state */
+.tbar{background:var(--cobalt);color:#fff;font-size:15px}
+.tbar .wrap{display:flex;justify-content:space-between;align-items:center;gap:16px;min-height:44px;padding-top:8px;padding-bottom:8px;flex-wrap:wrap}
+.tbar a{color:#fff;font-weight:600}
+[data-t].pending{color:transparent!important;background:linear-gradient(90deg,#E4E6E0 0%,#F1F2EE 50%,#E4E6E0 100%);background-size:200% 100%;animation:shim 1.2s linear infinite;border-radius:6px}
+[data-t].pending *{visibility:hidden}
+@keyframes shim{to{background-position:-200% 0}}
+[data-t].fresh{animation:fresh 1.4s ease}
+@keyframes fresh{from{background:var(--cobalt-soft)}to{background:transparent}}
+.first90{margin-top:clamp(36px,4vw,52px);background:var(--ink);color:var(--paper);border-radius:18px;padding:clamp(22px,3vw,36px)}
+.first90 h3{font-size:clamp(22px,2.4vw,30px);font-weight:700;letter-spacing:-.01em}
+.first90 ol{margin-top:16px;list-style:none;counter-reset:s;display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.first90 li{counter-increment:s;font-size:16px;line-height:1.45;color:#D6D9E0}
+.first90 li::before{content:"Step " counter(s);display:block;font-weight:700;color:#fff;margin-bottom:6px}
+@media (max-width:760px){.first90 ol{grid-template-columns:1fr}}
+.work .why{margin-top:12px;font-size:15px;font-weight:600;color:var(--cobalt)}
+.b.top{box-shadow:inset 0 0 0 2px var(--cobalt)}
 
 /* hero */
 .hero{padding:clamp(28px,6vw,72px) 0 clamp(48px,7vw,96px)}
 .hero-grid{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(0,1fr);gap:clamp(24px,4vw,56px);align-items:stretch}
-.hero h1{font-size:clamp(46px,7.4vw,108px);text-wrap:balance}
+.hero h1{font-size:clamp(44px,6.4vw,92px);text-wrap:balance}
 .hero .lede{margin-top:clamp(22px,3vw,34px);font-size:clamp(19px,1.7vw,22px);line-height:1.45;max-width:36ch;text-wrap:pretty}
 .hero .cta{margin-top:30px;display:flex;flex-wrap:wrap;gap:12px}
 figure.portrait{position:relative;display:flex;flex-direction:column;margin:0}
@@ -282,7 +283,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 @media (max-width:440px){.top .right>.btn{display:none}.brand{font-size:19px}}
 #agent{display:none;padding:0;background:var(--ink);color:#D3D6DC;min-height:calc(100vh - 64px)}
 body.agent #agent{display:block}
-body.agent main,body.agent footer{display:none}
+body.agent main,body.agent footer,body.agent .tbar{display:none}
 body.agent header.top{background:var(--ink);border-bottom-color:#2A2E36}
 body.agent .brand{color:var(--paper)}
 body.agent nav.links a:not(.btn){color:#9AA0AB}
@@ -351,7 +352,7 @@ figure.portrait .ph img{position:absolute;inset:0;width:100%;height:100%;min-hei
         <button type="button" data-mode="human" aria-pressed="true">Human</button>
         <button type="button" data-mode="agent" aria-pressed="false">Agent</button>
       </div>
-      <a class="btn" href="https://calendarbridge.com/book/jacobdutton/home">Book a call</a>
+      <a class="btn book" href="https://calendarbridge.com/book/jacobdutton/home">Book a call</a>
     </div>
   </div>
 </header>
@@ -444,9 +445,9 @@ Clients and organisations he has worked with include Microsoft, Salesforce, HSBC
 - [How AI is changing the Chief Innovation Officer’s job](https://youtu.be/yMrx7n6AyVM): interview, 2025
 - [How corporate innovators should think about AI](https://www.innovationleader.com/thought-leadership/how-corporate-innovators-should-think-about-ai/): Innovation Leader, 2024
 
-## Tailored briefing (for agents)
+## Tailored version of this site
 
-The site can write a short tailored briefing for an organisation (company, group or investor), a project brief or a job spec. Agents can call it directly: POST https://www.jacobdutton.co.uk/api/tailor with JSON {"mode": "company" | "brief" | "job", "input": "..."}. It returns JSON with a title, summary and sections, written only from this profile.
+The site can rewrite itself for a visitor's organisation (company, group or investor), job spec or project brief, written by Claude only from this profile. Open https://www.jacobdutton.co.uk/?for=&lt;organisation&gt; (for example ?for=mubadala), or call the API: POST https://www.jacobdutton.co.uk/api/tailor with JSON {"input": "..."}, or GET https://www.jacobdutton.co.uk/api/tailor?for=&lt;organisation&gt;. It returns plain text lines (LEDE, VALUE, GROWTH, INNOVATION, FIRST90, CLOSEST and so on).
 
 ## Contact
 
@@ -456,15 +457,24 @@ The site can write a short tailored briefing for an organisation (company, group
 - LinkedIn: https://www.linkedin.com/in/jacobdutton</pre>
   </div>
 </section>
+<div class="tbar" id="tbar" hidden><div class="wrap"><span>Tailored for <b data-t="NAME"></b>, written by Claude from my record</span><a href="/" id="treset">Back to the standard site</a></div></div>
 <main>
 <section class="hero" aria-labelledby="hero-title">
   <div class="wrap hero-grid">
     <div>
       <h1 id="hero-title" class="display">AI for value creation, growth and innovation.</h1>
-      <p class="lede rise d2">I get AI working for large companies, groups and portfolios: choosing where it pays, proving it on their own work and getting people using it every week. Most recently I led innovation, R&amp;D and emerging technology across ADQ’s 20+ operating companies in Abu Dhabi.</p>
+      <p class="lede rise d2" data-t="LEDE">I get AI working for large companies, groups and portfolios: choosing where it pays, proving it on their own work and getting people using it every week. Most recently I led innovation, R&amp;D and emerging technology across ADQ’s 20+ operating companies in Abu Dhabi.</p>
+      <form class="ask rise d3" id="ask" autocomplete="off">
+        <label for="askin">Where would AI pay at your organisation?</label>
+        <div class="askrow">
+          <textarea id="askin" rows="1" maxlength="6000" placeholder="A company, group or investor, or paste a job spec" required></textarea>
+          <button type="submit" class="btn" id="askgo">Show me</button>
+        </div>
+        <p class="askhint">The page rewrites itself for you. Try <button type="button" class="eg">Mubadala</button>, <button type="button" class="eg">Unilever</button> or <button type="button" class="eg">KKR</button>.</p>
+      </form>
       <div class="cta rise d3">
-        <a class="btn" href="https://calendarbridge.com/book/jacobdutton/home">Book a call</a>
-        <a class="btn ghost" href="#tailor">What I’d do for you</a>
+        <a class="btn book" href="https://calendarbridge.com/book/jacobdutton/home">Book a call</a>
+        <a class="btn ghost" href="https://www.linkedin.com/in/jacobdutton">LinkedIn profile</a>
       </div>
     </div>
     <figure class="portrait">
@@ -486,27 +496,31 @@ The site can write a short tailored briefing for an organisation (company, group
   <div class="wrap">
     <div class="sec-head">
       <h2 id="what-title" class="display">Where I put AI to work.</h2>
-      <p>I’ve spent eighteen years working out what large companies should put money into and what they should stop. With AI, I start every piece of work with the same three questions.</p>
+      <p data-t="WHAT">I’ve spent eighteen years working out what large companies should put money into and what they should stop. With AI, I start every piece of work with the same three questions.</p>
     </div>
     <div class="lenses">
       <div class="lens">
         <h3>Value creation</h3>
         <div class="q">Where will AI save or make the most money?</div>
-        <p>Across a company, group or portfolio, I work out which AI use cases are worth funding, prove them on the business’s own work before they scale and stop the rest early. Generative AI and agents do the first pass on the evidence, from mapping the work to modelling the value, and people make the funding calls.</p>
-        <div class="ev"><b class="num">$33M</b> of a $150M fund deployed across 16 initiatives at ADQ, all now in use and worth $40M+ a year</div>
+        <p data-t="VALUE">Across a company, group or portfolio, I work out which AI use cases are worth funding, prove them on the business’s own work before they scale and stop the rest early. Generative AI and agents do the first pass on the evidence, from mapping the work to modelling the value, and people make the funding calls.</p>
+        <div class="ev" data-t="VALUE_EV"><b class="num">$33M</b> of a $150M fund deployed across 16 initiatives at ADQ, all now in use and worth $40M+ a year</div>
       </div>
       <div class="lens">
         <h3>Growth</h3>
         <div class="q">Where can AI grow what you already sell?</div>
-        <p>I find where AI lifts revenue in the products, services and channels a company already has, and get it in front of customers, from machine learning on product data to generative AI that personalises at scale. I did this for Fortune 100 clients inside an NYSE-listed holding company, and for businesses like Hilton, JCB and Walgreens.</p>
-        <div class="ev"><b>JCB</b>: AI predictive maintenance built into its heavy equipment</div>
+        <p data-t="GROWTH">I find where AI lifts revenue in the products, services and channels a company already has, and get it in front of customers, from machine learning on product data to generative AI that personalises at scale. I did this for Fortune 100 clients inside an NYSE-listed holding company, and for businesses like Hilton, JCB and Walgreens.</p>
+        <div class="ev" data-t="GROWTH_EV"><b>JCB</b>: AI predictive maintenance built into its heavy equipment</div>
       </div>
       <div class="lens">
         <h3>Innovation</h3>
         <div class="q">What new AI businesses should you build?</div>
-        <p>I build net new AI-powered ventures, products and services for large companies, from the first test with customers to a business that pays its way. I’ve done it inside IPG, through Future Foundry for clients like Mars, Microsoft and Salesforce, and in my own venture studio.</p>
-        <div class="ev"><b class="num">10</b> businesses launched at IPG, one to $20M ARR in 18 months</div>
+        <p data-t="INNOVATION">I build net new AI-powered ventures, products and services for large companies, from the first test with customers to a business that pays its way. I’ve done it inside IPG, through Future Foundry for clients like Mars, Microsoft and Salesforce, and in my own venture studio.</p>
+        <div class="ev" data-t="INNOVATION_EV"><b class="num">10</b> businesses launched at IPG, one to $20M ARR in 18 months</div>
       </div>
+    </div>
+    <div class="first90" id="first90" hidden>
+      <h3>My first 90 days at <span data-t="NAME"></span></h3>
+      <ol data-t="FIRST90"></ol>
     </div>
     <p class="remit stack">The work runs on whatever fits the job: predictive models, computer vision and physical AI, generative AI and LLMs, and agentic workflows wired into a company’s own systems and data through MCP, running headless inside a harness with evals, guardrails and a person signing off where it matters.</p>
     <p class="remit">I own the value side of AI adoption: which use cases get funded, the proof before they scale, getting people using them and the business case. I work with the CIO, CTO and CISO on platforms, data, security and model risk, and nothing gets funded that can’t clear their bar.</p>
@@ -567,26 +581,6 @@ The site can write a short tailored briefing for an organisation (company, group
   </div>
 </section>
 
-<section class="tailor" id="tailor" aria-labelledby="tailor-title">
-  <div class="wrap">
-    <div class="sec-head">
-      <h2 id="tailor-title" class="display">What I’d do for you.</h2>
-      <p>Name a company, group or investor, or paste a project brief or a job spec. You’ll get a short read on where AI would pay, what I’d do first and the closest work I’ve done. It’s written by Claude, working only from what’s on this site.</p>
-    </div>
-    <div class="tmodes" role="tablist" aria-label="What are you giving me?">
-      <button type="button" role="tab" aria-selected="true" data-mode="company">Organisation</button>
-      <button type="button" role="tab" aria-selected="false" data-mode="brief">Project brief</button>
-      <button type="button" role="tab" aria-selected="false" data-mode="job">Job spec</button>
-    </div>
-    <form class="tform" id="tform">
-      <label for="tinput" class="sr">Your organisation, brief or job spec</label>
-      <textarea id="tinput" rows="2" maxlength="6000" placeholder="A company, group or investor, like Unilever, Mubadala or KKR" required></textarea>
-      <button type="submit" class="btn" id="tgo">Tailor it</button>
-    </form>
-    <div class="tout" id="tout" aria-live="polite"></div>
-  </div>
-</section>
-
 <section id="work" aria-labelledby="work-title">
   <div class="wrap">
     <div class="sec-head">
@@ -594,32 +588,32 @@ The site can write a short tailored briefing for an organisation (company, group
       <p>My most recent work was getting AI adopted across a sovereign portfolio. My earlier work, building and testing new products and ventures for global enterprises and in my own companies, was where I learned what’s worth funding and when to stop.</p>
     </div>
     <div class="work-list">
-      <article class="work">
+      <article class="work" data-k="aucctus">
         <div class="where">Aucctus AI<small>Global Head of AI Innovation, 2026 to now</small></div>
         <p>Aucctus is an AI system for strategy, growth and innovation work in large companies. It takes on the legwork across the jobs those teams already do, from spotting what’s changing in a market to learning from what launched, and it’s built on a memory of the company that learns from every test and decision. It’s agentic: specialist agents on frontier models, connected to each client’s systems through MCP and running headless on a schedule, with people approving what matters. I lead how enterprise clients get started: mapping their work, choosing the first job where AI will earn its keep, and getting it running on their own data.</p>
         <div class="fig"><b class="num" data-to="4">4</b><span>weeks from the first session to running on a client’s own data</span></div>
       </article>
-      <article class="work">
+      <article class="work" data-k="adq">
         <div class="where">ADQ<small>SVP Innovation, R&amp;D and Emerging Technology, 2025 to 2026</small></div>
         <p>Set the function up to run AI-first across a $300B sovereign investor and its operating companies in aviation, energy, ports, logistics, food and healthcare. Generative AI and agents did the opportunity mapping, proposition generation, screening and valuation, so a small team could cover the whole portfolio. I set the investment governance, stage gates and decision rights, and led the change so the operating companies could find, prove and fund AI use cases themselves. I also designed and led the Robotics Ramp-Up, getting robotics and physical AI, from computer vision and autonomous mobile robots to inspection drones, into real operations across 19 operating companies: 23 proofs of concept, more than 100 partners brought in, and use case sessions I ran myself inside Etihad Rail, PureHealth, TAQA and Al Dahra.</p>
         <div class="fig"><b class="num" data-to="20" data-suf="+">20+</b><span>operating companies covered by one small team</span></div>
       </article>
-      <article class="work">
+      <article class="work" data-k="csv">
         <div class="where">Curzon Street Ventures<small>Co-founder and CEO, 2023 to 2025</small></div>
         <p>A place-based venture studio turning the operational problems of large companies into AI-led startups. Six ventures validated, each with a corporate partner from day one: Kaiser Permanente, BP, Grant Thornton, Boeing, GXO and HSBC. I set up the studio’s governance and investment criteria, then took the model to nine other places and partners.</p>
         <div class="fig"><b class="num" data-to="500" data-pre="$" data-suf="K">$500K</b><span>corporate sponsorship signed, 25 partners committed</span></div>
       </article>
-      <article class="work">
+      <article class="work" data-k="ff">
         <div class="where">Future Foundry<small>Co-founder and CEO, 2021 to 2025</small></div>
         <p>A business experimentation company that tests whether customers want something, whether it can be delivered and whether the numbers work, before a large company invests. We built generative AI into the testing early, from desk research and test materials to synthetic customer interviews and analysis, so clients could test far more ideas. 500+ projects tested and 50+ launched, for clients including Mars, P&amp;G, Unilever, HSBC, Microsoft and Salesforce.</p>
         <div class="fig"><b class="num">$1bn+</b><span>of spend stopped on ideas that weren’t going to work</span></div>
       </article>
-      <article class="work">
+      <article class="work" data-k="ipg">
         <div class="where">Interpublic Group<small>Managing Director, Innovation, New York, 2018 to 2021</small></div>
         <p>Built IPG’s first innovation and venture practice, with its own P&amp;L, and grew it to 50 people. We launched 10 businesses, and three raised $45M of Series A between them. We were putting machine learning into products early: predictive maintenance on JCB’s heavy equipment, AI-personalised skincare for Avon China, and custom-formulated supplements for Holland &amp; Barrett.</p>
         <div class="fig"><b class="num" data-to="20" data-pre="$" data-suf="M">$20M</b><span>ARR reached by one venture in 18 months</span></div>
       </article>
-      <article class="work">
+      <article class="work" data-k="383">
         <div class="where">383<small>Employee number one to Managing Partner, 2009 to 2018</small></div>
         <p>Grew a Birmingham product studio to 40+ people. We built the first Hive connected thermostat for British Gas and ran Hilton’s guest experience and digital product strategy for four years, including keyless room entry.</p>
         <div class="fig"><b class="num" data-to="11" data-pre="$" data-suf="M">$11M</b><span>Hive subscription revenue in year one</span></div>
@@ -720,7 +714,7 @@ The site can write a short tailored briefing for an organisation (company, group
       <p>If you’re working out where AI should pay off across a company, group or portfolio, book a time that suits you.</p>
     </div>
     <div>
-      <a class="btn" href="https://calendarbridge.com/book/jacobdutton/home">Book a call</a>
+      <a class="btn book" href="https://calendarbridge.com/book/jacobdutton/home">Book a call</a>
       <dl>
         <dt>Email</dt><dd><a href="mailto:hello@jacobdutton.co.uk">hello@jacobdutton.co.uk</a></dd>
         <dt>LinkedIn</dt><dd><a href="https://www.linkedin.com/in/jacobdutton">linkedin.com/in/jacobdutton</a></dd>
@@ -814,28 +808,58 @@ The site can write a short tailored briefing for an organisation (company, group
 <script>
 (function(){
   var API=/jacobdutton\.co\.uk$/.test(location.hostname)?'/api/tailor':'https://www.jacobdutton.co.uk/api/tailor';
-  var mode='company',form=document.getElementById('tform');if(!form)return;
-  var ta=document.getElementById('tinput'),go=document.getElementById('tgo'),out=document.getElementById('tout');
-  var ph={company:'A company, group or investor, like Unilever, Mubadala or KKR',brief:'Paste the project brief',job:'Paste the job spec'};
-  var labels={value:'Value creation',growth:'Growth',innovation:'Innovation',first90:'The first 90 days',closest:'Closest work',read:'The read',approach:'How I’d run it',prove:'What to prove first',questions:'Questions I’d ask',fit:'Where I fit'};
-  var order={company:['value','growth','innovation','first90','closest'],brief:['read','approach','prove','closest','questions'],job:['fit','first90','closest','questions']};
-  document.querySelectorAll('.tmodes button').forEach(function(b){b.addEventListener('click',function(){
-    mode=b.getAttribute('data-mode');document.querySelectorAll('.tmodes button').forEach(function(x){x.setAttribute('aria-selected',x===b?'true':'false')});
-    ta.placeholder=ph[mode];ta.rows=mode==='company'?2:6;ta.focus();});});
-  function el(t,c,txt){var e=document.createElement(t);if(c)e.className=c;if(txt!=null)e.textContent=txt;return e}
-  function status(t,err){out.innerHTML='';out.appendChild(el('p','tstatus'+(err?' err':''),t))}
-  form.addEventListener('submit',function(ev){ev.preventDefault();var v=ta.value.trim();if(!v)return;
-    go.disabled=true;go.textContent='Working on it';status('Reading what you’ve given me and matching it to my work. About 15 seconds.');
-    fetch(API,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({mode:mode,input:v})})
-    .then(function(r){return r.json()}).then(function(d){
-      if(!d||d.error){status((d&&d.error)||'Something went wrong. Please try again.',true);return}
-      out.innerHTML='';var c=el('article','tcard');c.appendChild(el('h3','',d.title||''));if(d.summary)c.appendChild(el('p','tsum',[].concat(d.summary).join(' ')));
-      var g=el('div','tgrid');(order[mode]||[]).forEach(function(k){var items=d[k];if(!items||!items.length)return;var s=el('section');s.appendChild(el('h4','',labels[k]||k));var ul=el('ul');[].concat(items).forEach(function(i){ul.appendChild(el('li','',String(i)))});s.appendChild(ul);g.appendChild(s)});
-      c.appendChild(g);var f=el('div','tfoot');var a=el('a','btn','Book a call to talk it through');a.href=d.book||'https://calendarbridge.com/book/jacobdutton/home';f.appendChild(a);f.appendChild(el('small','','Written by Claude from my profile, so worth talking through with me.'));c.appendChild(f);out.appendChild(c);
-      c.scrollIntoView({behavior:'smooth',block:'start'});
-    }).catch(function(){status('I couldn’t reach the tailoring service. Please try again in a minute.',true)})
-    .then(function(){go.disabled=false;go.textContent='Tailor it'});
+  var form=document.getElementById('ask');if(!form)return;
+  var ta=document.getElementById('askin'),go=document.getElementById('askgo'),bar=document.getElementById('tbar');
+  function grow(){ta.style.height='auto';ta.style.height=Math.min(ta.scrollHeight,180)+'px'}
+  ta.addEventListener('input',grow);
+  ta.addEventListener('keydown',function(e){if(e.key==='Enter'&&!e.shiftKey&&ta.value.length<120){e.preventDefault();form.requestSubmit()}});
+  document.querySelectorAll('.ask .eg').forEach(function(b){b.addEventListener('click',function(){ta.value=b.textContent;grow();form.requestSubmit()})});
+  var targets=['LEDE','WHAT','VALUE','VALUE_EV','GROWTH','GROWTH_EV','INNOVATION','INNOVATION_EV'];
+  function q(k){return document.querySelectorAll('[data-t="'+k+'"]')}
+  function setText(k,v){q(k).forEach(function(e){e.textContent=v;e.classList.remove('pending');e.classList.remove('fresh');void e.offsetWidth;e.classList.add('fresh')})}
+  function slug(s){return s.toLowerCase().normalize('NFKD').replace(/[̀-ͯ]/g,'').replace(/&/g,' and ').replace(/[^a-z0-9]+/g,'-').replace(/^-+|-+$/g,'').slice(0,60)}
+  var applied={};
+  function apply(k,v){
+    if(applied[k]||!v)return;applied[k]=1;
+    if(targets.indexOf(k)>=0){setText(k,v);return}
+    if(k==='NAME'){q('NAME').forEach(function(e){e.textContent=v});bar.hidden=false;document.title='Jacob Dutton for '+v;return}
+    if(k==='FIRST90'){var ol=q('FIRST90')[0];ol.innerHTML='';v.split('|').forEach(function(x){x=x.trim();if(x){var li=document.createElement('li');li.textContent=x;ol.appendChild(li)}});document.getElementById('first90').hidden=false;return}
+    if(k==='CLOSEST'){var list=document.querySelector('.work-list');var parts=v.split('|').map(function(x){var i=x.indexOf('=');return[x.slice(0,i).trim().toLowerCase(),x.slice(i+1).trim()]}).filter(function(p){return p[0]});
+      parts.slice().reverse().forEach(function(p){var a=list.querySelector('[data-k="'+p[0]+'"]');if(!a)return;var w=a.querySelector('.why');if(!w){w=document.createElement('p');w.className='why';var fig=a.querySelector('.fig');a.insertBefore(w,fig)}w.textContent=p[1];list.insertBefore(a,list.firstChild)});return}
+    if(k==='PORTFOLIO'){var g=document.querySelector('.built-grid');var names=v.split(',').map(function(x){return x.trim().toLowerCase()});
+      names.slice().reverse().forEach(function(n){[].forEach.call(g.querySelectorAll('.b'),function(c){var h=c.querySelector('h4');if(h&&h.textContent.trim().toLowerCase()===n){c.classList.add('top');g.insertBefore(c,g.firstChild)}})});return}
+    if(k==='CTA'){document.querySelectorAll('a.book').forEach(function(a){a.textContent=v});return}
+    if(k==='ERROR'){fail(v)}
+  }
+  function fail(msg){targets.forEach(function(k){q(k).forEach(function(e){e.classList.remove('pending')})});alert0(msg)}
+  function alert0(msg){var h=document.querySelector('.askhint');h.textContent=msg}
+  var originals=null;
+  function start(){
+    if(!originals){originals={};targets.forEach(function(k){originals[k]=[].map.call(q(k),function(e){return e.innerHTML})})}
+    applied={};targets.forEach(function(k){q(k).forEach(function(e){e.classList.add('pending')})});
+    go.disabled=true;go.textContent='Rewriting';
+  }
+  function done(){go.disabled=false;go.textContent='Show me';targets.forEach(function(k){if(!applied[k])q(k).forEach(function(e,i){e.classList.remove('pending');if(originals)e.innerHTML=originals[k][i]})})}
+  function run(req){
+    start();var buf='';
+    fetch(req.url,req.opts).then(function(r){
+      if(!r.ok){return r.json().then(function(d){throw new Error(d.error||'Something went wrong.')})}
+      var rd=r.body.getReader(),dec=new TextDecoder();
+      function pump(){return rd.read().then(function(x){
+        if(x.done){buf+='\n';flush(true);done();return}
+        buf+=dec.decode(x.value,{stream:true});flush(false);return pump()})}
+      return pump();
+    }).catch(function(e){done();alert0(e.message||'I couldn’t reach the rewriting service. Please try again.')});
+    function flush(final){var i;while((i=buf.indexOf('\n'))>=0){line(buf.slice(0,i));buf=buf.slice(i+1)}if(final&&buf.trim())line(buf)}
+    function line(l){var m=l.match(/^([A-Z0-9_]+):\s*(.*)$/);if(m)apply(m[1],m[2].trim())}
+  }
+  form.addEventListener('submit',function(e){e.preventDefault();var v=ta.value.trim();if(!v)return;
+    if(v.length<=80&&v.indexOf('\n')<0){try{history.replaceState(null,'','?for='+slug(v))}catch(err){}}
+    run({url:API,opts:{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({input:v})}});
+    document.querySelector('.hero').scrollIntoView({behavior:'smooth'});
   });
+  var f=new URLSearchParams(location.search).get('for');
+  if(f){ta.value=f.replace(/-/g,' ');run({url:API+'?for='+encodeURIComponent(f),opts:{}})}
 })();
 </script>
 </body>
