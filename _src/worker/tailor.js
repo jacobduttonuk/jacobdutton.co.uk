@@ -181,29 +181,34 @@ async function generate(request, env, ctx, input, cacheKey, pdf) {
   return new Response(readable, { headers: { ...textHeaders, "X-Tailor": "live" } });
 }
 
-async function brand(env, ctx, name) {
+async function brand(env, ctx, name, debug) {
   const slug = slugify(name);
   if (!slug || !env.ANTHROPIC_API_KEY) return json({ color: null });
-  const key = `brand:${slug}`;
-  const hit = await cacheGet(env, key);
-  if (hit) return json({ color: hit === "NONE" ? null : hit, cached: true });
-  let color = "NONE";
-  try {
+  const key = `brand2:${slug}`;
+  if (!debug) {
+    const hit = await cacheGet(env, key);
+    if (hit) return json({ color: hit === "NONE" ? null : hit, cached: true });
+  }
+  const ask = async (model) => {
     const r = await fetch("https://api.anthropic.com/v1/messages", {
       method: "POST",
       headers: { "x-api-key": env.ANTHROPIC_API_KEY, "anthropic-version": "2023-06-01", "content-type": "application/json" },
       body: JSON.stringify({
-        model: env.BRAND_MODEL || "claude-haiku-5-5",
-        max_tokens: 20,
-        system: "Reply with only the primary brand colour of the named organisation as a 6-digit hex code like #E4002B, the colour most associated with its logo. Prefer a strong colour over black, white or grey where the brand uses one. If you don't know the organisation or its colour, reply NONE.",
+        model,
+        max_tokens: 30,
+        system: "You know the visual identities of companies, groups, banks, airlines, investors and government bodies. Reply with only the primary brand colour of the named organisation as a 6-digit hex code like #E4002B: the main colour of its logo. Prefer a strong colour over black, white or grey where the brand uses one. Only reply NONE if you genuinely don't recognise the organisation.",
         messages: [{ role: "user", content: name.slice(0, 120) }],
       }),
     });
     const d = await r.json();
-    const t = ((d.content || [])[0] || {}).text || "";
-    const m = t.match(/#[0-9a-fA-F]{6}/);
-    if (m) color = m[0].toUpperCase();
-  } catch {}
+    return { ok: r.ok, status: r.status, text: ((d.content || [])[0] || {}).text || "", err: d.error };
+  };
+  let res = await ask(env.BRAND_MODEL || "claude-haiku-5-5");
+  if (!res.ok) res = await ask(env.CLAUDE_MODEL || "claude-sonnet-5-5");
+  if (debug) return json(res);
+  if (!res.ok) return json({ color: null });
+  const m = res.text.match(/#[0-9a-fA-F]{6}/);
+  const color = m ? m[0].toUpperCase() : "NONE";
   ctx.waitUntil(cachePut(env, key, color));
   return json({ color: color === "NONE" ? null : color });
 }
@@ -214,7 +219,7 @@ export default {
     if (request.method === "OPTIONS") return new Response(null, { headers: CORS });
     if (url.pathname === "/api/health")
       return json({ ok: true, engine: env.ANTHROPIC_API_KEY ? "claude" : "workers-ai", cache: env.TAILOR ? "kv" : "edge", version: VERSION });
-    if (url.pathname === "/api/brand") return brand(env, ctx, url.searchParams.get("name") || "");
+    if (url.pathname === "/api/brand") return brand(env, ctx, url.searchParams.get("name") || "", url.searchParams.has("debug"));
     if (url.pathname !== "/api/tailor") return json({ error: "Not found" }, 404);
 
     if (request.method === "GET") {
