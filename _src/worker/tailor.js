@@ -184,7 +184,7 @@ async function generate(request, env, ctx, input, cacheKey, pdf) {
 async function brand(env, ctx, name, debug) {
   const slug = slugify(name);
   if (!slug || !env.ANTHROPIC_API_KEY) return json({ color: null });
-  const key = `brand2:${slug}`;
+  const key = `brand3:${slug}`;
   if (!debug) {
     const hit = await cacheGet(env, key);
     if (hit) return json({ color: hit === "NONE" ? null : hit, cached: true });
@@ -195,18 +195,18 @@ async function brand(env, ctx, name, debug) {
       headers: { "x-api-key": env.ANTHROPIC_API_KEY, "anthropic-version": "2023-06-01", "content-type": "application/json" },
       body: JSON.stringify({
         model,
-        max_tokens: 30,
+        max_tokens: 400,
         system: "You know the visual identities of companies, groups, banks, airlines, investors and government bodies. Reply with only the primary brand colour of the named organisation as a 6-digit hex code like #E4002B: the main colour of its logo. Prefer a strong colour over black, white or grey where the brand uses one. Only reply NONE if you genuinely don't recognise the organisation.",
         messages: [{ role: "user", content: name.slice(0, 120) }],
       }),
     });
     const d = await r.json();
-    return { ok: r.ok, status: r.status, text: ((d.content || [])[0] || {}).text || "", err: d.error };
+    return { ok: r.ok, status: r.status, text: (d.content || []).map((c) => c.text || "").join(""), types: (d.content || []).map((c) => c.type), stop: d.stop_reason, err: d.error };
   };
   let res = await ask(env.BRAND_MODEL || "claude-haiku-5-5");
-  if (!res.ok) res = await ask(env.CLAUDE_MODEL || "claude-sonnet-5-5");
+  if (!res.ok || !res.text.trim()) res = await ask(env.CLAUDE_MODEL || "claude-sonnet-5-5");
   if (debug) return json(res);
-  if (!res.ok) return json({ color: null });
+  if (!res.ok || !res.text.trim()) return json({ color: null });
   const m = res.text.match(/#[0-9a-fA-F]{6}/);
   const color = m ? m[0].toUpperCase() : "NONE";
   ctx.waitUntil(cachePut(env, key, color));
