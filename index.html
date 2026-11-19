@@ -20,6 +20,7 @@
 <meta name="twitter:card" content="summary">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,300..900;1,62..125,300..900&display=swap" rel="stylesheet">
 <style>
 :root{
@@ -47,14 +48,13 @@ a:focus-visible,button:focus-visible{outline:3px solid var(--cobalt);outline-off
 header.top{position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--stone) 92%,transparent);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-bottom:1px solid transparent}
 header.top.scrolled{border-bottom-color:var(--rule)}
 .top .wrap{display:flex;align-items:center;justify-content:space-between;height:64px;gap:16px}
-.brand{font-weight:800;font-variation-settings:"wdth" 75;font-size:21px;text-decoration:none;letter-spacing:-.005em}
+.brand{white-space:nowrap;font-weight:800;font-variation-settings:"wdth" 75;font-size:21px;text-decoration:none;letter-spacing:-.005em}
 nav.links{display:flex;gap:28px;align-items:center}
 nav.links a{text-decoration:none;font-size:15px;color:var(--slate)}
 nav.links a:hover{color:var(--ink)}
 .btn{display:inline-flex;align-items:center;justify-content:center;background:var(--ink);color:var(--paper);text-decoration:none;font-weight:600;font-size:15px;padding:11px 18px;border-radius:999px;white-space:nowrap}
 .btn:hover{background:var(--cobalt)}
-nav.links a.btn{color:var(--paper)}
-nav.links a.btn:hover{color:#fff}
+
 .btn.ghost{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 1.5px var(--ink)}
 .btn.ghost:hover{background:var(--ink);color:var(--paper)}
 @media (max-width:760px){nav.links a:not(.btn){display:none}}
@@ -206,6 +206,41 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 .invest a{font-weight:600;color:var(--cobalt);text-underline-offset:4px}
 @media (max-width:600px){.invest{grid-template-columns:1fr;gap:8px}}
 
+/* human / agent switch */
+.mode{display:inline-flex;padding:3px;border-radius:999px;box-shadow:inset 0 0 0 1.5px var(--rule);background:var(--paper)}
+.mode button{font:inherit;font-size:14px;font-weight:600;border:0;background:transparent;color:var(--slate);padding:7px 13px;border-radius:999px;cursor:pointer;transition:background-color .25s ease,color .25s ease}
+.mode button[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
+.top .right{display:flex;align-items:center;gap:20px}
+@media (max-width:760px){.top .right{gap:10px}.mode button{padding:6px 10px;font-size:13px}.top .btn{padding:9px 13px;font-size:14px}}
+@media (max-width:440px){.top .right>.btn{display:none}.brand{font-size:19px}}
+#agent{display:none;padding:0;background:var(--ink);color:#D3D6DC;min-height:calc(100vh - 64px)}
+body.agent #agent{display:block}
+body.agent main,body.agent footer{display:none}
+body.agent header.top{background:var(--ink);border-bottom-color:#2A2E36}
+body.agent .brand{color:var(--paper)}
+body.agent nav.links a:not(.btn){color:#9AA0AB}
+body.agent .mode{background:#1F232B;box-shadow:inset 0 0 0 1.5px #3A3E47}
+body.agent .mode button{color:#9AA0AB}
+body.agent .mode button[aria-pressed="true"]{background:var(--paper);color:var(--ink)}
+body.agent .top .btn{background:var(--cobalt);color:#fff}
+.agent-bar{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;padding:28px 0 20px;border-bottom:1px solid #2A2E36}
+.agent-bar p{font-size:15px;color:#9AA0AB;max-width:60ch}
+.agent-bar .acts{display:flex;gap:10px;flex-wrap:wrap}
+.agent-bar button,.agent-bar a{font:inherit;font-size:14px;font-weight:600;border:0;border-radius:999px;padding:9px 16px;cursor:pointer;text-decoration:none;background:var(--paper);color:var(--ink)}
+.agent-bar a{background:transparent;color:var(--paper);box-shadow:inset 0 0 0 1.5px #3A3E47}
+.md{font-family:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,monospace;font-size:14.5px;line-height:1.7;white-space:pre-wrap;word-break:break-word;padding:28px 0 72px;max-width:96ch;color:#C9CCD3}
+.md .h1{color:#fff;font-weight:600;font-size:1.25em}
+.md .h2{color:#fff;font-weight:600}
+.md .bq{color:#E7E8E3}
+.md .mk{color:#6F7AE8}
+.md a{color:#9EAAF5;text-decoration:none}
+.md a:hover{text-decoration:underline}
+.md .u{color:#666C78}
+.md .caret{display:inline-block;width:.6em;height:1.1em;background:#6F7AE8;vertical-align:-.15em;animation:blink 1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+.motion body.agent .md{animation:fadein .35s ease}
+@keyframes fadein{from{opacity:0}to{opacity:1}}
+
 /* motion: everything is visible without it */
 .ph{overflow:hidden}
 .motion .rise{opacity:0;transform:translateY(16px);animation:rise .9s cubic-bezier(.2,.7,.1,1) forwards;animation-delay:.55s}
@@ -232,16 +267,94 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 <header class="top" id="top">
   <div class="wrap">
     <a class="brand" href="#top">Jacob Dutton</a>
-    <nav class="links" aria-label="Main">
-      <a href="#what">What I do</a>
-      <a href="#work">Selected work</a>
-      <a href="#record">Track record</a>
-      <a href="#writing">Talks and writing</a>
+    <div class="right">
+      <nav class="links" aria-label="Main">
+        <a href="#what">What I do</a>
+        <a href="#work">Selected work</a>
+        <a href="#record">Track record</a>
+        <a href="#writing">Talks and writing</a>
+      </nav>
+      <div class="mode" role="group" aria-label="View this site as">
+        <button type="button" data-mode="human" aria-pressed="true">Human</button>
+        <button type="button" data-mode="agent" aria-pressed="false">Agent</button>
+      </div>
       <a class="btn" href="https://calendarbridge.com/book/jacobdutton/home">Book a call</a>
-    </nav>
+    </div>
   </div>
 </header>
 
+
+<section id="agent" aria-label="This site for AI agents">
+  <div class="wrap">
+    <div class="agent-bar">
+      <p>The same page, written for AI agents and assistants. Paste it into yours, or point it at jacobdutton.co.uk/llms.txt.</p>
+      <div class="acts"><button type="button" id="copy-md">Copy as markdown</button><a href="/llms.txt">Open llms.txt</a><a href="https://calendarbridge.com/book/jacobdutton/home">Book a call</a></div>
+    </div>
+    <pre class="md" id="md"># Jacob Dutton
+
+&gt; Jacob Dutton uses AI for value creation, growth and innovation. He finds where AI creates value in large companies and investment portfolios, gets it built and gets the business using it. Based in Abu Dhabi, UAE. Former SVP Innovation, R&amp;D and Emerging Technology at ADQ, the Abu Dhabi sovereign investor, where he ran the AED 500M portfolio innovation fund across 20+ operating companies. Currently Global Head of AI Innovation at Aucctus AI.
+
+Jacob owns the value side of AI: which use cases get funded, proof before scale, adoption and governance. He works alongside the CTO or CDO, who owns the platforms and data. Roles his work fits: Chief AI Officer, head of AI value creation, portfolio value creation, chief innovation officer.
+
+## How he runs AI spend
+
+He runs AI spend like a staged fund. Each use case passes five gates, and money is released at each one:
+
+1. Baseline: what today's process costs, how long it takes and how often it's right.
+2. Owner: a named person in the business who'll use it and answer for the result.
+3. Target: the accuracy it has to reach on the company's own cases, agreed before anything is built.
+4. Supervised: a person checks the AI's work until it hits that target.
+5. Unattended: only then does it run on its own, measured on cost per correct outcome against the old way.
+
+## Selected work
+
+- ADQ (2025 to 2026), SVP Innovation, R&amp;D and Emerging Technology: set the function up to run AI-first across a $300B sovereign investor and 20+ operating companies including Etihad, TAQA, AD Ports, PureHealth, Etihad Rail and Al Dahra. Ran the AED 500M portfolio innovation fund: 276 opportunities surfaced with AI, AED 120M deployed across 16 initiatives against evidence at each of five gates. Designed and led the Robotics Ramp-Up Programme across 19 operating companies: 23 proofs of concept launched, 100+ robotics and physical AI partners brought in. Reviewed innovation capability across 13 operating companies and turned it into a three-horizon roadmap.
+- Aucctus AI (2026 to now), Global Head of AI Innovation: leads how enterprise clients get started with the platform, from the first conversation with their leadership to the first use case running on their own data.
+- Future Foundry (2021 to 2025), co-founder and CEO: business experimentation company. 500+ propositions tested and 50+ launched, a 90% launch success rate, and more than $1bn of spend stopped on ideas that weren't going to work. Built the Velocity Method, adopted inside Salesforce, Microsoft, HSBC, Mars and Hilton.
+- Curzon Street Ventures (2023 to 2025), co-founder and CEO: place-based venture studio turning the operational problems of large companies into AI-led startups. Six ventures validated with corporate partners Kaiser Permanente, BP, Grant Thornton, Boeing, GXO and HSBC. $500,000 of corporate sponsorship, 25 corporate partners.
+- Interpublic Group (2018 to 2021), Managing Director, Innovation, New York: built IPG's first innovation and venture practice to 50 people. 10 businesses launched; three raised $45M of Series A between them and one reached $20M ARR in 18 months. AI products in market since 2018, including predictive maintenance for JCB and AI-personalised skincare for Avon China.
+- 383 (2009 to 2018), employee number one to Managing Partner: grew a Birmingham product studio to 40+ people. Built the first Hive connected thermostat for British Gas, an $11M subscription business in year one.
+- Also: Expert Instructor, Innovation Management, Maven (200+ senior operators, 85 NPS). Advisory Board Member, Connected Places Catapult.
+
+Clients and organisations he has worked with include Etihad, TAQA, AD Ports, PureHealth, Mars, P&amp;G, Unilever, Reckitt, Kimberly-Clark, Novartis, Walgreens, HSBC, Capital One, Experian, Ørsted, Microsoft, Salesforce, Hilton, JCB and the USPS.
+
+## Education
+
+- Advanced Programme, Entrepreneurship and Venture Finance, Saïd Business School, University of Oxford
+- Executive MBA, Quantic School of Business and Technology
+
+## Talks and writing
+
+- [The New Corporate Innovator: how AI changes value creation in large companies](https://innovationroundtable.com/summit/): talk, Innovation Roundtable Summit, Copenhagen, 2026
+- [Don't let the inventor run the company](https://jacobdutton.substack.com/p/dont-let-the-inventor-run-the-company): article, 2026
+- [What nobody tells you about building ventures inside corporates](https://jacobdutton.substack.com/p/what-nobody-tells-you-about-building): article, 2026
+- [You're hiring innovation leaders for the wrong things](https://jacobdutton.substack.com/p/youre-hiring-innovation-leaders-for): article, 2026
+- [Retail's platform gap](https://jacobdutton.substack.com/p/retails-platform-gap): thesis, 2026
+- [Britain's innovation problem is not what we think it is](https://jacobdutton.substack.com/p/britains-innovation-problem-is-not): article, 2026
+- [The experimentation inversion](https://jacobdutton.substack.com/p/the-experimentation-inversion): article, 2026
+- [CVC's trilemma](https://jacobdutton.substack.com/p/cvcs-trilemma): article, 2026
+- [Using AI to improve innovation experiments](https://www.youtube.com/watch?v=lXW4S4bMOVk): interview, 2025
+- [The emerging and evolving role of the Chief Innovation Officer](https://youtu.be/yMrx7n6AyVM): interview, 2025
+- [The Innovators Handbook](https://innov8rs.co/wp-content/uploads/2024/12/The-Innovators-Handbook-2025.pdf): publication, Innov8rs, 2025
+- [How corporate innovators should think about AI](https://www.innovationleader.com/thought-leadership/how-corporate-innovators-should-think-about-ai/): Innovation Leader, 2024
+- [Why innovation teams fail](https://www.innovationleader.com/thought-leadership/why-innovation-teams-fail/): Innovation Leader, 2024
+- [The why and how of corporate innovation](https://youtu.be/6ddzvIo85jk): podcast, 2024
+- [How to build a corporate innovation engine](https://www.youtube.com/watch?v=8FBFC9crt2g): talk, 2023
+- [How to think like a VC and win at corporate innovation](https://www.youtube.com/watch?v=QfNFZoFOW3c): talk, 2022
+- [How to eliminate corporate innovation waste](https://www.youtube.com/watch?v=QGkd_7DTFJM): talk, 2022
+
+## Investing
+
+Angel investor writing $10K cheques into pre-seed and seed B2B software and AI companies that fix what large organisations can't fix themselves.
+
+## Contact
+
+- Website: https://www.jacobdutton.co.uk/
+- Email: hello@jacobdutton.co.uk
+- Book a call: https://calendarbridge.com/book/jacobdutton/home
+- LinkedIn: https://www.linkedin.com/in/jacobdutton</pre>
+  </div>
+</section>
 <main>
 <section class="hero" aria-labelledby="hero-title">
   <div class="wrap hero-grid">
@@ -472,6 +585,36 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
     btns.forEach(function(x){x.setAttribute('aria-pressed',x===b?'true':'false')});
     posts.forEach(function(p){p.hidden=!(f==='all'||p.getAttribute('data-kind')===f)});
   })});
+
+
+  // human / agent switch
+  var modeBtns=document.querySelectorAll('.mode button'),raw=document.getElementById('md').textContent;
+  function hl(t){
+    var esc=t.replace(/&/g,'&amp;').replace(/</g,'&lt;');
+    return esc.split('\n').map(function(l){
+      if(/^# /.test(l))return '<span class="h1"><span class="mk">#</span>'+l.slice(1)+'</span>';
+      if(/^## /.test(l))return '<span class="h2"><span class="mk">##</span>'+l.slice(2)+'</span>';
+      if(/^> /.test(l))return '<span class="bq"><span class="mk">&gt;</span>'+l.slice(1)+'</span>';
+      l=l.replace(/^(- |\d+\. )/,'<span class="mk">$1</span>');
+      l=l.replace(/\[([^\]]+)\]\((https?:[^)]+)\)/g,'<span class="mk">[</span><a href="$2">$1</a><span class="mk">]</span><span class="u">($2)</span>');
+      return l;
+    }).join('\n');
+  }
+  var md=document.getElementById('md');md.innerHTML=hl(raw)+'<span class="caret" aria-hidden="true"></span>';
+  function setMode(m,push){
+    document.body.classList.toggle('agent',m==='agent');
+    modeBtns.forEach(function(b){b.setAttribute('aria-pressed',b.getAttribute('data-mode')===m?'true':'false')});
+    if(push){try{history.replaceState(null,'',m==='agent'?'#agent':location.pathname+location.search)}catch(e){location.hash=m==='agent'?'agent':''}}
+    window.scrollTo(0,0);
+  }
+  modeBtns.forEach(function(b){b.addEventListener('click',function(){setMode(b.getAttribute('data-mode'),true)})});
+  if(location.hash==='#agent')setMode('agent',false);
+  window.addEventListener('hashchange',function(){setMode(location.hash==='#agent'?'agent':'human',false)});
+  var cp=document.getElementById('copy-md');
+  cp.addEventListener('click',function(){
+    var done=function(){cp.textContent='Copied';setTimeout(function(){cp.textContent='Copy as markdown'},1800)};
+    try{navigator.clipboard.writeText(raw).then(done,function(){cp.textContent='Select the text to copy'})}catch(e){cp.textContent='Select the text to copy'}
+  });
 
   var root=document.documentElement;
   if(!root.classList.contains('motion')||!('IntersectionObserver' in window)){root.classList.remove('motion');return}
