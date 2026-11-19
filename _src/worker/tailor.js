@@ -181,10 +181,32 @@ async function generate(request, env, ctx, input, cacheKey, pdf) {
   return new Response(readable, { headers: { ...textHeaders, "X-Tailor": "live" } });
 }
 
+function saturated(hex) {
+  const h = hex.replace("#", "");
+  const rgb = [0, 2, 4].map((i) => parseInt(h.substr(i, 2), 16) / 255);
+  return Math.max(...rgb) - Math.min(...rgb) > 0.12;
+}
+
+async function siteColour(domain) {
+  try {
+    const r = await fetch("https://" + domain.replace(/^https?:\/\//, "").replace(/\/.*$/, ""), {
+      headers: { "User-Agent": "Mozilla/5.0 (compatible; jd-tailor/1.0)" }, redirect: "follow", cf: { cacheTtl: 86400 },
+    });
+    if (!r.ok) return null;
+    const html = (await r.text()).slice(0, 300000);
+    const metas = [...html.matchAll(/<meta[^>]+(?:theme-color|msapplication-TileColor)[^>]*>/gi)].map((m) => m[0]);
+    for (const m of metas) {
+      const c = m.match(/content=["']?\s*(#[0-9a-fA-F]{6})/);
+      if (c && saturated(c[1])) return c[1].toUpperCase();
+    }
+  } catch {}
+  return null;
+}
+
 async function brand(env, ctx, name, debug) {
   const slug = slugify(name);
   if (!slug || !env.ANTHROPIC_API_KEY) return json({ color: null });
-  const key = `brand3:${slug}`;
+  const key = `brand4:${slug}`;
   if (!debug) {
     const hit = await cacheGet(env, key);
     if (hit) return json({ color: hit === "NONE" ? null : hit, cached: true });
@@ -195,22 +217,25 @@ async function brand(env, ctx, name, debug) {
       headers: { "x-api-key": env.ANTHROPIC_API_KEY, "anthropic-version": "2023-06-01", "content-type": "application/json" },
       body: JSON.stringify({
         model,
-        max_tokens: 400,
-        system: "You know the visual identities of companies, groups, banks, airlines, investors and government bodies. Reply with only the primary brand colour of the named organisation as a 6-digit hex code like #E4002B: the main colour of its logo. Prefer a strong colour over black, white or grey where the brand uses one. Only reply NONE if you genuinely don't recognise the organisation.",
+        max_tokens: 600,
+        system: "For the named organisation, reply on one line in exactly this form: domain | hex | confidence. domain is its main official website domain (like unilever.com). hex is the main colour of its logo as a 6-digit hex code, preferring a strong colour over black, white or grey. confidence is high only if you are certain of that colour, otherwise low. If you don't recognise the organisation, reply: none | none | low",
         messages: [{ role: "user", content: name.slice(0, 120) }],
       }),
     });
     const d = await r.json();
-    return { ok: r.ok, status: r.status, text: (d.content || []).map((c) => c.text || "").join(""), types: (d.content || []).map((c) => c.type), stop: d.stop_reason, err: d.error };
+    return { ok: r.ok, text: (d.content || []).map((c) => c.text || "").join("").trim(), err: d.error };
   };
   let res = await ask(env.BRAND_MODEL || "claude-haiku-5-5");
-  if (!res.ok || !res.text.trim()) res = await ask(env.CLAUDE_MODEL || "claude-sonnet-5-5");
-  if (debug) return json(res);
-  if (!res.ok || !res.text.trim()) return json({ color: null });
-  const m = res.text.match(/#[0-9a-fA-F]{6}/);
-  const color = m ? m[0].toUpperCase() : "NONE";
-  ctx.waitUntil(cachePut(env, key, color));
-  return json({ color: color === "NONE" ? null : color });
+  if (!res.ok || !res.text) res = await ask(env.CLAUDE_MODEL || "claude-sonnet-5-5");
+  if (!res.ok || !res.text) return json({ color: null });
+  const [domain = "", hexRaw = "", conf = ""] = res.text.split("|").map((s) => s.trim());
+  let color = null, source = "none";
+  if (/\./.test(domain) && domain !== "none") { color = await siteColour(domain); if (color) source = "site"; }
+  const hex = (hexRaw.match(/#[0-9a-fA-F]{6}/) || [])[0];
+  if (!color && hex && /high/i.test(conf) && saturated(hex)) { color = hex.toUpperCase(); source = "model"; }
+  if (debug) return json({ raw: res.text, color, source });
+  ctx.waitUntil(cachePut(env, key, color || "NONE"));
+  return json({ color });
 }
 
 export default {
