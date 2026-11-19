@@ -187,26 +187,50 @@ function saturated(hex) {
   return Math.max(...rgb) - Math.min(...rgb) > 0.12;
 }
 
-async function siteColour(domain) {
+async function getText(url, limit = 400000) {
   try {
-    const r = await fetch("https://" + domain.replace(/^https?:\/\//, "").replace(/\/.*$/, ""), {
-      headers: { "User-Agent": "Mozilla/5.0 (compatible; jd-tailor/1.0)" }, redirect: "follow", cf: { cacheTtl: 86400 },
-    });
-    if (!r.ok) return null;
-    const html = (await r.text()).slice(0, 300000);
-    const metas = [...html.matchAll(/<meta[^>]+(?:theme-color|msapplication-TileColor)[^>]*>/gi)].map((m) => m[0]);
-    for (const m of metas) {
-      const c = m.match(/content=["']?\s*(#[0-9a-fA-F]{6})/);
-      if (c && saturated(c[1])) return c[1].toUpperCase();
-    }
-  } catch {}
-  return null;
+    const r = await fetch(url, { headers: { "User-Agent": "Mozilla/5.0 (compatible; jd-tailor/1.0)" }, redirect: "follow", cf: { cacheTtl: 86400 } });
+    if (!r.ok) return "";
+    return (await r.text()).slice(0, limit);
+  } catch { return ""; }
+}
+
+function topHex(css) {
+  const counts = {};
+  for (const m of css.matchAll(/#([0-9a-fA-F]{6})\b/g)) {
+    const h = "#" + m[1].toUpperCase();
+    if (saturated(h)) counts[h] = (counts[h] || 0) + 1;
+  }
+  const best = Object.entries(counts).sort((x, y) => y[1] - x[1])[0];
+  return best && best[1] >= 3 ? best[0] : null;
+}
+
+async function siteColour(domain) {
+  const base = "https://" + domain.replace(/^https?:\/\//, "").replace(/\/.*$/, "");
+  const html = await getText(base);
+  if (!html) return null;
+  for (const m of html.matchAll(/<meta[^>]+(?:theme-color|msapplication-TileColor)[^>]*>/gi)) {
+    const c = m[0].match(/content=["']?\s*(#[0-9a-fA-F]{6})/);
+    if (c && saturated(c[1])) return c[1].toUpperCase();
+  }
+  const man = html.match(/<link[^>]+rel=["']?manifest["']?[^>]*>/i);
+  const manHref = man && (man[0].match(/href=["']?([^"' >]+)/) || [])[1];
+  if (manHref) {
+    const mt = await getText(new URL(manHref, base).href, 20000);
+    const c = mt.match(/"theme_color"\s*:\s*"(#[0-9a-fA-F]{6})"/);
+    if (c && saturated(c[1])) return c[1].toUpperCase();
+  }
+  let css = [...html.matchAll(/<style[^>]*>([\s\S]*?)<\/style>/gi)].map((m) => m[1]).join("\n");
+  const sheets = [...html.matchAll(/<link[^>]+rel=["']?stylesheet["']?[^>]*>/gi)]
+    .map((m) => (m[0].match(/href=["']?([^"' >]+)/) || [])[1]).filter(Boolean).slice(0, 3);
+  for (const s of sheets) css += "\n" + (await getText(new URL(s, base).href, 600000));
+  return topHex(css);
 }
 
 async function brand(env, ctx, name, debug) {
   const slug = slugify(name);
   if (!slug || !env.ANTHROPIC_API_KEY) return json({ color: null });
-  const key = `brand4:${slug}`;
+  const key = `brand5:${slug}`;
   if (!debug) {
     const hit = await cacheGet(env, key);
     if (hit) return json({ color: hit === "NONE" ? null : hit, cached: true });
@@ -231,7 +255,7 @@ async function brand(env, ctx, name, debug) {
   const [domain = "", hexRaw = "", conf = ""] = res.text.split("|").map((s) => s.trim());
   let color = null, source = "none";
   if (/\./.test(domain) && domain !== "none") { color = await siteColour(domain); if (color) source = "site"; }
-  const hex = (hexRaw.match(/#[0-9a-fA-F]{6}/) || [])[0];
+  const hex = (hexRaw.match(/#?([0-9a-fA-F]{6})/) || [])[1] ? "#" + hexRaw.match(/#?([0-9a-fA-F]{6})/)[1] : null;
   if (!color && hex && /high/i.test(conf) && saturated(hex)) { color = hex.toUpperCase(); source = "model"; }
   if (debug) return json({ raw: res.text, color, source });
   ctx.waitUntil(cachePut(env, key, color || "NONE"));
