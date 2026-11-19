@@ -5,9 +5,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Jacob Dutton</title>
 <meta name="description" content="Jacob Dutton uses AI for value creation, growth and innovation: finding where it creates value in large companies, getting it built and getting the business using it. Former SVP Innovation, R&amp;D and Emerging Technology at ADQ. Based in Abu Dhabi.">
+<script>try{if(!window.matchMedia('(prefers-reduced-motion: reduce)').matches)document.documentElement.classList.add('motion')}catch(e){}</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"ProfilePage","url":"https://www.jacobdutton.co.uk/","name":"Jacob Dutton: AI for value creation, growth and innovation","mainEntity":{"@type":"Person","name":"Jacob Dutton","url":"https://www.jacobdutton.co.uk/","image":"https://www.jacobdutton.co.uk/jacob-dutton.jpg","email":"mailto:hello@jacobdutton.co.uk","jobTitle":"Global Head of AI Innovation","worksFor":{"@type":"Organization","name":"Aucctus AI"},"description":"Jacob Dutton finds where AI creates value in large companies and investment portfolios, gets it built and gets the business using it. Former SVP Innovation, R&D and Emerging Technology at ADQ, where he ran the AED 500M portfolio innovation fund across 20+ operating companies.","address":{"@type":"PostalAddress","addressLocality":"Abu Dhabi","addressCountry":"AE"},"alumniOf":[{"@type":"CollegeOrUniversity","name":"Saïd Business School, University of Oxford"},{"@type":"CollegeOrUniversity","name":"Quantic School of Business and Technology"}],"knowsAbout":["AI value creation","AI strategy","AI transformation","AI operating models","AI governance","AI use-case prioritisation","Portfolio value creation","Stage-gated investment","Corporate innovation","Venture building","Change management and adoption"],"hasOccupation":[{"@type":"Occupation","name":"Global Head of AI Innovation, Aucctus AI"},{"@type":"Occupation","name":"SVP Innovation, R&D and Emerging Technology, ADQ"}],"sameAs":["https://www.linkedin.com/in/jacobdutton","https://jacobdutton.substack.com"]}}
+</script>
+<link rel="alternate" type="text/plain" href="/llms.txt" title="Plain-text summary for AI assistants">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="canonical" href="https://www.jacobdutton.co.uk/">
-<meta property="og:type" content="website">
+<meta property="og:type" content="profile">
 <meta property="og:title" content="Jacob Dutton: AI for value creation, growth and innovation">
 <meta property="og:description" content="I find where AI creates value in large companies and investment portfolios, get it built and get the business using it.">
 <meta property="og:url" content="https://www.jacobdutton.co.uk/">
@@ -61,7 +66,7 @@ nav.links a.btn:hover{color:#fff}
 .hero .lede{margin-top:clamp(22px,3vw,34px);font-size:clamp(19px,1.7vw,22px);line-height:1.45;max-width:36ch;text-wrap:pretty}
 .hero .cta{margin-top:30px;display:flex;flex-wrap:wrap;gap:12px}
 figure.portrait{position:relative}
-figure.portrait img{display:block;width:100%;aspect-ratio:320/408;object-fit:cover;filter:contrast(1.04)}
+figure.portrait img{display:block;width:100%;height:auto;aspect-ratio:320/408;object-fit:cover;filter:contrast(1.04)}
 figure.portrait figcaption{margin-top:12px;font-size:14px;color:var(--slate);display:flex;justify-content:space-between;gap:12px}
 @media (max-width:860px){
   .hero-grid{grid-template-columns:1fr}
@@ -100,8 +105,9 @@ h2{font-size:clamp(44px,6.6vw,96px);text-wrap:balance}
 .gate h3{margin-top:6px;font-size:clamp(26px,2.6vw,36px);font-weight:800;font-variation-settings:"wdth" 70;line-height:1}
 .gate p{margin-top:12px;font-size:15px;line-height:1.5;color:#D3D6DC;max-width:30ch}
 .gate .bar{margin-top:auto;padding-top:28px}
-.gate .bar i{display:block;background:var(--cobalt);height:var(--h);transform-origin:bottom;transform:scaleY(0);transition:transform .9s cubic-bezier(.2,.7,.1,1) var(--d)}
-.gates.in .bar i{transform:scaleY(1)}
+.gate .bar i{display:block;background:var(--cobalt);height:var(--h);transform-origin:bottom}
+.motion .gate .bar i{transform:scaleY(0);transition:transform 1s cubic-bezier(.2,.7,.1,1) var(--d)}
+.motion .gates.in .bar i{transform:scaleY(1)}
 .gates-foot{display:flex;justify-content:space-between;gap:24px;margin-top:16px;font-size:14px;color:#9AA0AB;flex-wrap:wrap}
 @media (max-width:860px){
   .gates{grid-template-columns:1fr}
@@ -200,10 +206,25 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 .invest a{font-weight:600;color:var(--cobalt);text-underline-offset:4px}
 @media (max-width:600px){.invest{grid-template-columns:1fr;gap:8px}}
 
-/* one load moment: headline lines rise */
-.rise{opacity:0;transform:translateY(18px);animation:rise .9s cubic-bezier(.2,.7,.1,1) forwards}
-.rise.d2{animation-delay:.12s}.rise.d3{animation-delay:.24s}.rise.d4{animation-delay:.36s}
+/* motion: everything is visible without it */
+.ph{overflow:hidden}
+.motion .rise{opacity:0;transform:translateY(16px);animation:rise .9s cubic-bezier(.2,.7,.1,1) forwards;animation-delay:.55s}
+.motion .rise.d3{animation-delay:.7s}
 @keyframes rise{to{opacity:1;transform:none}}
+.motion .display .w{display:inline-block;overflow:hidden;vertical-align:top;padding-bottom:.14em;margin-bottom:-.14em}
+.motion .display .w>span{display:inline-block;transform:translateY(112%);transition:transform 1s cubic-bezier(.16,.8,.2,1);transition-delay:calc(var(--i) * 60ms)}
+.motion .display.in .w>span{transform:none}
+.motion figure.portrait img{clip-path:inset(100% 0 0 0);transform:scale(1.12);transition:clip-path 1.3s cubic-bezier(.7,0,.2,1) .2s,transform 2s cubic-bezier(.2,.7,.1,1) .2s}
+.motion figure.portrait.in img{clip-path:inset(0 0 0 0);transform:none}
+.motion .proof-grid,.motion .eras,.motion .work-list,.motion .lenses,.motion .posts,.motion .invest{border-top-color:transparent;position:relative}
+.motion .proof-grid::before,.motion .eras::before,.motion .work-list::before,.motion .lenses::before,.motion .posts::before,.motion .invest::before{content:"";position:absolute;left:0;right:0;top:-2px;height:2px;background:var(--ink);transform:scaleX(0);transform-origin:left;transition:transform 1.2s cubic-bezier(.7,0,.2,1)}
+.motion .in.proof-grid::before,.motion .in.eras::before,.motion .in.work-list::before,.motion .in.lenses::before,.motion .in.posts::before,.motion .in.invest::before{transform:none}
+.motion .era .tag{opacity:0;transition:opacity .6s ease calc(.4s + var(--i,0) * 120ms)}
+.motion .eras.in .era .tag{opacity:1}
+.work{transition:background-color .3s ease}
+.work .fig b{transition:transform .5s cubic-bezier(.2,.7,.1,1)}
+@media (hover:hover){.work:hover .fig b{transform:translateX(-6px)}}
+.post .t{transition:color .2s ease}
 </style>
 </head>
 <body>
@@ -225,15 +246,15 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 <section class="hero" aria-labelledby="hero-title">
   <div class="wrap hero-grid">
     <div>
-      <h1 id="hero-title" class="display rise">AI for value creation, growth and innovation.</h1>
+      <h1 id="hero-title" class="display">AI for value creation, growth and innovation.</h1>
       <p class="lede rise d2">I find where AI creates value in large companies and investment portfolios, get it built and get the business using it. Most recently I led innovation, R&amp;D and emerging technology across ADQ’s 20+ operating companies in Abu Dhabi.</p>
       <div class="cta rise d3">
         <a class="btn" href="https://calendarbridge.com/book/jacobdutton/home">Book a call</a>
         <a class="btn ghost" href="https://www.linkedin.com/in/jacobdutton">LinkedIn profile</a>
       </div>
     </div>
-    <figure class="portrait rise d2">
-      <img src="data:image/jpeg;base64,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" alt="Jacob Dutton, seated at a table, in a black jumper and glasses">
+    <figure class="portrait">
+      <div class="ph"><img src="/jacob-dutton.jpg" width="1000" height="1275" alt="Jacob Dutton, seated at a table, in a black jumper and glasses"></div>
       <figcaption><span>Jacob Dutton</span><span>Abu Dhabi</span></figcaption>
     </figure>
   </div>
@@ -241,10 +262,10 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 
 <div class="wrap" aria-label="Headline numbers">
   <div class="proof-grid">
-    <div class="proof-item"><b class="num">AED 500M</b><span>portfolio innovation fund run at ADQ</span></div>
-    <div class="proof-item"><b class="num">276</b><span>opportunities surfaced with AI across the portfolio, 16 funded</span></div>
-    <div class="proof-item"><b class="num">500+</b><span>propositions tested, with a 90% launch success rate</span></div>
-    <div class="proof-item"><b class="num">$45M</b><span>Series A raised by ventures from the studio I built at IPG</span></div>
+    <div class="proof-item"><b class="num" data-to="500" data-pre="AED " data-suf="M">AED 500M</b><span>portfolio innovation fund run at ADQ</span></div>
+    <div class="proof-item"><b class="num" data-to="276">276</b><span>opportunities surfaced with AI across the portfolio, 16 funded</span></div>
+    <div class="proof-item"><b class="num" data-to="500" data-suf="+">500+</b><span>propositions tested, with a 90% launch success rate</span></div>
+    <div class="proof-item"><b class="num" data-to="45" data-pre="$" data-suf="M">$45M</b><span>Series A raised by ventures from the studio I built at IPG</span></div>
   </div>
 </div>
 
@@ -305,17 +326,17 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
       <article class="work">
         <div class="where">ADQ<small>SVP Innovation, R&amp;D and Emerging Technology, 2025 to 2026</small></div>
         <p>Set the function up to run AI-first across a $300B sovereign investor and its operating companies in aviation, energy, ports, logistics, food and healthcare. AI did the opportunity mapping, proposition generation, screening and valuation, so a small team could cover the whole portfolio. I set the investment governance, stage gates and decision rights, and led the change so the operating companies could find, prove and fund AI use cases themselves.</p>
-        <div class="fig"><b class="num">AED 120M</b><span>deployed across 16 initiatives from 276 opportunities</span></div>
+        <div class="fig"><b class="num" data-to="120" data-pre="AED " data-suf="M">AED 120M</b><span>deployed across 16 initiatives from 276 opportunities</span></div>
       </article>
       <article class="work">
         <div class="where">ADQ Robotics Ramp-Up<small>Designed and led at ADQ</small></div>
         <p>A programme to get robotics and physical AI into real operations across 19 operating companies. I ran the use case sessions inside the businesses myself, at Etihad Rail, PureHealth, TAQA and Al Dahra, and brought in more than 100 robotics and physical AI partners.</p>
-        <div class="fig"><b class="num">23</b><span>proofs of concept launched</span></div>
+        <div class="fig"><b class="num" data-to="23">23</b><span>proofs of concept launched</span></div>
       </article>
       <article class="work">
         <div class="where">Interpublic Group<small>Managing Director, Innovation, New York, 2018 to 2021</small></div>
         <p>Built IPG’s first innovation and venture practice, with its own P&amp;L, and grew it to 50 people. We launched 10 businesses, and three raised $45M of Series A between them. We were putting AI into products early: predictive maintenance on JCB’s heavy equipment, AI-personalised skincare for Avon China, and custom-formulated supplements for Holland &amp; Barrett.</p>
-        <div class="fig"><b class="num">$20M</b><span>ARR reached by one venture in 18 months</span></div>
+        <div class="fig"><b class="num" data-to="20" data-pre="$" data-suf="M">$20M</b><span>ARR reached by one venture in 18 months</span></div>
       </article>
       <article class="work">
         <div class="where">Future Foundry<small>Co-founder and CEO, 2021 to 2025</small></div>
@@ -325,12 +346,12 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
       <article class="work">
         <div class="where">Curzon Street Ventures<small>Co-founder and CEO, 2023 to 2025</small></div>
         <p>A place-based venture studio turning the operational problems of large companies into AI-led startups. Six ventures validated, each with a corporate partner from day one: Kaiser Permanente, BP, Grant Thornton, Boeing, GXO and HSBC. I set up the studio’s governance and investment criteria, then took the model to nine other places and partners.</p>
-        <div class="fig"><b class="num">$500K</b><span>corporate sponsorship signed, 25 partners committed</span></div>
+        <div class="fig"><b class="num" data-to="500" data-pre="$" data-suf="K">$500K</b><span>corporate sponsorship signed, 25 partners committed</span></div>
       </article>
       <article class="work">
         <div class="where">383<small>Employee number one to Managing Partner, 2009 to 2018</small></div>
         <p>Grew a Birmingham product studio to 40+ people. We built the first Hive connected thermostat for British Gas and ran Hilton’s guest experience and digital product strategy for four years, including keyless room entry.</p>
-        <div class="fig"><b class="num">$11M</b><span>Hive subscription revenue in year one</span></div>
+        <div class="fig"><b class="num" data-to="11" data-pre="$" data-suf="M">$11M</b><span>Hive subscription revenue in year one</span></div>
       </article>
     </div>
   </div>
@@ -444,16 +465,44 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
   var top=document.getElementById('top');
   function onScroll(){top.classList.toggle('scrolled',window.scrollY>8)}
   window.addEventListener('scroll',onScroll,{passive:true});onScroll();
+
   var btns=document.querySelectorAll('.filters button'),posts=document.querySelectorAll('.post');
   btns.forEach(function(b){b.addEventListener('click',function(){
     var f=b.getAttribute('data-f');
     btns.forEach(function(x){x.setAttribute('aria-pressed',x===b?'true':'false')});
     posts.forEach(function(p){p.hidden=!(f==='all'||p.getAttribute('data-kind')===f)});
   })});
-  var g=document.getElementById('gates');
-  if(!('IntersectionObserver' in window)){g.classList.add('in');return}
-  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){g.classList.add('in');io.disconnect()}})},{threshold:.35});
-  io.observe(g);
+
+  var root=document.documentElement;
+  if(!root.classList.contains('motion')||!('IntersectionObserver' in window)){root.classList.remove('motion');return}
+
+  // split display headings into words for the reveal
+  document.querySelectorAll('.display').forEach(function(h){
+    var text=h.textContent.trim();h.setAttribute('aria-label',text);
+    h.innerHTML=text.split(/\s+/).map(function(w,i){
+      var t=w.replace(/&/g,'&amp;').replace(/</g,'&lt;');
+      return '<span class="w" aria-hidden="true" style="--i:'+i+'"><span>'+t+'</span></span>';
+    }).join(' ');
+  });
+  document.querySelectorAll('.era').forEach(function(e,i){e.style.setProperty('--i',i)});
+
+  // count numbers up from zero
+  function count(el){
+    var to=+el.getAttribute('data-to'),pre=el.getAttribute('data-pre')||'',suf=el.getAttribute('data-suf')||'',t0=null,d=1400;
+    function step(t){if(!t0)t0=t;var p=Math.min(1,(t-t0)/d),e=1-Math.pow(2,-10*p);
+      el.textContent=pre+Math.round(to*(p===1?1:e))+suf;if(p<1)requestAnimationFrame(step)}
+    el.textContent=pre+'0'+suf;requestAnimationFrame(step);
+  }
+
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){
+    if(!e.isIntersecting)return;var el=e.target;io.unobserve(el);
+    el.classList.add('in');
+    if(el.hasAttribute('data-to'))count(el);
+  })},{threshold:.3,rootMargin:'0px 0px -8% 0px'});
+
+  var hero=document.getElementById('hero-title'),portrait=document.querySelector('figure.portrait');
+  requestAnimationFrame(function(){setTimeout(function(){hero.classList.add('in');portrait.classList.add('in')},80)});
+  document.querySelectorAll('.display:not(#hero-title),.gates,[data-to],.proof-grid,.eras,.work-list,.lenses,.posts,.invest').forEach(function(el){io.observe(el)});
 })();
 </script>
 </body>
