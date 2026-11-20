@@ -6,7 +6,7 @@ meta='''<link rel="icon" href="/favicon.svg?v=2" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png?v=2">
 <link rel="canonical" href="https://www.jacobdutton.co.uk/">
 <meta property="og:type" content="profile">
-<meta property="og:description" content="I get AI working for large companies, groups and investors: choosing where it pays, proving it works and scaling what does.">
+<meta property="og:description" content="I get AI working for large companies, groups and investors: figuring out where it pays, proving it works and scaling what does.">
 <meta property="og:url" content="https://www.jacobdutton.co.uk/">
 <meta property="og:image" content="https://www.jacobdutton.co.uk/jacob-dutton.jpg">
 <meta name="twitter:card" content="summary">
