@@ -145,11 +145,11 @@ h2{font-size:clamp(38px,5.2vw,76px);text-wrap:balance}
 .tm-track button[aria-selected="true"] .amt,.tm-track button.done .amt{background:var(--cobalt)}
 .tm-track button:focus-visible,.tm-kind button:focus-visible,.tm-nav button:focus-visible{outline:2px solid var(--cobalt);outline-offset:2px}
 .tm-panel{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(24px,4vw,56px);padding:clamp(24px,3vw,40px) 0 8px;border-top:1px solid #3A3E47}
-.tm.js .tm-panel{min-height:330px;animation:tmin .35s ease}
+.tm.js .tm-panel{min-height:270px;animation:tmin .35s ease}
 .tm.js .tm-panel[hidden],.tm.js .tm-items[hidden]{display:none}
 @keyframes tmin{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
 .tm-panel .step,.tm-side .lab{font-size:14px;color:#9AA0AB}
-.tm-panel h3{font-size:clamp(26px,3vw,40px);font-weight:700;line-height:1.05;margin-top:8px}
+.tm-panel h3{font-size:clamp(26px,3vw,40px);font-weight:700;line-height:1.05}
 .tm-main p{margin-top:14px;font-size:clamp(16px,1.4vw,18px);line-height:1.5;color:#D3D6DC;max-width:44ch}
 .tm-rel.none{background:transparent;border:1px solid #3A3E47;color:#C9CCD3}
 .tm-rel{display:inline-block;margin-top:18px;padding:7px 14px;border-radius:999px;background:var(--cobalt);color:#fff;font-size:14px;font-weight:600}
@@ -167,12 +167,16 @@ h2{font-size:clamp(38px,5.2vw,76px);text-wrap:balance}
 .tm-kind{display:inline-flex;gap:4px;padding:4px;border:1px solid #3A3E47;border-radius:999px;margin-bottom:14px;flex-wrap:wrap}
 .tm-kind button{font:inherit;font-size:14px;font-weight:600;padding:7px 14px;border-radius:999px;border:0;background:transparent;color:#C9CCD3;cursor:pointer}
 .tm-kind button[aria-pressed="true"]{background:var(--paper);color:var(--ink)}
-.tm-nav{display:none;justify-content:space-between;margin-top:20px}
+.tm-nav{display:none;justify-content:flex-end;margin-top:20px}
+.tm-list{list-style:none;margin:0;padding:0;border-top:1px solid #3A3E47}
+.tm-list li{display:grid;grid-template-columns:120px minmax(0,1fr);gap:16px;padding:14px 0;border-bottom:1px solid #3A3E47;align-items:baseline}
+.tm-list b{font-size:18px;font-weight:700}
+.tm-list span{font-size:16px;line-height:1.45;color:#D3D6DC}
 .tm.js .tm-nav{display:flex}
 .tm-nav button{font:inherit;font-size:15px;font-weight:600;padding:10px 18px;border-radius:999px;border:1px solid #3A3E47;background:transparent;color:var(--paper);cursor:pointer}
 .tm-nav button[disabled]{opacity:.35;cursor:default}
 .tm-nav .next{background:var(--paper);color:var(--ink);border-color:var(--paper)}
-@media (max-width:760px){.tm-track button{min-height:0;padding:12px 4px 0 0}.tm-track button+button{padding-left:8px}.tm-track .n{font-size:12px}.tm-track .name{font-size:17px;margin-bottom:10px}.tm-track .tag{display:none}.tm-track .amt{margin-top:auto}.tm-panel{grid-template-columns:1fr}.tm.js .tm-panel{min-height:0}.tm-items,.tm-items.three{grid-template-columns:1fr}.tm-kind{display:flex;border-radius:18px}.tm-kind button{flex:1 1 100%;border-radius:14px;text-align:left}}
+@media (max-width:760px){.tm-list li{grid-template-columns:96px minmax(0,1fr);gap:12px}.tm-track button{min-height:0;padding:12px 4px 0 0}.tm-track button+button{padding-left:8px}.tm-track .n{font-size:12px}.tm-track .name{font-size:17px;margin-bottom:10px}.tm-track .tag{display:none}.tm-track .amt{margin-top:auto}.tm-panel{grid-template-columns:1fr}.tm.js .tm-panel{min-height:0}.tm-items,.tm-items.three{grid-template-columns:1fr}.tm-kind{display:flex;border-radius:18px}.tm-kind button{flex:1 1 100%;border-radius:14px;text-align:left}}
 .gates{display:grid;grid-template-columns:repeat(5,1fr);gap:0;border-top:1px solid #3A3E47}
 .gate{padding:20px 18px 0 0;display:flex;flex-direction:column;min-height:100%}
 .gate+.gate{padding-left:18px;border-left:1px solid #3A3E47}
@@ -504,7 +508,7 @@ figure.portrait .ph img{position:absolute;inset:0;width:100%;height:100%;min-hei
   <div class="wrap">
     <div class="sec-head">
       <h2 id="method-title" class="display">AI should be funded like a portfolio, not a project.</h2>
-      <div class="paras"><p>Most companies fund AI as a project: pick a use case, build it, roll it out and hope people use it. That’s why so much stalls after the pilot.</p><p>I run it as a portfolio and call it the Traction Method, because the measure is AI in use and paying back, not AI launched. It has five stages, and the money only grows as the evidence does. Step through it.</p></div>
+      <div class="paras"><p>Most companies fund AI as a project: pick a use case, build it, roll it out and hope people use it. That’s why so much stalls after the pilot.</p><p>I run it as a portfolio instead: five stages, and the money only grows as the evidence does. I call it the Traction Method, because what counts is AI in use and paying back.</p></div>
     </div>
     <div class="tm" id="tm">
       <div class="tm-track" role="tablist" aria-label="The five stages of the Traction Method">
@@ -515,60 +519,41 @@ figure.portrait .ph img{position:absolute;inset:0;width:100%;height:100%;min-hei
         <button type="button" role="tab" id="tm-t5" aria-controls="tm-p5" aria-selected="false"><span class="n">Stage 5</span><span class="name">Scale</span><span class="tag">The most money</span><i class="amt" style="--h:64px"></i></button>
       </div>
       <div class="tm-panel" role="tabpanel" id="tm-p1" aria-labelledby="tm-t1">
-        <div class="tm-main"><span class="step">Stage 1 of 5</span><h3>Where could AI change the work?</h3><p>I run sessions inside the business with the people who do the work, workflow by workflow, using their own process maps and their list of what’s slow, costly or goes wrong.</p><span class="tm-rel none">Money in: none yet</span></div>
+        <div class="tm-main"><h3>Where could AI change the work?</h3><p>I run sessions inside the business with the people who do the work, workflow by workflow, using their own process maps and their list of what’s slow, costly or goes wrong.</p></div>
         <div class="tm-side"><div class="tm-fact"><b class="num">276</b><p>AI opportunities found this way across ADQ’s operating companies.</p></div></div>
       </div>
       <div class="tm-panel" role="tabpanel" id="tm-p2" aria-labelledby="tm-t2">
-        <div class="tm-main"><span class="step">Stage 2 of 5</span><h3>What’s it worth, and is it ready?</h3><p>Before a use case gets any money, it has to pass four checks. They put a value on it and name the assumption most likely to be wrong.</p><span class="tm-rel none">Money in: none yet</span></div>
-        <div class="tm-side"><div class="tm-items">
-          <div class="tm-item"><h4>Worth</h4><p>What the work costs today and what it’d be worth to do it faster or better. If nobody can put a number on it, it waits for now.</p></div>
-          <div class="tm-item"><h4>Ready</h4><p>Whether the data exists, is good enough and can be reached, with the access and security sign-off it needs. Many pilots stall here.</p></div>
-          <div class="tm-item"><h4>Standard</h4><p>Whether AI can do it as well as the company’s best team does now. Faster or cheaper only counts if the work is just as good.</p></div>
-          <div class="tm-item"><h4>Shared</h4><p>Whether it can be built once and reused across teams, business units or group companies, so the second costs far less than the first.</p></div>
-        </div></div>
+        <div class="tm-main"><h3>What’s it worth, and is it ready?</h3><p>Before a use case gets any money, it has to pass four checks. They put a value on it and name the assumption most likely to be wrong.</p></div>
+        <div class="tm-side"><ul class="tm-list">
+          <li><b>Worth</b><span>What the work costs today, and what doing it better is worth.</span></li>
+          <li><b>Ready</b><span>Whether the data exists, is good enough and can be reached.</span></li>
+          <li><b>Standard</b><span>Whether AI can do it as well as the best team does now.</span></li>
+          <li><b>Shared</b><span>Whether it can be built once and reused across the group.</span></li>
+        </ul></div>
       </div>
       <div class="tm-panel" role="tabpanel" id="tm-p3" aria-labelledby="tm-t3">
-        <div class="tm-main"><span class="step">Stage 3 of 5</span><h3>Does it work on our data?</h3><p>A little money pays for the cheapest test of that assumption, on the company’s own data and real cases. The pass mark is agreed before it starts.</p><span class="tm-rel">Money in: a little, for the test</span></div>
-        <div class="tm-side"><div class="lab">What it has to show</div>
-          <div class="tm-kind" role="group" aria-label="Which kind of AI use case"><button type="button" data-kind="run" aria-pressed="true">AI in what you already run</button><button type="button" data-kind="new" aria-pressed="false">Something new built with AI</button></div>
-          <div class="tm-items three" data-kind="run">
-            <div class="tm-item"><h4>Owner</h4><p>A named person in the business who’ll use it and answer for the result.</p></div>
-            <div class="tm-item"><h4>Baseline</h4><p>What today’s process costs, how long it takes and how often it’s right.</p></div>
-            <div class="tm-item"><h4>Target</h4><p>The accuracy it must hit on the company’s own cases, agreed up front.</p></div>
-          </div>
-          <div class="tm-items one" data-kind="new">
-            <div class="tm-item"><h4>Demand</h4><p>Evidence customers want it, from what they do and what they’ll pay for.</p></div>
-          </div>
-        </div>
+        <div class="tm-main"><h3>Does it work on our data?</h3><p>A little money pays for the cheapest test of that assumption, on the company’s own data and real cases. Three things are agreed before it starts.</p></div>
+        <div class="tm-side"><ul class="tm-list">
+          <li><b>Owner</b><span>A named person in the business who answers for the result.</span></li>
+          <li><b>Baseline</b><span>What today’s process costs, and how often it’s right.</span></li>
+          <li><b>Target</b><span>The accuracy it has to hit on the company’s own cases.</span></li>
+        </ul></div>
       </div>
       <div class="tm-panel" role="tabpanel" id="tm-p4" aria-labelledby="tm-t4">
-        <div class="tm-main"><span class="step">Stage 4 of 5</span><h3>Does it pay in live work?</h3><p>If it passes, more money pays for a supervised run in live work, measured against the baseline. It’s cleared with the CIO, CTO and CISO before it touches live systems.</p><span class="tm-rel">Money in: more, for a live run</span></div>
-        <div class="tm-side"><div class="lab">What it has to show</div>
-          <div class="tm-kind" role="group" aria-label="Which kind of AI use case"><button type="button" data-kind="run" aria-pressed="true">AI in what you already run</button><button type="button" data-kind="new" aria-pressed="false">Something new built with AI</button></div>
-          <div class="tm-items one" data-kind="run">
-            <div class="tm-item"><h4>Supervised</h4><p>A person checks the AI’s work until it hits that target, case after case.</p></div>
-          </div>
-          <div class="tm-items" data-kind="new">
-            <div class="tm-item"><h4>Delivery</h4><p>Proof the company can build and run it, with the data and partners it needs.</p></div>
-            <div class="tm-item"><h4>Numbers</h4><p>Unit economics that work at the price customers will pay, at realistic volumes.</p></div>
-          </div>
-        </div>
+        <div class="tm-main"><h3>Does it pay in live work?</h3><p>If it passes the test, more money pays for a run in live work, measured against the baseline.</p></div>
+        <div class="tm-side"><ul class="tm-list">
+          <li><b>Supervised</b><span>A person checks the AI’s work until it hits the target.</span></li>
+          <li><b>Cleared</b><span>Signed off by the CIO, CTO and CISO before it goes live.</span></li>
+          <li><b>Measured</b><span>On cost per correct outcome, against the old way.</span></li>
+        </ul></div>
       </div>
       <div class="tm-panel" role="tabpanel" id="tm-p5" aria-labelledby="tm-t5">
-        <div class="tm-main"><span class="step">Stage 5 of 5</span><h3>Where else does it apply?</h3><p>Only what’s proved gets the big money: the rollout, then reuse across teams, business units and group companies, so the second costs far less than the first.</p><span class="tm-rel">Money in: the most, for the rollout</span></div>
-        <div class="tm-side"><div class="tm-fact"><b class="num">16<small>of 276</small></b><p>made it to funding at ADQ, after 100+ went through three gates. All 16 are in use, with $40M+ of first-year savings.</p></div>
-          <div class="tm-kind" role="group" aria-label="Which kind of AI use case"><button type="button" data-kind="run" aria-pressed="true">AI in what you already run</button><button type="button" data-kind="new" aria-pressed="false">Something new built with AI</button></div>
-          <div class="tm-items one" data-kind="run">
-            <div class="tm-item"><h4>In use</h4><p>In daily use, measured on cost per correct outcome and watched for drift.</p></div>
-          </div>
-          <div class="tm-items one" data-kind="new">
-            <div class="tm-item"><h4>Scale</h4><p>Money to grow it, with an owner and a route into the core business or a spin-out.</p></div>
-          </div>
-        </div>
+        <div class="tm-main"><h3>Where else does it apply?</h3><p>Only what’s proved gets the big money: the rollout, then reuse across teams, business units and group companies, so the second costs far less than the first.</p></div>
+        <div class="tm-side"><div class="tm-fact"><b class="num">16<small>of 276</small></b><p>made it this far at ADQ. All 16 are in use, with $40M+ of first-year savings. The rest were stopped early and cheaply.</p></div></div>
       </div>
-      <div class="tm-nav"><button type="button" class="prev">Back</button><button type="button" class="next">Next: Size</button></div>
+      <div class="tm-nav"><button type="button" class="next">Next: Size</button></div>
     </div>
-    <div class="gates-foot"><span>The money only grows as the evidence does</span><span>The rest get stopped early and cheaply</span><span class="measure">Every use case is measured the same way: a baseline before it starts, the impact after, and one report across the portfolio.</span></div>
+    <div class="gates-foot"><span class="measure">Every use case is measured the same way: a baseline before it starts, the impact after, and one report across the portfolio.</span></div>
     <figure class="shot"><div class="ph"><img src="__IMG_stage-copenhagen-frontier__" alt="Jacob Dutton on stage at the Innovation Roundtable Summit in Copenhagen, presenting where AI is changing corporate innovation" loading="lazy" width="1800" height="1200"></div></figure>
   </div>
 </section>
@@ -829,14 +814,11 @@ figure.portrait .ph img{position:absolute;inset:0;width:100%;height:100%;min-hei
 </script>
 <script>
 (function(){var tm=document.getElementById('tm');if(!tm)return;tm.classList.add('js');
-var tabs=[].slice.call(tm.querySelectorAll('.tm-track [role=tab]')),panels=[].slice.call(tm.querySelectorAll('.tm-panel')),prev=tm.querySelector('.prev'),next=tm.querySelector('.next'),cur=0;
+var tabs=[].slice.call(tm.querySelectorAll('.tm-track [role=tab]')),panels=[].slice.call(tm.querySelectorAll('.tm-panel')),next=tm.querySelector('.next'),cur=0;
 var names=tabs.map(function(t){return t.querySelector('.name').textContent});
-function go(i,focus){cur=Math.max(0,Math.min(tabs.length-1,i));tabs.forEach(function(t,k){t.setAttribute('aria-selected',k===cur?'true':'false');t.tabIndex=k===cur?0:-1;t.classList.toggle('done',k<cur)});panels.forEach(function(p,k){p.hidden=k!==cur});prev.disabled=cur===0;next.disabled=cur===tabs.length-1;next.textContent=cur<tabs.length-1?'Next: '+names[cur+1]:'End';if(focus)tabs[cur].focus()}
+function go(i,focus){cur=(i+tabs.length)%tabs.length;tabs.forEach(function(t,k){t.setAttribute('aria-selected',k===cur?'true':'false');t.tabIndex=k===cur?0:-1;t.classList.toggle('done',k<cur)});panels.forEach(function(p,k){p.hidden=k!==cur});next.textContent=cur<tabs.length-1?'Next: '+names[cur+1]:'Back to the start';if(focus)tabs[cur].focus()}
 tabs.forEach(function(t,k){t.addEventListener('click',function(){go(k)});t.addEventListener('keydown',function(e){if(e.key==='ArrowRight'){e.preventDefault();go(cur+1,true)}if(e.key==='ArrowLeft'){e.preventDefault();go(cur-1,true)}})});
-prev.addEventListener('click',function(){go(cur-1)});next.addEventListener('click',function(){go(cur+1)});
-var kb=[].slice.call(tm.querySelectorAll('.tm-kind button'));
-function kind(v){kb.forEach(function(b){b.setAttribute('aria-pressed',b.getAttribute('data-kind')===v?'true':'false')});[].forEach.call(tm.querySelectorAll('.tm-items[data-kind]'),function(g){g.hidden=g.getAttribute('data-kind')!==v})}
-kb.forEach(function(b){b.addEventListener('click',function(){kind(b.getAttribute('data-kind'))})});kind('run');go(0)})();
+next.addEventListener('click',function(){go(cur+1)});go(0)})();
 </script>
 <script>
 (function(){
