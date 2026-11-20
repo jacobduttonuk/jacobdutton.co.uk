@@ -12,16 +12,16 @@ Jacob's job is deciding which AI use cases get funded, proving they work before 
 
 ## Point of view: AI should be funded like a portfolio, not a project
 
-Most companies fund AI as a project: pick the use case, build it, roll it out and hope people use it. That's why so much of it stalls after the pilot. AI behaves more like a portfolio of bets. You need plenty of small ones because most won't pay off, and the money should follow the evidence. Jacob calls the way he runs it the Traction Method: five stages (mine, size, test, prove, scale), with money released three times, to test, to prove and to scale, and each time against evidence. The proof needed depends on the kind of bet. At ADQ, 276 AI opportunities went in, 100+ went through three gates and 16 were funded, and all 16 are in use, worth $40M+ a year; most of the rest were stopped early, before the big money went in.
+Most companies fund AI as a project: pick the use case, build it, roll it out and hope people use it. That's why so much of it stalls after the pilot. AI behaves more like a portfolio of investments. You need plenty of small ones because most won't pay off, and the money should follow the evidence. Jacob calls the way he runs it the Traction Method: five stages (mine, size, test, prove, scale), with money released three times, to test, to prove and to scale, and each time against evidence. The proof needed depends on the kind of use case. At ADQ, 276 AI opportunities went in, 100+ went through three gates and 16 were funded, and all 16 are in use, worth $40M+ a year; most of the rest were stopped early, before the big money went in.
 
-What gets on the list: before a bet gets any money, it has to pass four checks. Jacob runs them on the work itself, workflow by workflow, with the people who do it.
+What gets on the list: before a use case gets any money, it has to pass four checks. Jacob runs them on the work itself, workflow by workflow, with the people who do it.
 
 - Worth: what the work costs today and what it'd be worth to do it faster or better. If nobody can put a number on it, it waits for now.
 - Ready: whether the data exists, is good enough and can be reached, with the access and security sign-off it needs. Many pilots stall here.
 - Standard: whether AI can do it as well as the company's best team does now. Faster or cheaper only counts if the work is just as good.
 - Shared: whether it can be built once and reused across teams, business units or group companies, so the second costs far less.
 
-For AI in what a company already runs, a bet has to show five things across the test, prove and scale stages:
+For AI in what a company already runs, a use case has to show five things across the test, prove and scale stages:
 
 1. Owner: a named person in the business who'll use it and answer for the result.
 2. Baseline: what today's process costs, how long it takes and how often it's right.
@@ -36,15 +36,15 @@ For something new built with AI, it has to show four:
 3. Numbers: unit economics that work at the price customers will pay.
 4. Scale: money to grow it, with an owner and a route into the core business or out as a spin-out.
 
-Every bet is measured the same way: a baseline before it starts, the impact after, and one report across the portfolio.
+Every use case is measured the same way: a baseline before it starts, the impact after, and one report across the portfolio.
 
 ## Point of view: where this ends up
 
 Over the next decade, AI will push the cost of thinking, and then of doing, towards zero. Here's what that changes for investors, companies and customers.
 
 - Investors: value moves from labour to capital, and from the company to the portfolio. As agents take on more of the work, what a business earns depends less on headcount and more on what it owns: its data, its customers and its right to act on them. The diligence question becomes how much of a company's work agents can do, and who keeps the margin when they do. Owners who fund AI across their companies as one portfolio, and share what works, will see returns build faster than those who leave each company to work it out alone.
-- Companies: when everyone runs the same models, the models stop being an advantage. The advantage moves to a company's own data, what it knows about its customers, its distribution and the record of what's worked. Companies that wire that into their agents, with clear rules on what agents can decide alone, will pull ahead of competitors using the same tools. Org charts flatten and more of the company runs like a fund, backing small bets and scaling what works.
-- Customers: customers will buy through agents, whether they're consumers or businesses. More buying will be done by agents, for consumers and for companies' procurement teams, comparing, choosing and reordering. Products have to be readable by machines, through APIs and MCP, as well as by people. Services move from billing by the hour or per user to payment on outcomes, and a brand matters most when a customer's agent has to decide who to trust.
+- Companies: when everyone runs the same models, the models stop being an advantage. The advantage moves to a company's own data, what it knows about its customers, its distribution and the record of what's worked. Companies that wire that into their agents, with clear rules on what agents can decide alone, will pull ahead of competitors using the same tools. Org charts flatten and more of the company runs like a fund, backing small investments and scaling what works.
+- Customers: customers will buy through agents, whether they're consumers or businesses. More buying will be done by agents, for consumers and for companies' procurement teams, comparing, choosing and reordering. Products have to be readable by machines, through APIs, as well as by people and their agents. Services move from billing by the hour or per user to payment on outcomes, and a brand matters most when a customer's agent has to decide who to trust.
 
 ## What he's built
 
@@ -70,7 +70,7 @@ AI-led ventures and products, each built with a large company on board from day 
 - Maven (2021 to 2025), Expert Instructor, AI and Innovation Management: 200+ senior operators taught.
 - Also: Advisory Board Member, Connected Places Catapult.
 
-Career in four eras: 2009 to 2018, before AI, connected products and digital services (383); 2018 to 2021, AI in the product, machine learning, IoT and personalisation (IPG); 2021 to 2025, AI-assisted, generative AI and LLMs (Future Foundry, Curzon Street Ventures, Maven); 2025 to now, AI-native, agents, MCP and physical AI (ADQ, Aucctus AI).
+Career in four eras: 2009 to 2018, before AI, connected products and digital services (383); 2018 to 2021, AI in the product, machine learning, IoT and personalisation (IPG); 2021 to 2025, AI-assisted, generative AI and LLMs (Future Foundry, Curzon Street Ventures, Maven); 2025 to now, AI-native, agents and physical AI (ADQ, Aucctus AI).
 
 Clients and organisations he has worked with include Microsoft, Salesforce, HSBC, Boeing, BP, Mars, P&G, Unilever, Reckitt, Kimberly-Clark, Novartis, Walgreens, Capital One, Experian, Ørsted, Hilton, JCB and the USPS.
 
