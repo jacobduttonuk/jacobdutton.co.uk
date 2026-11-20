@@ -16,10 +16,10 @@ Most companies fund AI as a project: pick the use case, build it, roll it out an
 
 What gets on the list: before a bet gets any money, it has to pass four checks. Jacob runs them on the work itself, workflow by workflow, with the people who do it.
 
-- Worth: what the work costs today and what it'd be worth to do it faster or better. If nobody can put a number on it, it waits.
-- Ready: whether the data exists, is good enough and can be reached, with the access and security sign-off it needs. A lot of pilots stall here.
-- Standard: whether AI can do it as well as the company's best team does now. Faster only counts if the work is as good.
-- Shared: whether it can be built once and reused across teams, business units or portfolio companies, so the second one costs far less than the first.
+- Worth: what the work costs today and what it'd be worth to do it faster or better. If nobody can put a number on it, it waits for now.
+- Ready: whether the data exists, is good enough and can be reached, with the access and security sign-off it needs. Many pilots stall here.
+- Standard: whether AI can do it as well as the company's best team does now. Faster or cheaper only counts if the work is just as good.
+- Shared: whether it can be built once and reused across teams, business units or group companies, so the second costs far less.
 
 For AI in what a company already runs, money is released in five tranches:
 
@@ -42,9 +42,9 @@ Every bet is measured the same way: a baseline before it starts, the impact afte
 
 Over the next decade, AI will push the cost of thinking, and then of doing, towards zero. Here's what that changes for investors, companies and customers.
 
-- Investors: value moves from labour to capital, and from the company to the portfolio. As agents take on more of the work, what a business earns depends less on headcount and more on what it owns: its data, its customers and its right to act on them. The diligence question becomes how much of a company's work agents can do, and who keeps the margin when they do. Owners who fund AI across their companies as one portfolio and share what works between them will see the returns build. Leaving each company to work it out alone is slower and costs more.
-- Companies: when everyone runs the same models, the models stop being an advantage. The advantage moves to a company's own data, what it knows about its customers, its distribution and the record of what's worked. Companies that wire that into their agents, with clear rules on what agents can decide alone, will pull ahead of competitors using the same tools. Org charts flatten and more of the company runs like a fund.
-- Customers: customers will buy through agents, whether they're consumers or businesses. More buying will be done by agents, for consumers and for companies' procurement teams, comparing, choosing and reordering for them. Products and services have to be readable by machines, through APIs and MCP, as well as by people. Services move from billing by the hour or per user to payment on outcomes, and a brand matters most when a customer's agent has to decide who to trust.
+- Investors: value moves from labour to capital, and from the company to the portfolio. As agents take on more of the work, what a business earns depends less on headcount and more on what it owns: its data, its customers and its right to act on them. The diligence question becomes how much of a company's work agents can do, and who keeps the margin when they do. Owners who fund AI across their companies as one portfolio, and share what works, will see returns build faster than those who leave each company to work it out alone.
+- Companies: when everyone runs the same models, the models stop being an advantage. The advantage moves to a company's own data, what it knows about its customers, its distribution and the record of what's worked. Companies that wire that into their agents, with clear rules on what agents can decide alone, will pull ahead of competitors using the same tools. Org charts flatten and more of the company runs like a fund, backing small bets and scaling what works.
+- Customers: customers will buy through agents, whether they're consumers or businesses. More buying will be done by agents, for consumers and for companies' procurement teams, comparing, choosing and reordering. Products have to be readable by machines, through APIs and MCP, as well as by people. Services move from billing by the hour or per user to payment on outcomes, and a brand matters most when a customer's agent has to decide who to trust.
 
 ## What he's built
 
