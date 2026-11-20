@@ -435,6 +435,44 @@ section{padding:clamp(56px,8vw,112px) 0}
   .lens h3,.b h4,.tm-panel h3{font-size:26px}
   .proof-item b{font-size:36px}
 }
+/* detail pass */
+.what-sec{background:var(--stone)}
+#work{background:var(--stone)}
+.outlook{background:var(--paper)}
+#built{background:var(--stone);border-top:0}
+#writing{background:var(--paper)}
+.band-wrap{background:var(--paper);padding-bottom:clamp(56px,8vw,112px)}
+.talk-grid{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(28px,4vw,56px);align-items:start}
+.talk-grid .shot{margin:0}
+.shot.talk .ph{aspect-ratio:3/2}
+.shot.talk img{object-position:50% 50%}
+.built-grid{grid-template-columns:repeat(2,1fr)}
+.b:not(:nth-child(4n+1)){padding-left:0;border-left:0}
+.b:nth-child(2n){padding-left:32px;border-left:1px solid var(--rule)}
+.b{padding-right:32px}
+.b p{max-width:48ch}
+@media (max-width:860px){
+  .talk-grid{grid-template-columns:1fr}
+  .talk-grid .shot{margin-bottom:8px}
+  .built-grid{grid-template-columns:1fr}
+  .b,.b:nth-child(2n){padding:20px 0;border-left:0}
+  .tm-track .n{display:none}
+  .tm-track .name{font-size:16px;margin-top:2px}
+  .tm.js .tm-nav{justify-content:stretch}
+  .tm-nav button{width:100%}
+}
+@media (max-width:860px) and (max-height:700px){
+  figure.portrait .ph{aspect-ratio:21/9}
+  .hero h1{font-size:32px}
+  .hero .lede{font-size:17px;margin-top:10px}
+  .hero .ask{margin-top:14px}
+  .ask label{margin-bottom:8px}
+}
+@media (max-width:860px) and (max-height:600px){
+  figure.portrait .ph{aspect-ratio:3/1}
+  .hero h1{font-size:30px}
+  .hero{padding-top:8px}
+}
 </style>
 </head>
 <body>
@@ -807,7 +845,7 @@ The site uses Jacob's work and experience to show how he could help a visitor's 
   </div>
 </section>
 
-<div class="wrap"><figure class="shot band"><div class="ph"><img src="/images/stage-copenhagen-close.jpg" alt="Jacob Dutton speaking at the Innovation Roundtable Summit, Copenhagen" loading="lazy" width="1800" height="1200"></div></figure></div>
+<div class="band-wrap"><div class="wrap"><figure class="shot band"><div class="ph"><img src="/images/stage-copenhagen-close.jpg" alt="Jacob Dutton speaking at the Innovation Roundtable Summit, Copenhagen" loading="lazy" width="1800" height="1200"></div></figure></div></div>
 
 <section id="built" aria-labelledby="built-title">
   <div class="wrap">
@@ -835,7 +873,9 @@ The site uses Jacob's work and experience to show how he could help a visitor's 
       <h2 id="writing-title" class="display">Talks and writing.</h2>
       <p>On getting AI to pay off for large companies, groups and investors, and what it changes about how they decide what to fund.</p>
     </div>
-    <figure class="shot talk" style="margin:0 0 40px"><div class="ph"><img src="/images/stage-copenhagen-wide.jpg" alt="Jacob Dutton on stage at the Innovation Roundtable Summit 2026, Copenhagen" loading="lazy" width="1800" height="1200"></div></figure>
+    <div class="talk-grid">
+    <figure class="shot talk"><div class="ph"><img src="/images/stage-copenhagen-wide.jpg" alt="Jacob Dutton on stage at the Innovation Roundtable Summit 2026, Copenhagen" loading="lazy" width="1800" height="1200"></div></figure>
+    <div>
     <div class="filters" role="group" aria-label="Show">
       <button type="button" data-f="all" aria-pressed="true">Everything</button>
       <button type="button" data-f="talk" aria-pressed="false">Talks and interviews</button>
@@ -848,6 +888,8 @@ The site uses Jacob's work and experience to show how he could help a visitor's 
       <a class="post" data-kind="talk" href="https://www.youtube.com/watch?v=lXW4S4bMOVk"><span class="y num">2025</span><span class="k">Interview</span><span class="t">AI makes innovation experiments faster and cheaper</span></a>
       <a class="post" data-kind="talk" href="https://youtu.be/yMrx7n6AyVM"><span class="y num">2025</span><span class="k">Interview</span><span class="t">How AI is changing the Chief Innovation Officer’s job</span></a>
       <a class="post" data-kind="writing" href="https://www.innovationleader.com/thought-leadership/how-corporate-innovators-should-think-about-ai/"><span class="y num">2024</span><span class="k">Article</span><span class="t">How corporate innovators should think about AI <small>Innovation Leader</small></span></a>
+    </div>
+    </div>
     </div>
   </div>
 </section>
