@@ -159,7 +159,7 @@ h2{font-size:clamp(38px,5.2vw,76px);text-wrap:balance}
 .kill b{font-size:clamp(56px,7vw,96px);font-weight:700;line-height:.9;color:var(--paper)}
 .kill .of{font-size:clamp(22px,2.4vw,30px);font-weight:700;color:#9AA0AB}
 .kill p{flex:1 1 280px;font-size:clamp(17px,1.5vw,20px);color:#D3D6DC;max-width:44ch}
-.tracks{display:inline-flex;gap:4px;margin:clamp(32px,4vw,48px) 0 18px;padding:4px;border:1px solid #3A3E47;border-radius:999px;flex-wrap:wrap}
+.tracks{display:inline-flex;gap:4px;margin:18px 0 18px;padding:4px;border:1px solid #3A3E47;border-radius:999px;flex-wrap:wrap}
 .tracks button{font:inherit;font-size:15px;font-weight:600;padding:9px 16px;border-radius:999px;border:0;background:transparent;color:#C9CCD3;cursor:pointer}
 .tracks button[aria-selected="true"]{background:var(--paper);color:var(--ink)}
 .tracks button:focus-visible{outline:2px solid var(--cobalt);outline-offset:2px}
@@ -407,7 +407,7 @@ Jacob's job is deciding which AI use cases get funded, proving they work before 
 
 ## Point of view: AI should be funded like a portfolio, not a project
 
-Most companies fund AI as a project: pick the use case, build it, roll it out and hope people use it. That's why so much of it stalls after the pilot. AI behaves more like a portfolio of bets. You need plenty of small ones because most won't pay off, and the money should follow the evidence. Jacob releases funding in tranches, and every bet has to prove itself to get the next one. The proof needed depends on the kind of bet. At ADQ, 16 of 276 AI opportunities made it to funding, and all 16 are in use, worth $40M+ a year; most of the rest were stopped early, before the big money went in.
+Most companies fund AI as a project: pick the use case, build it, roll it out and hope people use it. That's why so much of it stalls after the pilot. AI behaves more like a portfolio of bets. You need plenty of small ones because most won't pay off, and the money should follow the evidence. Jacob calls the way he runs it the Release Method: five stages (mine, size, test, prove, scale), with money released three times, to test, to prove and to scale, and each time against evidence. The proof needed depends on the kind of bet. At ADQ, 276 AI opportunities went in, 100+ went through three gates and 16 were funded, and all 16 are in use, worth $40M+ a year; most of the rest were stopped early, before the big money went in.
 
 What gets on the list: before a bet gets any money, it has to pass four checks. Jacob runs them on the work itself, workflow by workflow, with the people who do it.
 
@@ -416,7 +416,7 @@ What gets on the list: before a bet gets any money, it has to pass four checks. 
 - Standard: whether AI can do it as well as the company's best team does now. Faster or cheaper only counts if the work is just as good.
 - Shared: whether it can be built once and reused across teams, business units or group companies, so the second costs far less.
 
-For AI in what a company already runs, money is released in five tranches:
+For AI in what a company already runs, a bet has to show five things across the test, prove and scale stages:
 
 1. Owner: a named person in the business who'll use it and answer for the result.
 2. Baseline: what today's process costs, how long it takes and how often it's right.
@@ -424,7 +424,7 @@ For AI in what a company already runs, money is released in five tranches:
 4. Supervised: a person checks the AI's work until it hits that target, case after case.
 5. In use: it's part of the normal week, on its own or with a person in the loop, measured on cost per correct outcome against the old way and watched for drift from then on.
 
-For something new built with AI, money is released in four tranches:
+For something new built with AI, it has to show four:
 
 1. Demand: evidence customers want it, from what they do.
 2. Delivery: proof the company can build and run it, with the data, partners and people it needs.
@@ -571,11 +571,21 @@ The site uses Jacob's work and experience to show how he could help a visitor's 
   <div class="wrap">
     <div class="sec-head">
       <h2 id="method-title" class="display">AI should be funded like a portfolio, not a project.</h2>
-      <div class="paras"><p>Most companies fund AI as a project: pick a use case, build it, roll it out and hope people use it. That’s why so much stalls after the pilot.</p><p>AI behaves more like a portfolio of bets. Most won’t pay off, so you need plenty of small ones, with the money following the evidence. I release funding in tranches, and each bet has to prove itself to get the next. The proof needed depends on the kind of bet.</p></div>
+      <div class="paras"><p>Most companies fund AI as a project: pick a use case, build it, roll it out and hope people use it. That’s why so much stalls after the pilot.</p><p>AI behaves more like a portfolio of bets. Most won’t pay off, so you need plenty of small ones, with the money following the evidence. I call the way I run it the Release Method: five stages, with money released three times, each time against evidence.</p></div>
     </div>
-    <div class="kill"><b class="num" data-to="16">16</b><span class="of">of 276</span><p>AI opportunities at ADQ made it to funding. All 16 are in use, worth $40M+ a year. Most of the rest were stopped before the big money went in.</p></div>
+    <div class="kill"><b class="num" data-to="16">16</b><span class="of">of 276</span><p>AI opportunities at ADQ made it to funding, after 100+ went through three gates. All 16 are in use, worth $40M+ a year. The rest were stopped before the big money went in.</p></div>
+    <div class="checks" aria-labelledby="stages-title">
+      <div class="checks-head"><h3 id="stages-title">The Release Method</h3><p>Every bet goes through the same five stages. Nothing gets the next release of money on a business case alone.</p></div>
+      <div class="gates">
+        <div class="gate"><span class="step">Stage 1</span><h3>Mine</h3><p>Sessions inside the business, workflow by workflow, to find where AI could change the work.</p></div>
+        <div class="gate"><span class="step">Stage 2</span><h3>Size</h3><p>Four checks put a value on each one and name the assumption most likely to be wrong.</p></div>
+        <div class="gate"><span class="step">Stage 3 · Release 1</span><h3>Test</h3><p>A small release funds the cheapest test of that assumption, on the company’s own data.</p></div>
+        <div class="gate"><span class="step">Stage 4 · Release 2</span><h3>Prove</h3><p>A bigger release funds a supervised run in live work, measured against the baseline.</p></div>
+        <div class="gate"><span class="step">Stage 5 · Release 3</span><h3>Scale</h3><p>The largest release funds the rollout, then reuse across teams and group companies.</p></div>
+      </div>
+    </div>
     <div class="checks" aria-labelledby="checks-title">
-      <div class="checks-head"><h3 id="checks-title">What gets on the list</h3><p>Before a bet gets any money, it has to pass four checks. I run them on the work itself, workflow by workflow, with the people who do it.</p></div>
+      <div class="checks-head"><h3 id="checks-title">Stage 2: what gets on the list</h3><p>Before a bet gets any money, it has to pass four checks. I run them on the work itself, workflow by workflow, with the people who do it.</p></div>
       <div class="gates four">
         <div class="gate"><h3>Worth</h3><p>What the work costs today and what it’d be worth to do it faster or better. If nobody can put a number on it, it waits for now.</p></div>
         <div class="gate"><h3>Ready</h3><p>Whether the data exists, is good enough and can be reached, with the access and security sign-off it needs. Many pilots stall here.</p></div>
@@ -583,24 +593,25 @@ The site uses Jacob's work and experience to show how he could help a visitor's 
         <div class="gate"><h3>Shared</h3><p>Whether it can be built once and reused across teams, business units or group companies, so the second costs far less.</p></div>
       </div>
     </div>
+    <div class="checks-head"><h3>Stages 3 to 5: what a bet has to show</h3><p>The proof needed depends on the kind of bet.</p></div>
     <div class="tracks" role="tablist" aria-label="Which kind of AI bet">
       <button type="button" role="tab" aria-selected="true" data-track="run">AI in what you already run</button>
       <button type="button" role="tab" aria-selected="false" data-track="new">Something new built with AI</button>
     </div>
     <div class="gates" id="gates" data-track="run">
-      <div class="gate"><span class="step">Tranche 1</span><h3>Owner</h3><p>A named person in the business who’ll use it and answer for the result.</p><div class="bar"><i style="--h:18px;--d:0s"></i></div></div>
-      <div class="gate"><span class="step">Tranche 2</span><h3>Baseline</h3><p>What today’s process costs, how long it takes and how often it’s right.</p><div class="bar"><i style="--h:34px;--d:.1s"></i></div></div>
-      <div class="gate"><span class="step">Tranche 3</span><h3>Target</h3><p>The accuracy it must hit on the company’s own cases, agreed up front.</p><div class="bar"><i style="--h:56px;--d:.2s"></i></div></div>
-      <div class="gate"><span class="step">Tranche 4</span><h3>Supervised</h3><p>A person checks the AI’s work until it hits that target, case after case.</p><div class="bar"><i style="--h:84px;--d:.3s"></i></div></div>
-      <div class="gate"><span class="step">Tranche 5</span><h3>In use</h3><p>In daily use, measured on cost per correct outcome and watched for drift.</p><div class="bar"><i style="--h:120px;--d:.4s"></i></div></div>
+      <div class="gate"><span class="step">Step 1</span><h3>Owner</h3><p>A named person in the business who’ll use it and answer for the result.</p><div class="bar"><i style="--h:18px;--d:0s"></i></div></div>
+      <div class="gate"><span class="step">Step 2</span><h3>Baseline</h3><p>What today’s process costs, how long it takes and how often it’s right.</p><div class="bar"><i style="--h:34px;--d:.1s"></i></div></div>
+      <div class="gate"><span class="step">Step 3</span><h3>Target</h3><p>The accuracy it must hit on the company’s own cases, agreed up front.</p><div class="bar"><i style="--h:56px;--d:.2s"></i></div></div>
+      <div class="gate"><span class="step">Step 4</span><h3>Supervised</h3><p>A person checks the AI’s work until it hits that target, case after case.</p><div class="bar"><i style="--h:84px;--d:.3s"></i></div></div>
+      <div class="gate"><span class="step">Step 5</span><h3>In use</h3><p>In daily use, measured on cost per correct outcome and watched for drift.</p><div class="bar"><i style="--h:120px;--d:.4s"></i></div></div>
     </div>
     <div class="gates four" data-track="new" hidden>
-      <div class="gate"><span class="step">Tranche 1</span><h3>Demand</h3><p>Evidence customers want it, from what they do and what they’ll pay for.</p><div class="bar"><i style="--h:18px;--d:0s"></i></div></div>
-      <div class="gate"><span class="step">Tranche 2</span><h3>Delivery</h3><p>Proof the company can build and run it, with the data and partners it needs.</p><div class="bar"><i style="--h:44px;--d:.1s"></i></div></div>
-      <div class="gate"><span class="step">Tranche 3</span><h3>Numbers</h3><p>Unit economics that work at the price customers will pay, at realistic volumes.</p><div class="bar"><i style="--h:78px;--d:.2s"></i></div></div>
-      <div class="gate"><span class="step">Tranche 4</span><h3>Scale</h3><p>Money to grow it, with an owner and a route into the core business or a spin-out.</p><div class="bar"><i style="--h:120px;--d:.3s"></i></div></div>
+      <div class="gate"><span class="step">Step 1</span><h3>Demand</h3><p>Evidence customers want it, from what they do and what they’ll pay for.</p><div class="bar"><i style="--h:18px;--d:0s"></i></div></div>
+      <div class="gate"><span class="step">Step 2</span><h3>Delivery</h3><p>Proof the company can build and run it, with the data and partners it needs.</p><div class="bar"><i style="--h:44px;--d:.1s"></i></div></div>
+      <div class="gate"><span class="step">Step 3</span><h3>Numbers</h3><p>Unit economics that work at the price customers will pay, at realistic volumes.</p><div class="bar"><i style="--h:78px;--d:.2s"></i></div></div>
+      <div class="gate"><span class="step">Step 4</span><h3>Scale</h3><p>Money to grow it, with an owner and a route into the core business or a spin-out.</p><div class="bar"><i style="--h:120px;--d:.3s"></i></div></div>
     </div>
-    <div class="gates-foot"><span>Money released at each tranche</span><span>The rest get stopped early and cheaply</span><span class="measure">Every bet is measured the same way: a baseline before it starts, the impact after, and one report across the portfolio.</span></div>
+    <div class="gates-foot"><span>Money released three times: to test, to prove and to scale</span><span>The rest get stopped early and cheaply</span><span class="measure">Every bet is measured the same way: a baseline before it starts, the impact after, and one report across the portfolio.</span></div>
     <figure class="shot"><div class="ph"><img src="/images/stage-copenhagen-frontier.jpg" alt="Jacob Dutton on stage at the Innovation Roundtable Summit in Copenhagen, presenting where AI is changing corporate innovation" loading="lazy" width="1800" height="1200"></div></figure>
   </div>
 </section>

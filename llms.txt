@@ -12,7 +12,7 @@ Jacob's job is deciding which AI use cases get funded, proving they work before 
 
 ## Point of view: AI should be funded like a portfolio, not a project
 
-Most companies fund AI as a project: pick the use case, build it, roll it out and hope people use it. That's why so much of it stalls after the pilot. AI behaves more like a portfolio of bets. You need plenty of small ones because most won't pay off, and the money should follow the evidence. Jacob releases funding in tranches, and every bet has to prove itself to get the next one. The proof needed depends on the kind of bet. At ADQ, 16 of 276 AI opportunities made it to funding, and all 16 are in use, worth $40M+ a year; most of the rest were stopped early, before the big money went in.
+Most companies fund AI as a project: pick the use case, build it, roll it out and hope people use it. That's why so much of it stalls after the pilot. AI behaves more like a portfolio of bets. You need plenty of small ones because most won't pay off, and the money should follow the evidence. Jacob calls the way he runs it the Release Method: five stages (mine, size, test, prove, scale), with money released three times, to test, to prove and to scale, and each time against evidence. The proof needed depends on the kind of bet. At ADQ, 276 AI opportunities went in, 100+ went through three gates and 16 were funded, and all 16 are in use, worth $40M+ a year; most of the rest were stopped early, before the big money went in.
 
 What gets on the list: before a bet gets any money, it has to pass four checks. Jacob runs them on the work itself, workflow by workflow, with the people who do it.
 
@@ -21,7 +21,7 @@ What gets on the list: before a bet gets any money, it has to pass four checks. 
 - Standard: whether AI can do it as well as the company's best team does now. Faster or cheaper only counts if the work is just as good.
 - Shared: whether it can be built once and reused across teams, business units or group companies, so the second costs far less.
 
-For AI in what a company already runs, money is released in five tranches:
+For AI in what a company already runs, a bet has to show five things across the test, prove and scale stages:
 
 1. Owner: a named person in the business who'll use it and answer for the result.
 2. Baseline: what today's process costs, how long it takes and how often it's right.
@@ -29,7 +29,7 @@ For AI in what a company already runs, money is released in five tranches:
 4. Supervised: a person checks the AI's work until it hits that target, case after case.
 5. In use: it's part of the normal week, on its own or with a person in the loop, measured on cost per correct outcome against the old way and watched for drift from then on.
 
-For something new built with AI, money is released in four tranches:
+For something new built with AI, it has to show four:
 
 1. Demand: evidence customers want it, from what they do.
 2. Delivery: proof the company can build and run it, with the data, partners and people it needs.
