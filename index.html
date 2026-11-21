@@ -428,8 +428,8 @@ section{padding:clamp(56px,8vw,112px) 0}
   .hero .lede{font-size:18px;margin-top:14px}
   .hero .ask{margin-top:18px}
   .hero .cta{margin-top:18px}
-  figure.portrait .ph{aspect-ratio:16/9}
-  figure.portrait .ph img,figure.portrait img{aspect-ratio:auto;height:100%;width:118%;max-width:none;margin-left:-14%;object-position:50% 14%}
+  figure.portrait .ph{aspect-ratio:3/2}
+  figure.portrait .ph img,figure.portrait img{aspect-ratio:auto;height:100%;width:100%;max-width:none;margin-left:0;object-position:50% 15%}
   .work .fig b{font-size:30px}
   .work .fig{padding-top:4px}
   .lens h3,.b h4,.tm-panel h3{font-size:26px}
@@ -462,14 +462,16 @@ section{padding:clamp(56px,8vw,112px) 0}
   .tm-nav button{width:100%}
 }
 @media (max-width:860px) and (max-height:700px){
-  figure.portrait .ph{aspect-ratio:21/9}
+  figure.portrait .ph{aspect-ratio:2/1}
+  figure.portrait .ph img,figure.portrait img{object-position:50% 16%}
   .hero h1{font-size:32px}
   .hero .lede{font-size:17px;margin-top:10px}
   .hero .ask{margin-top:14px}
   .ask label{margin-bottom:8px}
 }
 @media (max-width:860px) and (max-height:600px){
-  figure.portrait .ph{aspect-ratio:3/1}
+  figure.portrait .ph{aspect-ratio:5/2}
+  figure.portrait .ph img,figure.portrait img{object-position:50% 19%}
   .hero h1{font-size:30px}
   .hero{padding-top:8px}
 }
