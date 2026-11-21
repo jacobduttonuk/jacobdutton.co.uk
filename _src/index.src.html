@@ -52,6 +52,19 @@ nav.links a:hover{color:var(--ink)}
 .btn.ghost{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 1.5px var(--ink)}
 .btn.ghost:hover{background:var(--ink);color:var(--paper)}
 @media (max-width:760px){nav.links a:not(.btn){display:none}}
+nav.links a.on{color:var(--ink)}
+nav.strip{display:none}
+@media (max-width:760px){
+  html{scroll-padding-top:104px}
+  nav.strip{display:flex;position:relative;gap:22px;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch;padding:0 20px;max-height:0;opacity:0;white-space:nowrap;border-top:1px solid transparent;transition:max-height .25s ease,opacity .25s ease}
+  nav.strip::-webkit-scrollbar{display:none}
+  header.top.nav-on nav.strip{max-height:44px;opacity:1;border-top-color:var(--rule)}
+  nav.strip a{padding:11px 0 10px;font-size:14px;color:var(--slate);text-decoration:none}
+  nav.strip a.on{color:var(--ink);font-weight:600;box-shadow:inset 0 -2px 0 var(--cobalt)}
+  header.top.nav-on~.tbar{top:108px}
+  body.agent nav.strip{display:none}
+}
+@media (max-width:400px){.filters{flex-wrap:wrap!important;overflow-x:visible!important}}
 
 .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
@@ -60,7 +73,7 @@ nav.links a:hover{color:var(--ink)}
 .ask label{display:block;font-weight:700;font-size:17px;margin-bottom:10px}
 .askrow{display:flex;gap:8px;background:#fff;border-radius:16px;padding:6px;box-shadow:inset 0 0 0 1.5px var(--ink)}
 .askrow:focus-within{box-shadow:inset 0 0 0 2px var(--cobalt)}
-.askrow textarea{flex:1;min-width:0;font:inherit;font-size:17px;border:0;outline:0;resize:none;background:transparent;padding:10px 12px;line-height:1.35;max-height:180px;color:var(--ink)}
+.askrow textarea{flex:1;min-width:0;width:0;font:inherit;font-size:17px;border:0;outline:0;resize:none;background:transparent;padding:10px 12px;line-height:1.35;max-height:180px;color:var(--ink)}
 .askrow textarea::placeholder{color:#8A8F99}
 .askrow .btn{align-self:flex-end;background:var(--cobalt);padding:12px 20px}
 .askrow .btn:hover{background:var(--ink)}
@@ -88,7 +101,7 @@ html.branded figure.portrait .ph::after{content:"";position:absolute;inset:0;bac
 .first90 li{counter-increment:s;font-size:16px;line-height:1.45;color:#D6D9E0}
 .first90 li::before{content:"Step " counter(s);display:block;font-weight:700;color:#fff;margin-bottom:6px}
 @media (max-width:760px){.first90 ol{grid-template-columns:1fr}.askrow textarea{font-size:16px}}
-@media (max-width:520px){.askrow{flex-wrap:wrap}.askrow textarea{flex:1 1 100%}.askrow .btn{flex:1}.askrow .clip{order:2}.askrow .btn{order:3}}
+@media (max-width:520px){.askrow{gap:2px}.askrow textarea{padding:10px 4px 10px 10px}.askrow .clip{width:38px}.askrow .btn{flex:none;padding:12px 16px}}
 @media (max-width:360px){.askrow textarea{font-size:14px;padding:10px 8px}}
 @media (max-width:340px){.askrow textarea{font-size:13px;padding:10px 6px}}
 .work .why{margin-top:12px;font-size:15px;font-weight:600;color:var(--cobalt)}
@@ -490,6 +503,15 @@ section{padding:clamp(56px,8vw,112px) 0}
       <a class="btn book" href="https://calendarbridge.com/book/jacobdutton/home">Book a call</a>
     </div>
   </div>
+  <nav class="strip" aria-label="Sections">
+    <a href="#what">Focus</a>
+    <a href="#method">Method</a>
+    <a href="#record">Career</a>
+    <a href="#work">Work</a>
+    <a href="#outlook">Outlook</a>
+    <a href="#built">Portfolio</a>
+    <a href="#writing">Talks</a>
+  </nav>
 </header>
 
 
@@ -570,7 +592,7 @@ section{padding:clamp(56px,8vw,112px) 0}
       <ol data-t="FIRST90"></ol>
     </div>
     <p class="remit stack">I’ve put most kinds of AI to work: predictive models, computer vision and physical AI, generative AI, and agents connected to a company’s own systems and data. Each one is tested with evals before and after launch, with guardrails and a person signing off where it matters.</p>
-    <p class="remit">My job is deciding which AI use cases get funded, proving they work before they scale and getting them into day-to-day work. The CIO, CTO and CISO own platforms, data, security and model risk, and nothing gets funded that can’t clear their bar.</p>
+    <p class="remit">I decide which AI use cases get funded, prove they work before they scale and get them into day-to-day work. The CIO, CTO and CISO own platforms, data, security and model risk, and nothing gets funded that can’t clear their bar.</p>
   </div>
 </section>
 
@@ -632,7 +654,7 @@ section{padding:clamp(56px,8vw,112px) 0}
   <div class="wrap">
     <div class="sec-head">
       <h2 id="record-title" class="display">Eighteen years, four eras.</h2>
-      <p>The job has been the same throughout: working out what’s worth funding and getting it used. Each era, AI does more of it.</p>
+      <p>For eighteen years I’ve decided what large companies should fund and got it into use. In each era, AI has done more of that work.</p>
     </div>
     <div class="eras">
       <div class="era">
@@ -700,10 +722,10 @@ section{padding:clamp(56px,8vw,112px) 0}
     <div class="creds">
       <h3>What people say</h3>
       <div class="says">
-        <p>“You are someone who earns the respect and trust of everyone you work with.” <span>Eida Al Mansoori, Director, worked with Jacob at ADQ</span></p>
-        <p>“A great leader and an inspiration to work for.” <span>Chanade Hemming, reported to Jacob</span></p>
-        <p>“That rare ability to cut through to the core of organisational challenges.” <span>Ollie Purdom, People and Talent Director</span></p>
-        <p>“A really great partner to unlock structured, breakthrough thinking.” <span>Marni Allen, client</span></p>
+        <p>“You are someone who earns the respect and trust of everyone you work with.” <span>Eida Al Mansoori, ADQ</span></p>
+        <p>“A great leader and an inspiration to work for.” <span>Chanade Hemming</span></p>
+        <p>“That rare ability to cut through to the core of organisational challenges.” <span>Ollie Purdom</span></p>
+        <p>“A really great partner to unlock structured, breakthrough thinking.” <span>Marni Allen</span></p>
       </div>
     </div>
     <div class="creds">
@@ -972,6 +994,17 @@ next.addEventListener('click',function(){go(cur+1)});go(0)})();
   form.addEventListener('submit',function(e){e.preventDefault();var v=ta.value.trim();if(!v){fin.click();return}send(v)});
   var f=new URLSearchParams(location.search).get('for');
   if(f){ta.value=f.replace(/-/g,' ');run({url:API+'?for='+encodeURIComponent(f),opts:{}})}
+})();
+</script>
+<script>
+(function(){var top=document.getElementById('top'),strip=document.querySelector('nav.strip');if(!top||!strip)return;
+var secs=['what','method','record','work','outlook','built','writing'].map(function(i){return document.getElementById(i)}).filter(Boolean);
+var links=[].slice.call(document.querySelectorAll('nav.links a,nav.strip a')),cur=null;
+function upd(){var first=secs[0]?secs[0].getBoundingClientRect().top:9999;top.classList.toggle('nav-on',first<260);
+var c='';secs.forEach(function(x){if(x.offsetParent!==null&&x.getBoundingClientRect().top<=150)c=x.id});
+if(c!==cur){cur=c;links.forEach(function(a){var on=a.getAttribute('href')==='#'+c;a.classList.toggle('on',on);if(on&&a.parentNode===strip){try{strip.scrollTo({left:a.offsetLeft-strip.clientWidth/2+a.offsetWidth/2,behavior:'smooth'})}catch(e){strip.scrollLeft=a.offsetLeft-40}}})}}
+window.addEventListener('scroll',upd,{passive:true});window.addEventListener('resize',upd);upd();
+var ta=document.getElementById('askin');if(ta&&window.matchMedia&&matchMedia('(max-width:520px)').matches)ta.placeholder='Your organisation';
 })();
 </script>
 </body>
