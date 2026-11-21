@@ -723,9 +723,9 @@ section{padding:clamp(56px,8vw,112px) 0}
       <h3>What people say</h3>
       <div class="says">
         <p>“You are someone who earns the respect and trust of everyone you work with.” <span>Eida Al Mansoori, ADQ</span></p>
-        <p>“A great leader and an inspiration to work for.” <span>Chanade Hemming</span></p>
-        <p>“That rare ability to cut through to the core of organisational challenges.” <span>Ollie Purdom</span></p>
-        <p>“A really great partner to unlock structured, breakthrough thinking.” <span>Marni Allen</span></p>
+        <p>“A great leader and an inspiration to work for.” <span>Chanade Hemming, IAG Loyalty</span></p>
+        <p>“That rare ability to cut through to the core of organisational challenges.” <span>Ollie Purdom, McCann</span></p>
+        <p>“A really great partner to unlock structured, breakthrough thinking.” <span>Marni Allen, Holland &amp; Barrett</span></p>
       </div>
     </div>
     <div class="creds">
@@ -867,7 +867,7 @@ section{padding:clamp(56px,8vw,112px) 0}
   }
   modeBtns.forEach(function(b){b.addEventListener('click',function(){setMode(b.getAttribute('data-mode'),true)})});
   if(location.hash==='#agent')setMode('agent',false);
-  window.addEventListener('hashchange',function(){setMode(location.hash==='#agent'?'agent':'human',false)});
+  window.addEventListener('hashchange',function(){var a=location.hash==='#agent';if(a!==document.body.classList.contains('agent'))setMode(a?'agent':'human',false)});
   var cp=document.getElementById('copy-md');
   cp.addEventListener('click',function(){
     var done=function(){cp.textContent='Copied';setTimeout(function(){cp.textContent='Copy as markdown'},1800)};
