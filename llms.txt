@@ -19,7 +19,7 @@ Most companies fund AI as a project: pick a use case, build it, roll it out and 
    - Worth: what it costs or earns today, and what doing it better is worth.
    - Ready: whether the data, customers and route to market are there.
    - Standard: whether AI can beat the best of what's there today.
-   - Shared: whether it can be built once and reused across the group.
+   - Shared: whether the rest of the group can use it, buy it or sell it.
 3. Test (a little money): does it work on real cases? A little money pays for the cheapest test of that assumption, on the company's own data and real cases. Three things are agreed before it starts.
    - Owner: a named person in the business who answers for the result.
    - Baseline: what it costs or earns today, before anything changes.
