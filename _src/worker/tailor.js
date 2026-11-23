@@ -63,7 +63,7 @@ TYPE: organisation, job or brief
 NAME: the organisation's short name (for a job or brief, the hiring or client organisation if known, otherwise a 2 to 4 word label)
 LEDE: 1 or 2 sentences, under 40 words, opening the page for them: what I'd do with AI at this organisation (or in this role or project) and why my record fits
 WHAT: 1 sentence, under 25 words, introducing three questions as they apply to them
-VALUE: 2 sentences, under 45 words: where AI would save or make the most money in what they already run, with 2 specific use cases
+VALUE: 2 sentences, under 45 words: productivity, meaning where AI would save the most time and money in the work they already do, with 2 specific use cases
 VALUE_EV: under 18 words: the single closest proof point from my record
 GROWTH: 2 sentences, under 45 words: where AI could grow what they already sell, with specific ideas
 GROWTH_EV: under 18 words: closest proof point
