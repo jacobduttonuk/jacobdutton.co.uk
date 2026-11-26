@@ -1,29 +1,47 @@
 # Search engines and AI assistants are welcome to read this site.
 User-agent: *
 Allow: /
+Disallow: /api/
+Disallow: /cdn-cgi/
 
 User-agent: GPTBot
 Allow: /
+Disallow: /api/
+Disallow: /cdn-cgi/
 
 User-agent: OAI-SearchBot
 Allow: /
+Disallow: /api/
+Disallow: /cdn-cgi/
 
 User-agent: ChatGPT-User
 Allow: /
+Disallow: /api/
+Disallow: /cdn-cgi/
 
 User-agent: ClaudeBot
 Allow: /
+Disallow: /api/
+Disallow: /cdn-cgi/
 
 User-agent: Claude-User
 Allow: /
+Disallow: /api/
+Disallow: /cdn-cgi/
 
 User-agent: Claude-SearchBot
 Allow: /
+Disallow: /api/
+Disallow: /cdn-cgi/
 
 User-agent: PerplexityBot
 Allow: /
+Disallow: /api/
+Disallow: /cdn-cgi/
 
 User-agent: Google-Extended
 Allow: /
+Disallow: /api/
+Disallow: /cdn-cgi/
 
 Sitemap: https://www.jacobdutton.co.uk/sitemap.xml
