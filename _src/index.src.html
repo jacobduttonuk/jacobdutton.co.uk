@@ -228,6 +228,10 @@ h2{font-size:clamp(38px,5.2vw,76px);text-wrap:balance}
 .b .with{margin-top:auto;padding-top:18px;font-size:15px;font-weight:600;color:var(--cobalt)}
 @media (max-width:860px){.built-grid{grid-template-columns:1fr}.b,.b:not(:nth-child(4n+1)),.b:nth-child(2n){padding:20px 0;border-left:0}}
 .gates-foot{display:flex;justify-content:space-between;gap:24px;margin-top:16px;font-size:14px;color:#9AA0AB;flex-wrap:wrap}
+.tm-cta{display:flex;justify-content:space-between;align-items:center;gap:20px 28px;flex-wrap:wrap;margin-top:28px;padding:22px 24px;border:1px solid #3A3E47;border-radius:16px}
+.tm-cta b{display:block;font-size:clamp(19px,2vw,24px);font-weight:700;letter-spacing:-.01em}
+.tm-cta span{display:block;margin-top:4px;font-size:15px;color:#D3D6DC;max-width:52ch}
+.tm-cta .btn{background:var(--cobalt);color:#fff;font-size:16px;padding:13px 22px}
 @media (max-width:860px){
   .gates{grid-template-columns:1fr}
   .gate,.gate+.gate{padding:18px 0;border-left:0;border-bottom:1px solid #3A3E47;display:grid;grid-template-columns:1fr 64px;column-gap:18px}
@@ -653,6 +657,7 @@ section{padding:clamp(56px,8vw,112px) 0}
       <div class="tm-nav"><button type="button" class="next">Next: Size</button></div>
     </div>
     <div class="gates-foot"><span class="measure">Every use case is measured the same way: a baseline before it starts, the impact after, and one report across the portfolio.</span></div>
+    <div class="tm-cta"><div><b>Run it on one of your own use cases.</b><span>The five Traction Method worksheets, one for each stage, with the sizing formula. Free to download and print.</span></div><a class="btn" href="/resources/traction-method-worksheets.pdf">Get the worksheets</a></div>
     <figure class="shot"><div class="ph"><img src="__IMG_stage-copenhagen-frontier__" alt="Jacob Dutton on stage at the Innovation Roundtable Summit in Copenhagen, presenting where AI is changing corporate innovation" loading="lazy" width="1800" height="1200"></div></figure>
   </div>
 </section>

@@ -37,6 +37,8 @@ Most companies fund AI as a project: pick a use case, build it, roll it out and 
 
 Every use case is measured the same way: a baseline before it starts, the impact after, and one report across the portfolio.
 
+Worksheets: the five Traction Method worksheets (opportunity card, sizing sheet, test charter, live-run scorecard, portfolio report) and the sizing formula, W = (V x R x P) - C, are free to download at https://www.jacobdutton.co.uk/resources/traction-method-worksheets.pdf
+
 ## Point of view: where this ends up
 
 Over the next decade, AI will push the cost of thinking, and then of doing, towards zero. Here's what that changes for investors, companies and customers.
