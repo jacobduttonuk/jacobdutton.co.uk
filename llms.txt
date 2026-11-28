@@ -83,6 +83,9 @@ Clients and organisations he has worked with include Microsoft, Salesforce, HSBC
 ## Talks and writing
 
 - [By 2028, activist investors will be targeting companies for what they still spend on work AI can do](https://jacobdutton.substack.com/p/by-2028-activist-investors-will-be): article, 2026
+- [Your customers will buy through agents, whether they’re consumers or businesses](https://jacobdutton.substack.com/p/your-customers-will-buy-through-agents): article, 2026
+- [When every company runs the same models, the models stop being an advantage](https://jacobdutton.substack.com/p/when-every-company-runs-the-same): article, 2026
+- [For investors, AI moves value from labour to capital, and from the company to the portfolio](https://jacobdutton.substack.com/p/for-investors-ai-moves-value-from): article, 2026
 - [Most AI use cases shouldn’t get funded. Here’s how I decide which ones do.](https://jacobdutton.substack.com/p/most-ai-use-cases-shouldnt-get-funded): guide to the Traction Method, with the sizing formula and five worksheets, 2026
 - [AI changes what an innovation function can do. Here’s how to redesign yours.](https://jacobdutton.substack.com/p/ai-changes-what-an-innovation-function): guide in five parts, with worksheets and a proposal template, 2026
 - [How AI helps portfolio managers compare growth across every company they own](https://jacobdutton.substack.com/p/ai-lets-investors-run-innovation): article, 2026
