@@ -289,7 +289,7 @@ h2{font-size:clamp(38px,5.2vw,76px);text-wrap:balance}
 .creds{margin-top:28px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,3fr);gap:24px;align-items:baseline}
 .creds h3{font-size:15px;font-weight:600;color:var(--slate)}
 .creds p{max-width:var(--measure)}
-.says p+p{margin-top:14px}.says span{display:block;color:var(--slate);font-size:14px;margin-top:4px}
+.says p+p{margin-top:14px}.says span{display:block;color:var(--slate);font-size:14px;margin-top:4px}.says p{display:grid;grid-template-columns:48px minmax(0,1fr);column-gap:14px;align-items:center}.says .av{grid-row:1/3;width:48px;height:48px;border-radius:50%;overflow:hidden;position:relative;display:block;background:var(--ink)}.says .av img{width:100%;height:100%;object-fit:cover;display:block;filter:grayscale(1)}.says .av::after{content:"";position:absolute;inset:0;background:var(--cobalt);mix-blend-mode:color;pointer-events:none}.says .qt{color:inherit;font-size:inherit;margin:0}
 @media (max-width:960px){
   .eras{grid-template-columns:1fr 1fr}
   .era:nth-child(3){padding-left:0;border-left:0}
@@ -503,11 +503,11 @@ section{padding:clamp(56px,8vw,112px) 0}
     <a class="brand" href="#top">Jacob Dutton</a>
     <div class="right">
       <nav class="links" aria-label="Main">
+        <a href="#outlook">Outlook</a>
         <a href="#what">Focus</a>
         <a href="#method">Method</a>
         <a href="#record">Career</a>
         <a href="#work">Work</a>
-        <a href="#outlook">Outlook</a>
         <a href="#built">Portfolio</a>
         <a href="#writing">Talks</a>
       </nav>
@@ -519,11 +519,11 @@ section{padding:clamp(56px,8vw,112px) 0}
     </div>
   </div>
   <nav class="strip" aria-label="Sections">
+    <a href="#outlook">Outlook</a>
     <a href="#what">Focus</a>
     <a href="#method">Method</a>
     <a href="#record">Career</a>
     <a href="#work">Work</a>
-    <a href="#outlook">Outlook</a>
     <a href="#built">Portfolio</a>
     <a href="#writing">Talks</a>
   </nav>
@@ -869,10 +869,11 @@ The site uses Jacob's work and experience to show how he could help a visitor's 
     <div class="creds">
       <h3>What people say</h3>
       <div class="says">
-        <p>“You are someone who earns the respect and trust of everyone you work with.” <span>Eida Al Mansoori, ADQ</span></p>
-        <p>“A great leader and an inspiration to work for.” <span>Chanade Hemming, IAG Loyalty</span></p>
-        <p>“That rare ability to cut through to the core of organisational challenges.” <span>Ollie Purdom, McCann</span></p>
-        <p>“A really great partner to unlock structured, breakthrough thinking.” <span>Marni Allen, Holland &amp; Barrett</span></p>
+        <p><i class="av"><img src="/images/people/caroline-mcnaught.jpg" alt="Caroline McNaught" width="48" height="48" loading="lazy"></i><span class="qt">“One of the rare few whose currency holds real value.”</span><span>Caroline McNaught, 383</span></p>
+        <p><i class="av"><img src="/images/people/ollie-purdom.jpg" alt="Ollie Purdom" width="48" height="48" loading="lazy"></i><span class="qt">“That rare ability to cut through to the core of organisational challenges.”</span><span>Ollie Purdom, McCann</span></p>
+        <p><i class="av"><img src="/images/people/marc-rubery.jpg" alt="Marc Rubery" width="48" height="48" loading="lazy"></i><span class="qt">“I’d work with Jacob again in a heartbeat.”</span><span>Marc Rubery, Aldi UK</span></p>
+        <p><i class="av"><img src="/images/people/nick-mcdonald.jpg" alt="Nick McDonald" width="48" height="48" loading="lazy"></i><span class="qt">“The strategic engine of the team.”</span><span>Nick McDonald, Philips</span></p>
+        <p><i class="av"><img src="/images/people/kai-ling-ting.jpg" alt="Kai Ling Ting" width="48" height="48" loading="lazy"></i><span class="qt">“He had no problems rolling up his sleeves and getting the work done.”</span><span>Kai Ling Ting, ADQ</span></p>
       </div>
     </div>
     <div class="creds">
