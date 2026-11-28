@@ -62,8 +62,8 @@ AI-led ventures and products, each built with a large company on board from day 
 
 ## Selected work
 
-- Aucctus AI (2026 to now), Global Head of AI Innovation: Aucctus is an AI system for strategy, growth and innovation work in large companies, built on a memory of the company that learns from every test and decision. Its agents work inside each client's own systems, with people approving what matters. Jacob leads how enterprise clients get started: mapping their work, deciding where AI will pay back first, and getting it running on their own data, typically within four weeks of the first session.
-- ADQ (2025 to 2026), SVP Innovation, R&D and Emerging Technology: led innovation, R&D and emerging technology across a $300B sovereign investor and 20+ operating companies in aviation, energy, ports, logistics, food and healthcare. Managed the $150M portfolio innovation fund: 276 opportunities across the portfolio, 16 funded for $33M against evidence at each stage. Designed and led the Robotics Ramp-Up Programme across 19 operating companies: 23 pilots launched, 100+ robotics and physical AI partners brought in, across computer vision, autonomous mobile robots and inspection drones. Reviewed innovation capability across 13 operating companies and turned it into a three-horizon roadmap.
+- Aucctus AI (2026 to now), Global Head of AI Innovation: Aucctus is AI built for growth, innovation and product teams at large companies, from spotting what's changing in a market to learning from what launched. Its engineers build it around how each team works, and it learns from every test, decision and launch, so each piece of work builds on the last. Jacob leads how enterprise clients get started: mapping their work, deciding where Aucctus would transform it most and getting it running on their own data in four weeks.
+- ADQ (2025 to 2026), SVP Innovation, R&D and Emerging Technology: led innovation, R&D and emerging technology across a $300B sovereign investor and 20+ operating companies in aviation, energy, ports, logistics, food and healthcare. Managed the $150M portfolio innovation fund: 276 AI use cases found across the portfolio, 100+ taken through three checks and 16 funded for $33M, all now in use, with $40M+ of first-year savings. Set the investment governance, stage gates and decision rights, and led the change so operating companies could find, prove and fund AI use cases themselves. Designed and led the Robotics Ramp-Up Programme across 19 operating companies: 23 pilots launched, 100+ robotics and physical AI partners brought in, across computer vision, autonomous mobile robots and inspection drones. Reviewed innovation capability across 13 operating companies and turned it into a three-horizon roadmap.
 - Curzon Street Ventures (2023 to 2025), co-founder and CEO: place-based venture studio turning the operational problems of large companies into AI-led startups. Six AI ventures built, each with a corporate partner: Kaiser Permanente, BP, Grant Thornton, Boeing, GXO and HSBC. Set up its governance and investment criteria, then took the model to nine other regional combined authorities.
 - Future Foundry (2021 to 2025), co-founder and CEO: business experimentation company. 500+ projects tested, most of them AI use cases, and 50+ launched, with 90% of those still in market 12 months later, and more than $1bn of spend stopped on use cases that weren't going to work. Built the testing method used inside Salesforce, Microsoft, HSBC, Mars and Hilton.
 - Interpublic Group (2018 to 2021), Managing Director, Innovation, New York: built IPG's first innovation and venture practice to 50 people. 10 businesses launched; three raised $45M of Series A between them and one reached $20M ARR in 18 months. AI products in market since 2018, including predictive maintenance for JCB and AI-personalised skincare for Avon China.
@@ -74,6 +74,14 @@ AI-led ventures and products, each built with a large company on board from day 
 Career in four eras: 2009 to 2018, before AI, connected products and digital services (383); 2018 to 2021, AI in the product, machine learning, IoT and personalisation (IPG); 2021 to 2025, AI-assisted, generative AI and LLMs (Future Foundry, Curzon Street Ventures, Maven); 2025 to now, AI-native, agents and physical AI (ADQ, Aucctus AI).
 
 Clients and organisations he has worked with include Microsoft, Salesforce, HSBC, Boeing, BP, Mars, P&G, Unilever, Reckitt, Kimberly-Clark, Novartis, Walgreens, Capital One, Experian, Ørsted, Hilton, JCB and the USPS.
+
+## What people say
+
+- "One of the rare few whose currency holds real value." Caroline McNaught, Global Editorial Manager at CGI
+- "That rare ability to cut through to the core of organisational challenges." Ollie Purdom, People & Talent Director at McCann
+- "I'd work with Jacob again in a heartbeat." Marc Rubery, Head of Web & App at Aldi UK
+- "The strategic engine of the team." Nick McDonald, Product Owner at Philips
+- "It's been an honour to work alongside you and call you my team." Kai Ling Ting, Senior Director, Innovation, R&D and Emerging Tech at L'IMAD
 
 ## Education
 
