@@ -18,8 +18,8 @@ Most companies fund AI as a project: pick a use case, build it, roll it out and 
    - Ask: sessions with the people closest to the work and the customer.
    - Look: at process maps, customer data and what's slow or costly.
    - List: every opportunity written up the same way, with an owner.
-2. Size (no money yet): what's it worth, and is it ready? Before a use case gets any money, it has to pass three checks. They put a value on it and name the assumption most likely to be wrong.
-   - Worth: what it costs or earns today, and what doing it better is worth.
+2. Size (no money yet): what's it worth, and is it ready? First I ask whether it's worth doing at all. Then it has to pass three checks before it gets any money. They put a value on it and name the assumption most likely to be wrong.
+   - Worth: what it's worth if it works, times the odds it works, less what it costs to run.
    - Ready: whether the data, customers and route to market are there.
    - Standard: whether AI can beat the best of what's there today.
 3. Test (a little money): does it work on real cases? A little money pays for the cheapest test of that assumption, on the company's own data and real cases. Three things are agreed before it starts.
