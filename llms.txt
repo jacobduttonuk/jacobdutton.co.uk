@@ -37,7 +37,7 @@ Most companies fund AI as a project: pick a use case, build it, roll it out and 
 
 Every use case is measured the same way: a baseline before it starts, the impact after, and one report across the portfolio.
 
-Worksheets: the five Traction Method worksheets (opportunity card, sizing sheet, test charter, live-run scorecard, portfolio report) and the sizing formula, W = (V x R x P) - C, are free to download at https://www.jacobdutton.co.uk/resources/traction-method-worksheets.pdf
+Worksheets: the five Traction Method worksheets (opportunity card, sizing sheet, test charter, live-run scorecard, portfolio report) and the sizing formula, W = (V x R x P) - C, are free to download at https://www.jacobdutton.co.uk/resources/traction-method-worksheets.pdf and the full guide is at https://jacobdutton.substack.com/p/most-ai-use-cases-shouldnt-get-funded
 
 ## Point of view: where this ends up
 
@@ -82,6 +82,7 @@ Clients and organisations he has worked with include Microsoft, Salesforce, HSBC
 
 ## Talks and writing
 
+- [Most AI use cases shouldn’t get funded. Here’s how I decide which ones do.](https://jacobdutton.substack.com/p/most-ai-use-cases-shouldnt-get-funded): guide to the Traction Method, with the sizing formula and five worksheets, 2026
 - [AI changes what corporate innovators are for](https://innovationroundtable.com/summit/): talk, Innovation Roundtable Summit, Copenhagen, 2026
 - [What corporate innovators do when AI does the analysis](https://newcorporateinnovator.aucctus.com/): briefing, 2026
 - [AI has inverted how companies should experiment](https://jacobdutton.substack.com/p/the-experimentation-inversion): article, 2026
